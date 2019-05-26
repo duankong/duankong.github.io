@@ -7,20 +7,20 @@
 
 
 
-    <meta name="description" content="标签（空格分隔）： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过">
+    <meta name="description" content="标签 ： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那">
 <meta name="keywords" content="PCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA(Principal Component Analysis) 主成分分析">
 <meta property="og:url" content="http://notouch.top/2018/11/15/PCA(Principal Component Analysis) 主成分分析/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="标签（空格分隔）： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过">
+<meta property="og:description" content="标签 ： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://notouch.top/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-25T18:09:22.499Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
+<meta property="og:updated_time" content="2019-05-26T16:11:53.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA(Principal Component Analysis) 主成分分析">
-<meta name="twitter:description" content="标签（空格分隔）： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过">
-<meta name="twitter:image" content="http://notouch.top/images/og_image.png">
+<meta name="twitter:description" content="标签 ： PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  一、特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 二、主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
 
 
 
@@ -126,6 +126,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -141,17 +145,27 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
+        </span>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality Reduction</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1473 words)
+                    10 minutes read (About 1467 words)
                 </span>
                 
                 
@@ -164,7 +178,7 @@
             
         </h1>
         <div class="content">
-            <p>标签（空格分隔）： PCA 降维</p>
+            <p>标签 ： PCA 降维</p>
 <hr>
 <blockquote>
 <p>PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
@@ -218,6 +232,10 @@
         </div>
         
         
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
@@ -290,7 +308,7 @@
             <div class="level-item has-text-centered">
                 <div>
                     
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Duankong">
+                        <img class="image is-128x128 has-mb-6" src="/images/xiaomai.gif" alt="Duankong">
                     
                     
                     <p class="is-size-4 is-block">
@@ -328,7 +346,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        3
                     </p>
                 </div>
             </div>
@@ -387,6 +405,25 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#一、特征值和奇异值">
+        <span class="has-mr-6">1</span>
+        <span>一、特征值和奇异值</span>
+        </a></li><li>
+        <a class="is-flex" href="#二、主成分分析—PCA">
+        <span class="has-mr-6">2</span>
+        <span>二、主成分分析—PCA</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -399,20 +436,9 @@
         <ul class="menu-list">
         
             <li>
-                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                <a class="level is-mobile" href="https://github.com/duankong" target="_blank">
                     <span class="level-left">
-                        <span class="level-item">Hexo</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">hexo.io</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">PPOffice</span>
+                        <span class="level-item">Github</span>
                     </span>
                     <span class="level-right">
                         <span class="level-item tag">github.com</span>
@@ -435,7 +461,31 @@
                 Categories
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Learning/">
+            <span class="level-start">
+                <span class="level-item">Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Learning/Dimensionality-Reduction/">
+            <span class="level-start">
+                <span class="level-item">Dimensionality Reduction</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Learning/Feature-Extraction/">
+            <span class="level-start">
+                <span class="level-item">Feature Extraction</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
             </ul>
         </div>
     </div>
@@ -466,7 +516,7 @@
             
             <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PCA(Principal Component Analysis) 主成分分析">
+                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
                 </p>
             </a>
             
@@ -475,7 +525,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
                     <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality Reduction</a>
                     </p>
                 </div>
             </div>
@@ -485,7 +535,7 @@
             
             <a href="/2018/10/22/求三维图像的海森矩阵/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="求三维图像的海森矩阵">
+                    <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
                 </p>
             </a>
             
@@ -494,7 +544,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
                     <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature Extraction</a>
                     </p>
                 </div>
             </div>
@@ -639,7 +689,7 @@
             
             <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PCA(Principal Component Analysis) 主成分分析">
+                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
                 </p>
             </a>
             
@@ -648,7 +698,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
                     <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality Reduction</a>
                     </p>
                 </div>
             </div>
@@ -658,7 +708,7 @@
             
             <a href="/2018/10/22/求三维图像的海森矩阵/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="求三维图像的海森矩阵">
+                    <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
                 </p>
             </a>
             
@@ -667,7 +717,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
                     <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature Extraction</a>
                     </p>
                 </div>
             </div>
