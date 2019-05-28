@@ -170,7 +170,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1509 words)
+                    10 minutes read (About 1540 words)
                 </span>
                 
                 
@@ -212,7 +212,7 @@
 </blockquote>
 <p>考虑一个问题，在维度很低的时候，我们能轻松求出矩阵的协方差以及其特征值和特征向量。那么当维度很多的时候呢？<br><img src="https://lh3.googleusercontent.com/-u6IIoqwxUMM/W_9YoY6kXsI/AAAAAAAAAmk/3b1si1dokLc2xfIzVZ8KXI-YVkbF3nDdgCHMYCw/s0/MATLAB_2018-11-29_11-10-00.png" alt></p>
 <p><img src="https://lh3.googleusercontent.com/-A47uBUHW_-M/W_9YbxkgiXI/AAAAAAAAAmc/g4e9bZQOYqkOfUUniiOLomdo6kSzmgs6QCHMYCw/s0/MATLAB_2018-11-29_11-09-10.png" alt></p>
-<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。<br>此时，SVD就派上用场了：<br>$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{* } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{** }$$</p>
+<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。<br>此时，SVD就派上用场了：<br>$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{<em> } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{*</em> }$$</p>
 <blockquote>
 <p>Disp:</p>
 </blockquote>
@@ -229,8 +229,8 @@
 <p>3、特征值分解只能针对方阵，奇异值分解任意矩阵(包括方阵)都可以。实际上都是求协方差的特征向量作为新的坐标系，一个是$P_{k\times n}$，一个是$V$。只不过奇异值的好处就是可以减少计算量直接求解矩阵$V$。</p>
 <p>4、PCA适用于线性相关的维度，对于非线性的数据来说可以考虑用K-PCA也就是基于核函数的PCA。</p>
 <hr>
-<p>水平有限，如有错误还请批评指正！</p>
-<p>以上。(づ●─●)づ</p>
+<h2 id="水平有限，如有错误还请批评指正！"><a href="#水平有限，如有错误还请批评指正！" class="headerlink" title="水平有限，如有错误还请批评指正！"></a>水平有限，如有错误还请批评指正！</h2><p>以上。(づ●─●)づ</p>
+<p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="http://notouch.top/2018/11/15/PCA(Principal%20Component%20Analysis)%20主成分分析/">点击阅读原文</a></p>
 
         </div>
         
@@ -412,9 +412,9 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Learning/FEATURE-EXTRACTION/">
+        <a class="level is-marginless" href="/categories/Learning/Feature-Extraction/">
             <span class="level-start">
-                <span class="level-item">FEATURE-EXTRACTION</span>
+                <span class="level-item">Feature-Extraction</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -478,7 +478,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
                     <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/FEATURE-EXTRACTION/">FEATURE-EXTRACTION</a>
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
                     </p>
                 </div>
             </div>
@@ -621,7 +621,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
                     <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/FEATURE-EXTRACTION/">FEATURE-EXTRACTION</a>
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
                     </p>
                 </div>
             </div>
