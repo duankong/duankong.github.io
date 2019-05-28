@@ -202,7 +202,8 @@
 <p>假设<code>m</code>个<code>n</code>维随机信号$X=(x_1,x_2,…,x_m)$,存在一个坐标系$w^T$。(信号<code>x</code>各维度都减去了其均值)</p>
 <p>对于一个一维向量来说，<strong>方差</strong>可以度量其包含的信息。对于一个矩阵，可以用<strong>协方差</strong>来表示： </p>
 <p>那么容易得到信号$X$的协方差:<br>$$ S=\frac{1}{n}XX^T $$<br>投影后方差:<br>$$ S’=\frac{1}{n} (w^TX)^2=\frac{1}{n}w^TXX^Tw=w^T(\frac{1}{n}XX^T)w=w^TSw $$</p>
-<p>要求方差<code>S&#39;</code>最大，那么可以得到<strong>优化问题</strong>：<br>$$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$L=w^TSw+\lambda(1-w^Tw)$$<br> $$\frac{\partial L}{\partial w}=2Sw-2\lambda w$$<br>易得:<br>$$Sw=\lambda w$$<br>如果还没忘记什么叫做特征值的话，那么这个式子就可以告诉我们：<strong>求的坐标系$w$其实就是方差$S$的特征向量</strong>。</p>
+<p>要求方差<code>S&#39;</code>最大，那么可以得到<strong>优化问题</strong>： 
+$$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$L=w^TSw+\lambda(1-w^Tw)$$<br> $$\frac{\partial L}{\partial w}=2Sw-2\lambda w$$<br>易得:<br>$$Sw=\lambda w$$<br>如果还没忘记什么叫做特征值的话，那么这个式子就可以告诉我们：<strong>求的坐标系$w$其实就是方差$S$的特征向量</strong>。</p>
 <p>到这里，我们已经找到了新的坐标系$w$。</p>
 <blockquote>
 <p>那么开始分析</p>
@@ -215,7 +216,7 @@
 </blockquote>
 <p>考虑一个问题，在维度很低的时候，我们能轻松求出矩阵的协方差以及其特征值和特征向量。那么当维度很多的时候呢？<br><img src="https://lh3.googleusercontent.com/-u6IIoqwxUMM/W_9YoY6kXsI/AAAAAAAAAmk/3b1si1dokLc2xfIzVZ8KXI-YVkbF3nDdgCHMYCw/s0/MATLAB_2018-11-29_11-10-00.png" alt></p>
 <p><img src="https://lh3.googleusercontent.com/-A47uBUHW_-M/W_9YbxkgiXI/AAAAAAAAAmc/g4e9bZQOYqkOfUUniiOLomdo6kSzmgs6QCHMYCw/s0/MATLAB_2018-11-29_11-09-10.png" alt></p>
-<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。<br>此时，SVD就派上用场了：<br>$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{<em> } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{*</em> }$$</p>
+<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。<br>此时，SVD就派上用场了：<br>$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{* } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{** }$$</p>
 <blockquote>
 <p>Disp:</p>
 </blockquote>
@@ -292,7 +293,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -302,7 +303,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -312,7 +313,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        12
                     </p>
                 </div>
             </div>
@@ -423,6 +424,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Learning-Note/">
+            <span class="level-start">
+                <span class="level-item">Learning Note</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Note/">
             <span class="level-start">
                 <span class="level-item">Note</span>
@@ -442,7 +451,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -459,18 +468,37 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/2018年11月_学习笔记/" class="media-left">
+            <a href="/2018/11/30/Learning notes_2018_11/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="2018年11月_学习笔记">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/2018年11月_学习笔记/" class="has-link-black-ter is-size-6">2018年11月_学习笔记</a>
+                    <a href="/2018/11/30/Learning notes_2018_11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Note/">Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
+                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
                     </p>
                 </div>
             </div>
@@ -532,7 +560,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -562,6 +590,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/KKT/">
+                        <span class="tag">KKT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/PCA降维/">
                         <span class="tag">PCA降维</span>
                         <span class="tag is-grey">1</span>
@@ -583,6 +618,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
+                        <span class="tag">凸函数，正交和投影</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拉格朗日乘子/">
+                        <span class="tag">拉格朗日乘子</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -592,6 +641,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/朴素贝叶斯算法/">
                         <span class="tag">朴素贝叶斯算法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/梯度散度和旋度/">
+                        <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -642,18 +698,37 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/2018年11月_学习笔记/" class="media-left">
+            <a href="/2018/11/30/Learning notes_2018_11/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="2018年11月_学习笔记">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/2018年11月_学习笔记/" class="has-link-black-ter is-size-6">2018年11月_学习笔记</a>
+                    <a href="/2018/11/30/Learning notes_2018_11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Note/">Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
+                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
                     </p>
                 </div>
             </div>
@@ -715,7 +790,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -745,6 +820,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/KKT/">
+                        <span class="tag">KKT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/PCA降维/">
                         <span class="tag">PCA降维</span>
                         <span class="tag is-grey">1</span>
@@ -766,6 +848,20 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
+                        <span class="tag">凸函数，正交和投影</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拉格朗日乘子/">
+                        <span class="tag">拉格朗日乘子</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -775,6 +871,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/朴素贝叶斯算法/">
                         <span class="tag">朴素贝叶斯算法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/梯度散度和旋度/">
+                        <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
