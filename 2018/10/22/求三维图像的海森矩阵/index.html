@@ -16,7 +16,7 @@
 <meta property="og:description" content="标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数    雅可比矩阵  在向量分析中，雅可比矩阵是一阶偏导数以一定方式排列成的矩阵, 其行列式称为雅可比行列式。  海森矩阵  数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的二阶偏导数组成的方块矩阵（假设其二阶偏导都存在）。$$ H(f)=\left[\begin{matrix} \frac{\partial^2">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg">
-<meta property="og:updated_time" content="2019-05-28T04:53:28.006Z">
+<meta property="og:updated_time" content="2019-05-29T14:48:27.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求三维图像的海森矩阵">
 <meta name="twitter:description" content="标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数    雅可比矩阵  在向量分析中，雅可比矩阵是一阶偏导数以一定方式排列成的矩阵, 其行列式称为雅可比行列式。  海森矩阵  数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的二阶偏导数组成的方块矩阵（假设其二阶偏导都存在）。$$ H(f)=\left[\begin{matrix} \frac{\partial^2">
@@ -165,7 +165,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1387 words)
+                    9 minutes read (About 1373 words)
                 </span>
                 
                 
@@ -192,11 +192,11 @@
 <hr>
 <h3 id="高斯求导"><a href="#高斯求导" class="headerlink" title="高斯求导"></a>高斯求导</h3><hr>
 <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>通过上述公式可知，求海森矩阵的过程实际上就是求<strong>二阶偏导</strong>的过程。<strong>卷积</strong>中有一个重要的性质：<strong>卷积的微分特性</strong>—两个函数相卷积后的导数等于其中一个函数的导数与另一个函数的卷积 </p>
-<p>$$  \frac{d}{dt}[f_{1}(t)\star f_{2}(t)]=\frac{df_{1}(t)} {dt}\star f_2(t)= f_1(t)\star \frac{df_2(t)}{dt} $$</p>
+<p>$$  \frac{d}{dt}[f_{1}(t)\ * f_{2}(t)]=\frac{df_{1}(t)} {dt}\ * f_2(t)= f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
 <p>证明如下：</p>
-<p>$$\frac{d}{dt}[f_1(t)\star f_2(t)]=\frac{d}{dt}\int ^{\infty}<em>{-\infty} f_1(\tau)\star f_2(t-\tau)d\tau<br>= \int ^{\infty}</em>{-\infty} f_1(\tau)\star \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\star \frac{df_2(t)}{dt} $$ </p>
-<p>同理可证：<br>$$\frac{d}{dt}[f_1(t)\star  f_2(t)]=\frac{d}{dt}\int ^{\infty}<em>{-\infty} f_1(\tau)\star  f_2(t-\tau)d\tau<br>= \int ^{\infty}</em>{-\infty} \frac{d}{dt}f_1(\tau)\star  f_2(t-\tau)d\tau<br>=\frac{df_1(t)}{dt}\star f_2(t) $$</p>
-<p> 故上述微分特性得证。<br>推广易得：<br>$$\frac{\partial^2}{\partial t^2}[f_1(t)\star  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\star  f_2(t)<br>= f_1(t)\star \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
+<p>$$\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau<br>= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
+<p>同理可证：<br>$$\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau<br>= \int ^{\infty}_ {-\infty} \frac{d}{dt}f_1(\tau)\ *  f_2(t-\tau)d\tau<br>=\frac{df_1(t)}{dt}\ * f_2(t) $$</p>
+<p> 故上述微分特性得证。<br>推广易得：<br>$$\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)<br>= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
 <h4 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:<br>$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\star  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\star  I(x,y,z)<br>= G(x,y,z)\star \frac{\partial^2I(x,y,z)}{\partial x^2}$$<br>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
 <hr>
 <p>跳过。。跳过。。一系列的求导过程((٩(//̀Д/́/)۶))</p>
@@ -568,7 +568,7 @@
             
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
                 </p>
             </a>
             
@@ -798,7 +798,7 @@
             
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1488267/pexels-photo-1488267.png?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
                 </p>
             </a>
             
