@@ -197,26 +197,36 @@
         </h1>
         
         <div class="content">
-            <h2 id="有关病毒标记"><a href="#有关病毒标记" class="headerlink" title="有关病毒标记"></a>有关病毒标记</h2><blockquote>
-<p>顺行标记：沿信号传递方向,一般的病毒，常用AAVs<br>逆行标记：沿信号传递相反的分向，狂犬病毒，常用Rv<br>跨突触标记：多神经元传递</p>
+            <h2>有关病毒标记</h2>
+<blockquote>
+<p>顺行标记：沿信号传递方向,一般的病毒，常用AAVs
+逆行标记：沿信号传递相反的分向，狂犬病毒，常用Rv
+跨突触标记：多神经元传递</p>
 </blockquote>
-<h2 id="条件概率、贝叶斯公式和全概率公式"><a href="#条件概率、贝叶斯公式和全概率公式" class="headerlink" title="条件概率、贝叶斯公式和全概率公式"></a>条件概率、贝叶斯公式和全概率公式</h2><p><code>边缘概率</code>(又称先验概率):某个事件发生的概率。</p>
-<p><strong>边缘概率</strong> 是这样得到的：在联合概率中，把最终结果中那些不需要的事件通过合并成它们的全概率，而消去它们(对离散随机变量用求和得全概率，对连续随机变量用积分得全概率)，这称为边缘化（marginalization），比如A的边缘概率表示为P(A)，B的边缘概率表示为P(B)。 </p>
+<h2>条件概率、贝叶斯公式和全概率公式</h2>
+<p><code>边缘概率</code>(又称先验概率):某个事件发生的概率。</p>
+<p><strong>边缘概率</strong> 是这样得到的：在联合概率中，把最终结果中那些不需要的事件通过合并成它们的全概率，而消去它们(对离散随机变量用求和得全概率，对连续随机变量用积分得全概率)，这称为边缘化（marginalization），比如A的边缘概率表示为P(A)，B的边缘概率表示为P(B)。</p>
 <p><code>联合概率</code>表示两个事件共同发生的概率。A与B的联合概率表示为$P ( A \bigcap B )$或者$P(A,B)$。</p>
 <p><code>条件概率</code>(又称后验概率):事件A在另外一个事件B已经发生条件下的发生概率。条件概率表示为P(A|B)，读作“在B条件下A的概率”。</p>
 <ul>
-<li>条件概率<br>$$P(A|B)=\frac{P(A,B)}{P(B)}$$</li>
-<li>贝叶斯公式<br>$$ P(A|B)=\frac{P(B|A)P(A)}{P(B)} $$</li>
-<li>全概率公式<br>$$P(A)=\sum_{i=1}^n P(A|B_i)P(B_i)$$</li>
-<li>全概率公式和贝叶斯公式的结合<br>$$ P(A|B)=\frac{P(B|A)P(A)}{\sum_{i=1}^n P(B|A_i)P(A_i)} $$</li>
+<li>条件概率
+$$P(A|B)=\frac{P(A,B)}{P(B)}$$</li>
+<li>贝叶斯公式
+$$ P(A|B)=\frac{P(B|A)P(A)}{P(B)} $$</li>
+<li>全概率公式
+$$P(A)=\sum_{i=1}^n P(A|B_i)P(B_i)$$</li>
+<li>全概率公式和贝叶斯公式的结合
+$$ P(A|B)=\frac{P(B|A)P(A)}{\sum_{i=1}^n P(B|A_i)P(A_i)} $$</li>
 </ul>
-<h2 id="无偏估计、有效性、一致性"><a href="#无偏估计、有效性、一致性" class="headerlink" title="无偏估计、有效性、一致性"></a>无偏估计、有效性、一致性</h2><blockquote>
+<h2>无偏估计、有效性、一致性</h2>
+<blockquote>
 <p>无偏估计</p>
 </blockquote>
-<p> 估计量的<code>数学期望</code>等于被估计参数的<code>真实值</code>，则称此此估计量为被估计参数的无偏估计，即具有无偏性。</p>
-<p> 无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。<br>$$ S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2 $$</p>
+<p>估计量的<code>数学期望</code>等于被估计参数的<code>真实值</code>，则称此此估计量为被估计参数的无偏估计，即具有无偏性。</p>
+<p>无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。
+$$ S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2 $$</p>
 <blockquote>
-<p> 有效性</p>
+<p>有效性</p>
 </blockquote>
 <p>估计量方差越小，则说明这个估计量有效性更高。</p>
 <p><img src="/2018/11/30/Learning-notes-2018-11/v2-712306e4b23cc1cc13dc7187f5249a3f_hd.jpg" alt="有效性和无偏估计不相关"></p>
@@ -225,7 +235,8 @@
 <p>一致性</p>
 </blockquote>
 <p>一致性就是在大样本条件下，估计值接近真实值。</p>
-<h2 id="额叶皮层"><a href="#额叶皮层" class="headerlink" title="额叶皮层"></a>额叶皮层</h2><p><img src="/2018/11/30/Learning-notes-2018-11/b7292d133da14d419ae2e3d5d265134e.jpg" alt="此处输入图片的描述"></p>
+<h2>额叶皮层</h2>
+<p><img src="/2018/11/30/Learning-notes-2018-11/b7292d133da14d419ae2e3d5d265134e.jpg" alt="此处输入图片的描述"></p>
 <p><code>前额叶</code>指的是额叶的前端。</p>
 <p>要了解前额叶的位置，我们应该先了解额叶的位置。大脑的两个半球通常被分为四个脑叶，分别是:</p>
 <ul>
@@ -241,7 +252,8 @@
 <p>额叶的前端是前额叶，前额叶的表层便是前额叶皮层，主要与人类的<strong>高级认知功能</strong>相关；</p>
 <p>额叶后端的表层是运动皮层，主要与<strong>运动的控制</strong>相关。</p>
 </blockquote>
-<h2 id="图像的复原方法"><a href="#图像的复原方法" class="headerlink" title="图像的复原方法"></a>图像的复原方法</h2><p>MATLAB的图像处理工具箱中提供了四种图像复原的函数，分别利用:</p>
+<h2>图像的复原方法</h2>
+<p>MATLAB的图像处理工具箱中提供了四种图像复原的函数，分别利用:</p>
 <ul>
 <li>维纳滤波器（wiener）复原</li>
 <li>规则化滤波器（regularized）复原</li>
@@ -252,43 +264,52 @@
 <table>
 <thead>
 <tr>
-<th align="center">函数名</th>
-<th align="center">滤波器</th>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">滤波器</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">deconv</td>
-<td align="center">用wnrener滤波器实现图像去模糊</td>
+<tbody>
+<tr>
+<td style="text-align:center">deconv</td>
+<td style="text-align:center">用wnrener滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td align="center">deconvreg</td>
-<td align="center">用gularized滤波器实现图像去模糊</td>
+<td style="text-align:center">deconvreg</td>
+<td style="text-align:center">用gularized滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td align="center">deconvlucy</td>
-<td align="center">用ucy-Richardson滤波器实现图像去模糊</td>
+<td style="text-align:center">deconvlucy</td>
+<td style="text-align:center">用ucy-Richardson滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td align="center">deconvbind</td>
-<td align="center">用反卷积算法实现图像去模糊</td>
+<td style="text-align:center">deconvbind</td>
+<td style="text-align:center">用反卷积算法实现图像去模糊</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>其中：</p>
 <ol>
-<li><p>deconvwnr函数求得的是最小二乘解</p>
+<li>
+<p>deconvwnr函数求得的是最小二乘解</p>
 </li>
-<li><p>deconvreg 函数求得的是一种约束最下二乘解，在使用此函数时若提供一些关于噪声的参数可以减少去模糊过程中噪声的放大作用。</p>
+<li>
+<p>deconvreg 函数求得的是一种约束最下二乘解，在使用此函数时若提供一些关于噪声的参数可以减少去模糊过程中噪声的放大作用。</p>
 </li>
-<li><p>deconvlucy 函数使用的是一种快速抑制的Lucy-Richardson方法， 经过多次迭代，采用优化技术和泊松统计准则，不需要函数提供模糊图像中关于噪声的额外参数。</p>
+<li>
+<p>deconvlucy 函数使用的是一种快速抑制的Lucy-Richardson方法， 经过多次迭代，采用优化技术和泊松统计准则，不需要函数提供模糊图像中关于噪声的额外参数。</p>
 </li>
-<li><p>使用deconvbind函数时不需要知道真实的点扩散函PSF，使用盲反卷积技术，只需要初始设置一个PSF参数，函数除了返回恢复出的图像外，还返回最后跌倒的点扩散函数PSF。</p>
-<h2 id="朴素贝叶斯算法及贝叶斯估计"><a href="#朴素贝叶斯算法及贝叶斯估计" class="headerlink" title="朴素贝叶斯算法及贝叶斯估计"></a>朴素贝叶斯算法及贝叶斯估计</h2></li>
+<li>
+<p>使用deconvbind函数时不需要知道真实的点扩散函PSF，使用盲反卷积技术，只需要初始设置一个PSF参数，函数除了返回恢复出的图像外，还返回最后跌倒的点扩散函数PSF。</p>
+</li>
 </ol>
+<h2>朴素贝叶斯算法及贝叶斯估计</h2>
 <p>定义：贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称贝叶斯分类。而贝叶斯分类中最简单的一种：朴素贝叶斯分类。</p>
 <p>朴素贝叶斯分类：基于特征条件独立假设，学习输入输出的联合概率分布，对于输入x,朴素贝叶斯法求出后验概率最大的输出y，这等价于期望风险最小化。</p>
 <p>朴素贝叶斯法的参数估计：极大似然估计。</p>
-<p>贝叶斯估计：用极大似然估计可能出现要估计的概率值为0的情况，这会影响到后验概率的计算结果，使分类产生偏差，解决这类问题的方法是采用贝叶斯估计。<br><img src="/2018/11/30/Learning-notes-2018-11/ApplicationFrameHost_2018-11-22_14-21-37.png" alt="贝叶斯估计"></p>
-<h2 id="概念定义"><a href="#概念定义" class="headerlink" title="概念定义"></a>概念定义</h2><p><strong>凸集</strong>：欧式空间中，对于集合中的任意两点的连线，连线上任意一点都在集合中，我们就说这个集合是凸集。</p>
+<p>贝叶斯估计：用极大似然估计可能出现要估计的概率值为0的情况，这会影响到后验概率的计算结果，使分类产生偏差，解决这类问题的方法是采用贝叶斯估计。
+<img src="/2018/11/30/Learning-notes-2018-11/ApplicationFrameHost_2018-11-22_14-21-37.png" alt="贝叶斯估计"></p>
+<h2>概念定义</h2>
+<p><strong>凸集</strong>：欧式空间中，对于集合中的任意两点的连线，连线上任意一点都在集合中，我们就说这个集合是凸集。</p>
 <p><strong>凸函数</strong>：对于任意属于[0,1]的a和任意属于凸集的两点x, y，有f( ax + (1-a)y ) &lt;= a * f(x) + (1-a) * f(y)，几何上的直观理解就是两点连线上某点的函数值，大于等于两点之间某点的函数值。凸函数的任一局部极小点也是全局极小点</p>
 <p><strong>半正定矩阵</strong>：特征值大于等于0的实对称矩阵。</p>
 <blockquote>
@@ -360,41 +381,64 @@
         </h1>
         
         <div class="content">
-            <h2 id="一、梯度、散度、旋度"><a href="#一、梯度、散度、旋度" class="headerlink" title="一、梯度、散度、旋度"></a>一、梯度、散度、旋度</h2><p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
-<h2 id="二、拉格朗日乘子法和KKT条件"><a href="#二、拉格朗日乘子法和KKT条件" class="headerlink" title="二、拉格朗日乘子法和KKT条件"></a>二、拉格朗日乘子法和KKT条件</h2><p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
+            <h2>一、梯度、散度、旋度</h2>
+<p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
+<h2>二、拉格朗日乘子法和KKT条件</h2>
+<p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-22-17.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/26514613" target="_blank" rel="noopener">浅谈最优化问题的KKT条件</a></p>
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-20-46.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28804123" target="_blank" rel="noopener">【分类战车SVM】第四话：拉格朗日对偶问题（原来这么简单，你也可以轻松学会）</a></p>
-<h2 id="三、点乘和叉乘"><a href="#三、点乘和叉乘" class="headerlink" title="三、点乘和叉乘"></a>三、点乘和叉乘</h2><p>$$ a\cdot b =|a||b|\cos \theta$$<br>$$ a\cdot b =a_1b_1+a_2b_2+ … +a_nb_n  $$<br>$$  a \times b=<br>\left|<br> \begin{matrix}<br>   i &amp; j &amp; k \<br>   x_1 &amp; y_1 &amp; z_1  \<br>   x_2 &amp; y_2 &amp; z_2<br>  \end{matrix}<br>\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k<br>$$<br><img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
-<h2 id="四、凸集、凸函数"><a href="#四、凸集、凸函数" class="headerlink" title="四、凸集、凸函数"></a>四、凸集、凸函数</h2><ol>
+<h2>三、点乘和叉乘</h2>
+<p>$$ a\cdot b =|a||b|\cos \theta$$
+$$ a\cdot b =a_1b_1+a_2b_2+ ... +a_nb_n  $$
+$$  a \times b=
+\left|
+\begin{matrix}
+i &amp; j &amp; k \
+x_1 &amp; y_1 &amp; z_1  \
+x_2 &amp; y_2 &amp; z_2<br>
+\end{matrix}
+\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k
+$$
+<img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
+<h2>四、凸集、凸函数</h2>
+<ol>
 <li>凸集</li>
 </ol>
 <p>若某集合中的x和y两个点，若x和y连线之间的所有点（即0&lt;=μ&lt;=1，μx+(1-μ)y）仍属于这个集合，则称此集合为凸集。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
+<p>直观几何表示：
+<img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
 <ol start="2">
 <li>凸函数</li>
 </ol>
 <p>对于$x$是定义在某凸集（非空的，空集也被规定为凸集）上的函数，对于凸集中的任意两点$x_1$和$x_2$，若</p>
-<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$ </p>
+<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$</p>
 <p>则称函数$f(x)$为<code>凸函数</code>。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
+<p>直观几何表示：
+<img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
 <p>也就是说两点对应的函数值$f(x_1)$和$f(x_2)$的之间的连线$(\mu f(x_1)+(1-\mu)f(x_2))$大于等于相应的（即同一个$\mu$值）两点之间连线$(\mu f(x_1)+(1-\mu)f(x_2))$对应的函数值$f[\mu x_1+(1-\mu)x_2]$</p>
 <p>这其实应叫 下凸。</p>
 <p>判定方法可利用<strong>定义法、已知结论法以及函数的二阶导数</strong></p>
 <p>对于实数集上的凸函数，一般的判别方法是求它的二阶导数，如果其二阶导数在区间上非负，就称为凸函数。(向下凸)</p>
 <p>如果其二阶导数在区间上恒大于0，就称为严格凸函数。</p>
-<h2 id="五、方程的解"><a href="#五、方程的解" class="headerlink" title="五、方程的解"></a>五、方程的解</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141128173356875.jpg" alt="方程的解"><br>若矩阵A的秩为r，即r=R(A) ：</p>
+<h2>五、方程的解</h2>
+<p><img src="/2018/11/30/Learning-notes-2018-12/20141128173356875.jpg" alt="方程的解">
+若矩阵A的秩为r，即r=R(A) ：</p>
 <p>1）若$r=M=N$，则线性方程组$Ax=b$有唯一解；</p>
 <p>2）若$r=N&lt; M$,则线性方程组$Ax=b$有唯一解或无解；</p>
 <p>3）若$r=M&lt; N$，则线性方程组$Ax=b$有无穷解；</p>
 <p>4）若$r&lt; M$,$r&lt; N$，则线性方程组$Ax =b$有无穷解或无解；</p>
-<h2 id="六、正交投影和投影矩阵"><a href="#六、正交投影和投影矩阵" class="headerlink" title="六、正交投影和投影矩阵"></a>六、正交投影和投影矩阵</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141125122541339.jpg" alt="正交投影"></p>
+<h2>六、正交投影和投影矩阵</h2>
+<p><img src="/2018/11/30/Learning-notes-2018-12/20141125122541339.jpg" alt="正交投影"></p>
 <p><strong>正交投影</strong>$p$是向量$b$在平面（由矩阵$A$的列向量$a_1$和$a_2$确定）上正交投影</p>
-<p>投影矩阵是从向量b变换到其正交投影p过程中的变换矩阵P：<br><img src="/2018/11/30/Learning-notes-2018-12/20141125123056796.jpg" alt="正交投影和投影矩阵"></p>
-<h2 id="七、MP和OMP"><a href="#七、MP和OMP" class="headerlink" title="七、MP和OMP"></a>七、MP和OMP</h2><p><a href="https://korediantousman.staff.telkomuniversity.ac.id/files/2017/08/main.pdf" target="_blank" rel="noopener">MP</a><br>OMP</p>
+<p>投影矩阵是从向量b变换到其正交投影p过程中的变换矩阵P：
+<img src="/2018/11/30/Learning-notes-2018-12/20141125123056796.jpg" alt="正交投影和投影矩阵"></p>
+<h2>七、MP和OMP</h2>
+<p><a href="https://korediantousman.staff.telkomuniversity.ac.id/files/2017/08/main.pdf" target="_blank" rel="noopener">MP</a>
+OMP</p>
 <hr>
 <p>以上。(づ●─●)づ</p>
 
@@ -683,7 +727,7 @@
         
         <article class="media">
             
-            <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="media-left">
+            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
                 </p>
@@ -692,7 +736,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
+                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
@@ -913,7 +957,7 @@
         
         <article class="media">
             
-            <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="media-left">
+            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
                 </p>
@@ -922,7 +966,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA(Principal Component Analysis) 主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
+                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
