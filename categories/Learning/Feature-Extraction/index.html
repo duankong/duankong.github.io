@@ -173,7 +173,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1373 words)
+                    9 minutes read (About 1367 words)
                 </span>
                 
                 
@@ -205,7 +205,7 @@
 <p>$$\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau<br>= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
 <p>同理可证：<br>$$\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau<br>= \int ^{\infty}_ {-\infty} \frac{d}{dt}f_1(\tau)\ *  f_2(t-\tau)d\tau<br>=\frac{df_1(t)}{dt}\ * f_2(t) $$</p>
 <p> 故上述微分特性得证。<br>推广易得：<br>$$\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)<br>= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
-<h4 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:<br>$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\star  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\star  I(x,y,z)<br>= G(x,y,z)\star \frac{\partial^2I(x,y,z)}{\partial x^2}$$<br>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
+<h4 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:<br>$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\ *   I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\ *   I(x,y,z)<br>= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$$<br>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
 <hr>
 <p>跳过。。跳过。。一系列的求导过程((٩(//̀Д/́/)۶))</p>
 <hr>
@@ -213,7 +213,7 @@
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">%%  求高斯函数的二阶偏导数</span></span><br><span class="line"><span class="hljs-comment">%%  num为高斯核的大小</span></span><br><span class="line"><span class="hljs-comment">%%  sigma为高斯函数的方差</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[gau_xx,gau_yy,gau_zz,gau_xy,gau_xz,gau_yz]</span>=<span class="hljs-title">gaus_creation_3D</span><span class="hljs-params">(num,sigma)</span></span></span><br><span class="line"></span><br><span class="line">gau_xx=[];gau_yy=[];gau_zz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line">gau_xy=[];gau_xz=[];gau_yz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">            x=<span class="hljs-built_in">i</span>-num<span class="hljs-number">-1</span>;y=<span class="hljs-built_in">j</span>-num<span class="hljs-number">-1</span>;z=k-num<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">            gau_xx(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-x^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-y^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_zz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-z^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">            gau_xy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_xz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*z/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(z*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
-<p>关于最终的结果<br>从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \star I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \star I(x,y,z)= G(x,y,z)\star \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
+<p>关于最终的结果<br>从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \ *  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \ *  I(x,y,z)= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
 </blockquote>
 <hr>
 <p>以上。(づ●─●)づ</p>
@@ -465,25 +465,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
@@ -494,6 +475,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
                     <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
+                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
                     </p>
@@ -695,25 +695,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
@@ -724,6 +705,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
                     <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
+                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
                     </p>
