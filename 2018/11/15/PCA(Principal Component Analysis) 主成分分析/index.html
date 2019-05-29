@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="标签 : PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那么新的坐">
+    <meta name="description" content="标签 :  PCA      降维  PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。">
 <meta name="keywords" content="PCA降维">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA(Principal Component Analysis) 主成分分析">
 <meta property="og:url" content="http://notouch.top/2018/11/15/PCA(Principal Component Analysis) 主成分分析/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="标签 : PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那么新的坐">
+<meta property="og:description" content="标签 :  PCA      降维  PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
-<meta property="og:updated_time" content="2019-05-28T04:57:14.122Z">
+<meta property="og:updated_time" content="2019-05-29T17:52:37.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA(Principal Component Analysis) 主成分分析">
-<meta name="twitter:description" content="标签 : PCA 降维   PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。  那么新的坐">
+<meta name="twitter:description" content="标签 :  PCA      降维  PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  特征值和奇异值如何理解矩阵特征值？ 奇异值分解（SVD） 主成分分析—PCA正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。 一个n维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
 
 
@@ -144,6 +144,8 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+	
+
     
     <div class="card-image">
         <span class="image is-7by1">
@@ -151,11 +153,18 @@
         </span>
     </div>
     
+    
     <div class="card-content article ">
+		
+        
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+			
+			<i class="fas fa-arrow-alt-circle-up" style="color:#53ff1a"></i><span class="level-item" style="color:#ff4da6">&nbsp;&nbsp;置顶</span>
+			
                 <time class="level-item has-text-grey" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time>
+                
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
@@ -172,14 +181,19 @@
             </div>
         </div>
         
+        
+		
+		
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
             
                 PCA(Principal Component Analysis) 主成分分析
             
+
         </h1>
+        
         <div class="content">
-            <p>标签 : PCA 降维</p>
-<hr>
+            <p>标签 :  PCA      降维</p>
 <blockquote>
 <p>PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
 </blockquote>
@@ -286,6 +300,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
 
 
 
+
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
@@ -308,6 +323,28 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '6cd559678e1f221043a2',
+        clientSecret: '80e2f67e1a4202407fa9624190ed476d7cb3a86d',
+        id: 'e8eb5f9f5d2c70d4ed66df9a1832dc84',
+        repo: 'duankong.github.io',
+        owner: 'duankong',
+        admin: "duankong"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
