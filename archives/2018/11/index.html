@@ -82,6 +82,10 @@
     
     
     
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -133,6 +137,7 @@
         </div>
     </div>
 </nav>
+    
     
     <section class="section">
         <div class="container">
@@ -227,7 +232,7 @@
 
 
 </div>
-                
+                        <!-- 修改 -->
 
 
 
@@ -672,7 +677,10 @@
     
 </div>
 
-                
+
+<!-- 粘贴的部分 -->
+
+                        <!-- 修改 -->
 
 
 
@@ -901,6 +909,9 @@
     
 </div>
 
+
+<!-- 粘贴的部分 -->
+
             </div>
         </div>
     </section>
@@ -910,20 +921,26 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/o_timg.gif" alt="Notouch" height="28">
+                    <img src="/images/o_timg.gif" alt="Notouch" height="50">
                 
                 </a>
-                <p class="is-size-7">
+                <p class="is-size-10">
                 &copy; 2019 duankong&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
                 </p>
             </div>
+            
             <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
             <script>
                 var now = new Date(); 
                 function createtime() { 
-                    var grt= new Date("5/25/2019 12:50:00");//此处修改你的建站时间或者网站上线时间 
+                    var grt= new Date("5/25/2019 11:50:00");//此处修改你的建站时间或者网站上线时间 
                     now.setTime(now.getTime()+250); 
                     days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
                     hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -931,14 +948,12 @@
                     mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
                     seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
                     snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-                    document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+                    document.getElementById("timeDate").innerHTML = "Security Run For "+dnum+" Day "; 
+                    document.getElementById("times").innerHTML = hnum + " Hour " + mnum + " Min " + snum + " Second"; 
                 } 
             setInterval("createtime()",250);
             </script>
             
-Analyse with <script src="http://s23.cnzz.com/z_stat.php?id=1277655767&web_id=1277655767" language="JavaScript"></script>
-
             <div class="level-end">
             
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
@@ -1069,6 +1084,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     
+    
+
     
 
 
