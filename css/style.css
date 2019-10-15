@@ -5,7 +5,10 @@ html {
   font-size: 14px;
 }
 body {
-  background-color: #f7f7f7;
+  background-image: u;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 body,
 button,
