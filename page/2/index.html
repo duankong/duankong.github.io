@@ -26,13 +26,13 @@
 
 
 
-<link rel="icon" href="/images/o_timg.svg">
+<link rel="icon" href="/images/bitbug_favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/monokai-sublime.css">
 
 
     
@@ -82,6 +82,10 @@
     
     
     
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -92,7 +96,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/o_timg.gif" alt="Notouch" height="28">
+                <img src="/images/dk_logo.svg" alt="Notouch" height="28">
             
             </a>
         </div>
@@ -134,6 +138,7 @@
     </div>
 </nav>
     
+    
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -144,7 +149,7 @@
     
     <div class="card-image">
         <a href="/2018/11/30/Learning-notes-2018-12/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+            <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
         </a>
     </div>
     
@@ -155,6 +160,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+            
 			
                 <time class="level-item has-text-grey" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time>
                 
@@ -167,7 +173,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 962 words)
+                    7 minutes read (About 979 words)
                 </span>
                 
                 
@@ -186,142 +192,18 @@
         </h1>
         
         <div class="content">
-            <h2 id="一、梯度、散度、旋度"><a href="#一、梯度、散度、旋度" class="headerlink" title="一、梯度、散度、旋度"></a>一、梯度、散度、旋度</h2><p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
-<h2 id="二、拉格朗日乘子法和KKT条件"><a href="#二、拉格朗日乘子法和KKT条件" class="headerlink" title="二、拉格朗日乘子法和KKT条件"></a>二、拉格朗日乘子法和KKT条件</h2><p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
-<p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-22-17.png" alt></p>
-<p><a href="https://zhuanlan.zhihu.com/p/26514613" target="_blank" rel="noopener">浅谈最优化问题的KKT条件</a></p>
-<p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-20-46.png" alt></p>
-<p><a href="https://zhuanlan.zhihu.com/p/28804123" target="_blank" rel="noopener">【分类战车SVM】第四话：拉格朗日对偶问题（原来这么简单，你也可以轻松学会）</a></p>
-<h2 id="三、点乘和叉乘"><a href="#三、点乘和叉乘" class="headerlink" title="三、点乘和叉乘"></a>三、点乘和叉乘</h2><p>$$ a\cdot b =|a||b|\cos \theta$$<br>$$ a\cdot b =a_1b_1+a_2b_2+ … +a_nb_n  $$<br>$$  a \times b=<br>\left|<br> \begin{matrix}<br>   i &amp; j &amp; k \<br>   x_1 &amp; y_1 &amp; z_1  \<br>   x_2 &amp; y_2 &amp; z_2<br>  \end{matrix}<br>\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k<br>$$<br><img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
-<h2 id="四、凸集、凸函数"><a href="#四、凸集、凸函数" class="headerlink" title="四、凸集、凸函数"></a>四、凸集、凸函数</h2><ol>
-<li>凸集</li>
-</ol>
-<p>若某集合中的x和y两个点，若x和y连线之间的所有点（即0&lt;=μ&lt;=1，μx+(1-μ)y）仍属于这个集合，则称此集合为凸集。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
-<p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
-<ol start="2">
-<li>凸函数</li>
-</ol>
-<p>对于$x$是定义在某凸集（非空的，空集也被规定为凸集）上的函数，对于凸集中的任意两点$x_1$和$x_2$，若</p>
-<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$ </p>
-<p>则称函数$f(x)$为<code>凸函数</code>。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
-<p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
-<p>也就是说两点对应的函数值$f(x_1)$和$f(x_2)$的之间的连线$(\mu f(x_1)+(1-\mu)f(x_2))$大于等于相应的（即同一个$\mu$值）两点之间连线$(\mu f(x_1)+(1-\mu)f(x_2))$对应的函数值$f[\mu x_1+(1-\mu)x_2]$</p>
-<p>这其实应叫 下凸。</p>
-<p>判定方法可利用<strong>定义法、已知结论法以及函数的二阶导数</strong></p>
-<p>对于实数集上的凸函数，一般的判别方法是求它的二阶导数，如果其二阶导数在区间上非负，就称为凸函数。(向下凸)</p>
-<p>如果其二阶导数在区间上恒大于0，就称为严格凸函数。</p>
-<h2 id="五、方程的解"><a href="#五、方程的解" class="headerlink" title="五、方程的解"></a>五、方程的解</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141128173356875.jpg" alt="方程的解"><br>若矩阵A的秩为r，即r=R(A) ：</p>
-<p>1）若$r=M=N$，则线性方程组$Ax=b$有唯一解；</p>
-<p>2）若$r=N&lt; M$,则线性方程组$Ax=b$有唯一解或无解；</p>
-<p>3）若$r=M&lt; N$，则线性方程组$Ax=b$有无穷解；</p>
-<p>4）若$r&lt; M$,$r&lt; N$，则线性方程组$Ax =b$有无穷解或无解；</p>
-<h2 id="六、正交投影和投影矩阵"><a href="#六、正交投影和投影矩阵" class="headerlink" title="六、正交投影和投影矩阵"></a>六、正交投影和投影矩阵</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141125122541339.jpg" alt="正交投影"></p>
-<p><strong>正交投影</strong>$p$是向量$b$在平面（由矩阵$A$的列向量$a_1$和$a_2$确定）上正交投影</p>
-<p>投影矩阵是从向量b变换到其正交投影p过程中的变换矩阵P：<br><img src="/2018/11/30/Learning-notes-2018-12/20141125123056796.jpg" alt="正交投影和投影矩阵"></p>
-<h2 id="七、MP和OMP"><a href="#七、MP和OMP" class="headerlink" title="七、MP和OMP"></a>七、MP和OMP</h2><p><a href="https://korediantousman.staff.telkomuniversity.ac.id/files/2017/08/main.pdf" target="_blank" rel="noopener">MP</a><br>OMP</p>
-<hr>
-<p>以上。(づ●─●)づ</p>
-
+            <h2 id="😀-一、梯度、散度、旋度"><a href="#😀-一、梯度、散度、旋度" class="headerlink" title="😀 一、梯度、散度、旋度"></a>😀 一、梯度、散度、旋度</h2><p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
+<h2 id="🖐-二、拉格朗日乘子法和KKT条件"><a href="#🖐-二、拉格朗日乘子法和KKT条件" class="headerlink" title="🖐 二、拉格朗日乘子法和KKT条件"></a>🖐 二、拉格朗日乘子法和KKT条件</h2><p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
         </div>
         
         
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    <div class="card">
-	
-
-    
-    <div class="card-image">
-        <a href="/2018/10/22/求三维图像的海森矩阵/" class="image is-7by1">
-            <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
-        </a>
-    </div>
-    
-    
-    <div class="card-content article ">
-		
-        
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-			
-                <time class="level-item has-text-grey" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time>
-                
-                
+        <div class="level is-mobile">
+            <div class="level-start">
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
+                <a class="button is-size-7 is-light" href="/2018/11/30/Learning-notes-2018-12/#more">Read More</a>
                 </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 minutes read (About 1367 words)
-                </span>
-                
-                
             </div>
         </div>
-        
-        
-		
-		
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-			
-            
-                <a class="has-link-black-ter" href="/2018/10/22/求三维图像的海森矩阵/">求三维图像的海森矩阵</a>
-            
-
-        </h1>
-        
-        <div class="content">
-            <p>标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数</p>
-<hr>
-<hr>
-<ul>
-<li>雅可比矩阵</li>
-</ul>
-<p>在向量分析中，雅可比矩阵是<strong>一阶偏导数</strong>以一定方式排列成的矩阵, 其行列式称为雅可比行列式。</p>
-<ul>
-<li>海森矩阵</li>
-</ul>
-<p>数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的<strong>二阶偏导数</strong>组成的方块矩阵（假设其二阶偏导都存在）。<br>$$ H(f)=\left[<br>\begin{matrix}<br> \frac{\partial^2 f}{\partial x^2_1} &amp; \frac{\partial^2 f}{\partial x_1x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1x_n}      \<br>  \frac{\partial^2 f}{\partial x_2x_1} &amp; \frac{\partial^2 f}{\partial x^2_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2x_n}      \<br> \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br> \frac{\partial^2 f}{\partial x_nx_1} &amp; \frac{\partial^2 f}{\partial x_n x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x^2_n}      \<br>\end{matrix}<br>\right] $$</p>
-<hr>
-<h3 id="高斯求导"><a href="#高斯求导" class="headerlink" title="高斯求导"></a>高斯求导</h3><hr>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>通过上述公式可知，求海森矩阵的过程实际上就是求<strong>二阶偏导</strong>的过程。<strong>卷积</strong>中有一个重要的性质：<strong>卷积的微分特性</strong>—两个函数相卷积后的导数等于其中一个函数的导数与另一个函数的卷积 </p>
-<p>$$  \frac{d}{dt}[f_{1}(t)\ * f_{2}(t)]=\frac{df_{1}(t)} {dt}\ * f_2(t)= f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
-<p>证明如下：</p>
-<p>$$\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau<br>= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
-<p>同理可证：<br>$$\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau<br>= \int ^{\infty}_ {-\infty} \frac{d}{dt}f_1(\tau)\ *  f_2(t-\tau)d\tau<br>=\frac{df_1(t)}{dt}\ * f_2(t) $$</p>
-<p> 故上述微分特性得证。<br>推广易得：<br>$$\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)<br>= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
-<h4 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:<br>$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\ *   I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\ *   I(x,y,z)<br>= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$$<br>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
-<hr>
-<p>跳过。。跳过。。一系列的求导过程((٩(//̀Д/́/)۶))</p>
-<hr>
-<p>得到以下高斯函数的二阶偏导：<br>$$\frac{\partial^2G(x,y,z)}{\partial x^2}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{x^2-\sigma^2}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{x^2-\sigma^2}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{xy}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{xy}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$<br>同理易得高斯函数$G(x,y,z)$对$y^2,z^2,yx,xz,zx,yz,zy$等方向的偏导。<br>可以发现：<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{\partial^2G(x,y,z)}{\partial y\partial x}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial x}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial y}$$<br>至此，高斯函数所有的二阶偏导已经求得，然后利用matlab中的convn函数进行三维空间内的卷积(参数选择same保证结果和图像一致)，这也意味着黑森矩阵已经可以通过上述过程得到。</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">%%  求高斯函数的二阶偏导数</span></span><br><span class="line"><span class="hljs-comment">%%  num为高斯核的大小</span></span><br><span class="line"><span class="hljs-comment">%%  sigma为高斯函数的方差</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[gau_xx,gau_yy,gau_zz,gau_xy,gau_xz,gau_yz]</span>=<span class="hljs-title">gaus_creation_3D</span><span class="hljs-params">(num,sigma)</span></span></span><br><span class="line"></span><br><span class="line">gau_xx=[];gau_yy=[];gau_zz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line">gau_xy=[];gau_xz=[];gau_yz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">            x=<span class="hljs-built_in">i</span>-num<span class="hljs-number">-1</span>;y=<span class="hljs-built_in">j</span>-num<span class="hljs-number">-1</span>;z=k-num<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">            gau_xx(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-x^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-y^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_zz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-z^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">            gau_xy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_xz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*z/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(z*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
-<p>关于最终的结果<br>从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \ *  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \ *  I(x,y,z)= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
-</blockquote>
-<hr>
-<p>以上。(づ●─●)づ</p>
-<p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="http://notouch.top/2018/10/22/求三维图像的海森矩阵/">点击阅读原文</a></p>
-
-        </div>
-        
         
         
     </div>
@@ -355,12 +237,12 @@
     </nav>
 </div>
 </div>
-                
+                        <!-- 修改 -->
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -378,7 +260,7 @@
                     
                     
                     <p class="is-size-6 is-block">
-                        君子不器
+                        🌅总之岁月漫长，然而值得等待！
                     </p>
                     
                     
@@ -397,7 +279,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        6
                     </p>
                 </div>
             </div>
@@ -407,7 +289,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        7
                     </p>
                 </div>
             </div>
@@ -417,7 +299,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        18
                     </p>
                 </div>
             </div>
@@ -466,6 +348,76 @@
 </div>
     
         
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/C/">
+            <span class="level-start">
+                <span class="level-item">C++</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
+            <span class="level-start">
+                <span class="level-item">Basic knowledge</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Learning/">
+            <span class="level-start">
+                <span class="level-item">Learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Learning/Dimensionality-Reduction/">
+            <span class="level-start">
+                <span class="level-item">Dimensionality-Reduction</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Learning/Feature-Extraction/">
+            <span class="level-start">
+                <span class="level-item">Feature-Extraction</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Learning/Matlab/">
+            <span class="level-start">
+                <span class="level-item">Matlab</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Learning-Note/">
+            <span class="level-start">
+                <span class="level-item">Learning Note</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
     
         
 
@@ -520,62 +472,16 @@
         
 <div class="card widget">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Learning/">
-            <span class="level-start">
-                <span class="level-item">Learning</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Learning/Dimensionality-Reduction/">
-            <span class="level-start">
-                <span class="level-item">Dimensionality-Reduction</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Learning/Feature-Extraction/">
-            <span class="level-start">
-                <span class="level-item">Feature-Extraction</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Learning-Note/">
-            <span class="level-start">
-                <span class="level-item">Learning Note</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
     
     
-        <div class="column-right-shadow is-hidden-widescreen ">
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
         
             
 <div class="card widget">
@@ -586,9 +492,47 @@
         
         <article class="media">
             
+            <a href="/2019/10/17/C-基础知识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
+                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time></div>
+                    <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
                 </p>
             </a>
             
@@ -607,7 +551,7 @@
             
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
                 </p>
             </a>
             
@@ -641,25 +585,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/10/22/求三维图像的海森矩阵/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
-                    <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -671,6 +596,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
@@ -708,8 +644,22 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Bigtiff/">
+                        <span class="tag">Bigtiff</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/KKT/">
                         <span class="tag">KKT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -743,8 +693,36 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/变量类型/">
+                        <span class="tag">变量类型</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/常量/">
+                        <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/拉格朗日乘子/">
                         <span class="tag">拉格朗日乘子</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/指针/">
+                        <span class="tag">指针</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -800,12 +778,15 @@
     
 </div>
 
-                
+
+<!-- 粘贴的部分 -->
+
+                        <!-- 修改 -->
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
     
         
 <div class="card widget">
@@ -816,9 +797,47 @@
         
         <article class="media">
             
+            <a href="/2019/10/17/C-基础知识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
+                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time></div>
+                    <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
                 </p>
             </a>
             
@@ -837,7 +856,7 @@
             
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2235303/pexels-photo-2235303.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
                 </p>
             </a>
             
@@ -871,25 +890,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/10/22/求三维图像的海森矩阵/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
-                    <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -901,6 +901,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
@@ -938,8 +949,22 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Bigtiff/">
+                        <span class="tag">Bigtiff</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/KKT/">
                         <span class="tag">KKT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Matlab/">
+                        <span class="tag">Matlab</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -973,8 +998,36 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/变量类型/">
+                        <span class="tag">变量类型</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/常量/">
+                        <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/拉格朗日乘子/">
                         <span class="tag">拉格朗日乘子</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/指针/">
+                        <span class="tag">指针</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1028,6 +1081,9 @@
     
     
 </div>
+
+
+<!-- 粘贴的部分 -->
 
             </div>
         </div>
@@ -1036,22 +1092,32 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
+				<script src="//code.tidio.co/3tnny2tdx9oh0xzuitaxzhuakj60ydfy.js"></script>
+                <a class="footer-logo is-block has-mb-12" href="/">
                 
-                    <img src="/images/o_timg.gif" alt="Notouch" height="28">
+                    <img src="/images/dk_logo.svg" alt="Notouch" width="304" height="50">
                 
                 </a>
-                <p class="is-size-7">
+                <p class="is-size-10">
                 &copy; 2019 duankong&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
+                <br>
+                <span id="busuanzi_container_site_uv">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fa fa-bolt" aria-hidden="true "></i>
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                <i class="fa fa-bolt" aria-hidden="true "></i>
+                </span>
+                
                 </p>
             </div>
+            
             <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
             <script>
                 var now = new Date(); 
                 function createtime() { 
-                    var grt= new Date("5/25/2019 12:50:00");//此处修改你的建站时间或者网站上线时间 
+                    var grt= new Date("5/25/2019 11:50:00");//此处修改你的建站时间或者网站上线时间 
                     now.setTime(now.getTime()+250); 
                     days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
                     hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -1059,14 +1125,12 @@
                     mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
                     seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
                     snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-                    document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+                    document.getElementById("timeDate").innerHTML = "Security Run For "+dnum+" Day "; 
+                    document.getElementById("times").innerHTML = hnum + " Hour " + mnum + " Min " + snum + " Second"; 
                 } 
             setInterval("createtime()",250);
             </script>
             
-Analyse with <script src="http://s23.cnzz.com/z_stat.php?id=1277655767&web_id=1277655767" language="JavaScript"></script>
-
             <div class="level-end">
             
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
@@ -1199,6 +1263,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
+    
+
 
 <script src="/js/main.js" defer></script>
 
@@ -1233,5 +1299,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+    
+
+	
+	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: Bigtiff - Notouch</title>
+<title>Tag: 字符串 - Notouch</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     <meta name="description" content="总之岁月漫长，然而值得等待！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Notouch">
-<meta property="og:url" content="http://notouch.top/tags/Bigtiff/index.html">
+<meta property="og:url" content="http://notouch.top/tags/字符串/index.html">
 <meta property="og:site_name" content="Notouch">
 <meta property="og:description" content="总之岁月漫长，然而值得等待！">
 <meta property="og:locale" content="en">
@@ -147,7 +147,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Bigtiff</a></li>
+            <li class="is-active"><a href="#" aria-current="page">字符串</a></li>
         </ul>
         </nav>
     </div>
@@ -158,8 +158,8 @@
 
     
     <div class="card-image">
-        <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
+        <a href="/2019/10/17/C-基础知识/" class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
         </a>
     </div>
     
@@ -172,20 +172,18 @@
             <div class="level-left">
             
 			
-			<i class="fas fa-arrow-alt-circle-up" style="color:#53ff1a"></i><span class="level-item" style="color:#ff4da6">&nbsp;&nbsp;置顶</span>
-			
-                <time class="level-item has-text-grey" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time>
+                <time class="level-item has-text-grey" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time>
                 
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1008 words)
+                    6 minutes read (About 947 words)
                 </span>
                 
                 
@@ -198,21 +196,59 @@
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
 			
             
-                <a class="has-link-black-ter" href="/2019/10/15/Matlab读写超过4GB的图像/">Matlab读写超过4GB的图像</a>
+                <a class="has-link-black-ter" href="/2019/10/17/C-基础知识/">C++基础知识</a>
             
 
         </h1>
         
         <div class="content">
-            <h4 id="💬-Brief-introduction-to-the-TIFF-format"><a href="#💬-Brief-introduction-to-the-TIFF-format" class="headerlink" title="💬 Brief introduction to the TIFF format"></a>💬 Brief introduction to the TIFF format</h4><p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
-<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either ‘Tiles’ or ‘Strips’. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
+            <h1 id="😈-C-基础知识"><a href="#😈-C-基础知识" class="headerlink" title="😈 C++基础知识"></a>😈 C++基础知识</h1><hr>
+<h3 id="👺-变量类型"><a href="#👺-变量类型" class="headerlink" title="👺 变量类型"></a>👺 变量类型</h3><p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
+<p>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。</p>
+<p>以下几种基本的变量类型:</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">存储值 true 或 false</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">通常是一个字符（八位），是一个整数类型</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">整数类型</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
+</tr>
+<tr>
+<td align="center">void</td>
+<td align="center">表示类型的缺失</td>
+</tr>
+<tr>
+<td align="center">wchar_t</td>
+<td align="center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
+</tr>
+</tbody></table>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/15/Matlab读写超过4GB的图像/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2019/10/17/C-基础知识/#more">Read More</a>
                 </div>
             </div>
         </div>

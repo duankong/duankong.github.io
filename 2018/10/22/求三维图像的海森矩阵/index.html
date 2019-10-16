@@ -213,56 +213,36 @@
 <li>👀 海森矩阵</li>
 </ul>
 <p>数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的<strong>二阶偏导数</strong>组成的方块矩阵（假设其二阶偏导都存在）。</p>
-<p><a id="more"></a></p>
-<p>$$ H(f)=\left[
+<a id="more"></a> 
+<script type="math/tex; mode=display">H(f)=\left[
 \begin{matrix}
-\frac{\partial^2 f}{\partial x^2_1} &amp; \frac{\partial^2 f}{\partial x_1x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1x_n}      \
-\frac{\partial^2 f}{\partial x_2x_1} &amp; \frac{\partial^2 f}{\partial x^2_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2x_n}      \
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
-\frac{\partial^2 f}{\partial x_nx_1} &amp; \frac{\partial^2 f}{\partial x_n x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x^2_n}      \
+ \frac{\partial^2 f}{\partial x^2_1} & \frac{\partial^2 f}{\partial x_1x_2} & \cdots & \frac{\partial^2 f}{\partial x_1x_n}      \\
+  \frac{\partial^2 f}{\partial x_2x_1} & \frac{\partial^2 f}{\partial x^2_2} & \cdots & \frac{\partial^2 f}{\partial x_2x_n}      \\
+ \vdots & \vdots & \ddots & \vdots \\
+ \frac{\partial^2 f}{\partial x_nx_1} & \frac{\partial^2 f}{\partial x_n x_2} & \cdots & \frac{\partial^2 f}{\partial x^2_n}      \\
 \end{matrix}
-\right] $$</p>
-<hr>
-<h3>🙅 高斯求导</h3>
-<hr>
-<h4>👚 前言</h4>
-<p>通过上述公式可知，求海森矩阵的过程实际上就是求<strong>二阶偏导</strong>的过程。<strong>卷积</strong>中有一个重要的性质：<strong>卷积的微分特性</strong>---两个函数相卷积后的导数等于其中一个函数的导数与另一个函数的卷积</p>
-<p>$$  \frac{d}{dt}[f_{1}(t)\ * f_{2}(t)]=\frac{df_{1}(t)} {dt}\ * f_2(t)= f_1(t)\ * \frac{df_2(t)}{dt} $$</p>
-<p>证明如下：</p>
-<p>$$\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau
-= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt} $$</p>
-<p>同理可证：
-$$\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau
+\right]</script><hr>
+<h3 id="🙅-高斯求导"><a href="#🙅-高斯求导" class="headerlink" title="🙅 高斯求导"></a>🙅 高斯求导</h3><hr>
+<h4 id="👚-前言"><a href="#👚-前言" class="headerlink" title="👚 前言"></a>👚 前言</h4><p>通过上述公式可知，求海森矩阵的过程实际上就是求<strong>二阶偏导</strong>的过程。<strong>卷积</strong>中有一个重要的性质：<strong>卷积的微分特性</strong>—-两个函数相卷积后的导数等于其中一个函数的导数与另一个函数的卷积 </p>
+<script type="math/tex; mode=display">\frac{d}{dt}[f_{1}(t)\ * f_{2}(t)]=\frac{df_{1}(t)} {dt}\ * f_2(t)= f_1(t)\ * \frac{df_2(t)}{dt}</script><p>证明如下：</p>
+<script type="math/tex; mode=display">\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau
+= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt}</script><p>同理可证：</p>
+<script type="math/tex; mode=display">\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau
 = \int ^{\infty}_ {-\infty} \frac{d}{dt}f_1(\tau)\ *  f_2(t-\tau)d\tau
-=\frac{df_1(t)}{dt}\ * f_2(t) $$</p>
-<p>故上述微分特性得证。
-推广易得：
-$$\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)
-= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
-<h4>⛑ 推导</h4>
-<p>根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:
-$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\ *   I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\ *   I(x,y,z)
-= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$$
-可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。
-到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
+=\frac{df_1(t)}{dt}\ * f_2(t)</script><p> 故上述微分特性得证。<br>推广易得：</p>
+<script type="math/tex; mode=display">\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)
+= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}</script><h4 id="⛑-推导"><a href="#⛑-推导" class="headerlink" title="⛑ 推导"></a>⛑ 推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:</p>
+<script type="math/tex; mode=display">\frac{\partial^2}{\partial x^2}[G(x,y,z)\ *   I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\ *   I(x,y,z)
+= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}</script><p>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
 <hr>
 <p>跳过。。跳过。。一系列的求导过程((٩(//̀Д/́/)۶))</p>
 <hr>
-<p>得到以下高斯函数的二阶偏导：
-$$\frac{\partial^2G(x,y,z)}{\partial x^2}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{x^2-\sigma^2}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{x^2-\sigma^2}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$
-$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{xy}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{xy}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$
-同理易得高斯函数$G(x,y,z)$对$y^2,z^2,yx,xz,zx,yz,zy$等方向的偏导。
-可以发现：
-$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{\partial^2G(x,y,z)}{\partial y\partial x}$$
-$$\frac{\partial^2G(x,y,z)}{\partial x\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial x}$$
-$$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial y}$$
-至此，高斯函数所有的二阶偏导已经求得，然后利用matlab中的convn函数进行三维空间内的卷积(参数选择same保证结果和图像一致)，这也意味着黑森矩阵已经可以通过上述过程得到。</p>
-<h3>🐼 代码实现</h3>
-<p><figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">%%  求高斯函数的二阶偏导数</span></span><br><span class="line"><span class="hljs-comment">%%  num为高斯核的大小</span></span><br><span class="line"><span class="hljs-comment">%%  sigma为高斯函数的方差</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[gau_xx,gau_yy,gau_zz,gau_xy,gau_xz,gau_yz]</span>=<span class="hljs-title">gaus_creation_3D</span><span class="hljs-params">(num,sigma)</span></span></span><br><span class="line"></span><br><span class="line">gau_xx=[];gau_yy=[];gau_zz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line">gau_xy=[];gau_xz=[];gau_yz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">            x=<span class="hljs-built_in">i</span>-num<span class="hljs-number">-1</span>;y=<span class="hljs-built_in">j</span>-num<span class="hljs-number">-1</span>;z=k-num<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">            gau_xx(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-x^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-y^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_zz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-z^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">            gau_xy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_xz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*z/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(z*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure></p>
-<h3>🐕 思考</h3>
-<blockquote>
-<p>关于最终的结果
-从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \ *  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \ *  I(x,y,z)= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
+<p>得到以下高斯函数的二阶偏导：</p>
+<script type="math/tex; mode=display">\frac{\partial^2G(x,y,z)}{\partial x^2}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{x^2-\sigma^2}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{x^2-\sigma^2}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}</script><script type="math/tex; mode=display">\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{xy}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{xy}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}</script><p>同理易得高斯函数$G(x,y,z)$对$y^2,z^2,yx,xz,zx,yz,zy$等方向的偏导。<br>可以发现：</p>
+<script type="math/tex; mode=display">\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{\partial^2G(x,y,z)}{\partial y\partial x}</script><script type="math/tex; mode=display">\frac{\partial^2G(x,y,z)}{\partial x\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial x}</script><script type="math/tex; mode=display">\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial y}</script><p>至此，高斯函数所有的二阶偏导已经求得，然后利用matlab中的convn函数进行三维空间内的卷积(参数选择same保证结果和图像一致)，这也意味着黑森矩阵已经可以通过上述过程得到。</p>
+<h3 id="🐼-代码实现"><a href="#🐼-代码实现" class="headerlink" title="🐼 代码实现"></a>🐼 代码实现</h3> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">%%  求高斯函数的二阶偏导数</span></span><br><span class="line"><span class="hljs-comment">%%  num为高斯核的大小</span></span><br><span class="line"><span class="hljs-comment">%%  sigma为高斯函数的方差</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[gau_xx,gau_yy,gau_zz,gau_xy,gau_xz,gau_yz]</span>=<span class="hljs-title">gaus_creation_3D</span><span class="hljs-params">(num,sigma)</span></span></span><br><span class="line"></span><br><span class="line">gau_xx=[];gau_yy=[];gau_zz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line">gau_xy=[];gau_xz=[];gau_yz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">            x=<span class="hljs-built_in">i</span>-num<span class="hljs-number">-1</span>;y=<span class="hljs-built_in">j</span>-num<span class="hljs-number">-1</span>;z=k-num<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">            gau_xx(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-x^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-y^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_zz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-z^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">            gau_xy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_xz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*z/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(z*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="🐕-思考"><a href="#🐕-思考" class="headerlink" title="🐕 思考"></a>🐕 思考</h3><blockquote>
+<p>关于最终的结果<br>从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \ <em>  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \ </em>  I(x,y,z)= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
 </blockquote>
 <hr>
 <p>🐑 以上。(づ●─●)づ</p>
@@ -415,7 +395,7 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -425,7 +405,7 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        7
                     </p>
                 </div>
             </div>
@@ -435,7 +415,7 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        18
                     </p>
                 </div>
             </div>
@@ -491,23 +471,23 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#undefined">
+        <a class="is-flex" href="#🙅-高斯求导">
         <span class="has-mr-6">1</span>
         <span>🙅 高斯求导</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#undefined">
+        <a class="is-flex" href="#👚-前言">
         <span class="has-mr-6">1.1</span>
         <span>👚 前言</span>
         </a></li><li>
-        <a class="is-flex" href="#undefined">
+        <a class="is-flex" href="#⛑-推导">
         <span class="has-mr-6">1.2</span>
         <span>⛑ 推导</span>
         </a></li></ul></li><li>
-        <a class="is-flex" href="#undefined">
+        <a class="is-flex" href="#🐼-代码实现">
         <span class="has-mr-6">2</span>
         <span>🐼 代码实现</span>
         </a></li><li>
-        <a class="is-flex" href="#undefined">
+        <a class="is-flex" href="#🐕-思考">
         <span class="has-mr-6">3</span>
         <span>🐕 思考</span>
         </a></li></ul>
@@ -525,6 +505,22 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/C/">
+            <span class="level-start">
+                <span class="level-item">C++</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
+            <span class="level-start">
+                <span class="level-item">Basic knowledge</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
             <span class="level-start">
                 <span class="level-item">Learning</span>
@@ -626,7 +622,7 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -643,6 +639,25 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
         
         <article class="media">
             
+            <a href="/2019/10/17/C-基础知识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
+                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
@@ -655,25 +670,6 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                     <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
                     </p>
                 </div>
             </div>
@@ -700,6 +696,25 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
         
         <article class="media">
             
+            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
+                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
@@ -712,25 +727,6 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                     <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/10/22/求三维图像的海森矩阵/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time></div>
-                    <a href="/2018/10/22/求三维图像的海森矩阵/" class="has-link-black-ter is-size-6">求三维图像的海森矩阵</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
                     </p>
                 </div>
             </div>
@@ -754,7 +750,7 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -844,8 +840,36 @@ $$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\par
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/变量类型/">
+                        <span class="tag">变量类型</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/常量/">
+                        <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/拉格朗日乘子/">
                         <span class="tag">拉格朗日乘子</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/指针/">
+                        <span class="tag">指针</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
