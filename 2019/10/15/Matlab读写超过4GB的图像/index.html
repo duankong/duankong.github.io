@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="💬 Brief introduction to the TIFF formatA TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For">
+    <meta name="description" content="💬 Brief introduction to the TIFF format A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of &apos;tags&apos; and corresponding values. For">
 <meta name="keywords" content="Matlab,Bigtiff">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab读写超过4GB的图像">
 <meta property="og:url" content="http://notouch.top/2019/10/15/Matlab读写超过4GB的图像/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="💬 Brief introduction to the TIFF formatA TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For">
+<meta property="og:description" content="💬 Brief introduction to the TIFF format A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of &apos;tags&apos; and corresponding values. For">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 <meta property="og:updated_time" content="2019-10-15T17:16:34.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab读写超过4GB的图像">
-<meta name="twitter:description" content="💬 Brief introduction to the TIFF formatA TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For">
+<meta name="twitter:description" content="💬 Brief introduction to the TIFF format A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of &apos;tags&apos; and corresponding values. For">
 <meta name="twitter:image" content="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 
 
@@ -204,43 +204,53 @@
         </h1>
         
         <div class="content">
-            <h4 id="💬-Brief-introduction-to-the-TIFF-format"><a href="#💬-Brief-introduction-to-the-TIFF-format" class="headerlink" title="💬 Brief introduction to the TIFF format"></a>💬 Brief introduction to the TIFF format</h4><p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
-<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either ‘Tiles’ or ‘Strips’. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
-<a id="more"></a> 
-
+            <h4>💬 Brief introduction to the TIFF format</h4>
+<p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of 'tags' and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
+<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either 'Tiles' or 'Strips'. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
+<p><a id="more"></a></p>
 <hr>
-<h3 id="💦-读取图片"><a href="#💦-读取图片" class="headerlink" title="💦 读取图片"></a>💦 读取图片</h3><hr>
+<h3>💦 读取图片</h3>
+<hr>
 <p>Matlab中imread()支持读取超过4GB的tiff图像。当然也支持<a href="http://www.libtiff.org" target="_blank" rel="noopener">LibTIFF</a>自带的读取函数：</p>
 <table>
 <thead>
 <tr>
-<th align="center">函数</th>
-<th align="center">Function</th>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">Function</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.read.html" target="_blank" rel="noopener">read</a></td>
-<td align="center">读取整个 TIFF 图像</td>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.read.html" target="_blank" rel="noopener">read</a></td>
+<td style="text-align:center">读取整个 TIFF 图像</td>
 </tr>
 <tr>
-<td align="center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.readencodedstrip.html" target="_blank" rel="noopener">readEncodedStrip</a></td>
-<td align="center">从指定条带读取数据</td>
+<td style="text-align:center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.readencodedstrip.html" target="_blank" rel="noopener">readEncodedStrip</a></td>
+<td style="text-align:center">从指定条带读取数据</td>
 </tr>
 <tr>
-<td align="center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.readencodedtile.html" target="_blank" rel="noopener">readEncodedTile</a></td>
-<td align="center">从指定图块读取数据</td>
+<td style="text-align:center"><a href="https://ww2.mathworks.cn/help/matlab/ref/tiff.readencodedtile.html" target="_blank" rel="noopener">readEncodedTile</a></td>
+<td style="text-align:center">从指定图块读取数据</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-<h3 id="💨-写入图片"><a href="#💨-写入图片" class="headerlink" title="💨 写入图片"></a>💨 写入图片</h3><hr>
+<h3>💨 写入图片</h3>
+<hr>
 <p>从<a href="http://www.libtiff.org" target="_blank" rel="noopener">LibTIFF</a>版本4.0.0开始，其偏移值格式使用64位而不是32位的，故后面也叫做Bigtiff，理论上最大可以支持17,179,869,184‬GB的图片。</p>
-<h5 id="🚵-实现思路"><a href="#🚵-实现思路" class="headerlink" title="🚵 实现思路"></a>🚵 实现思路</h5><p>Matlab中以 obj.TiffObject = Tiff(obj.Filename, ‘w8’)方式开始写入Bigtiff；<br>然后结合blockproc函数分块写入图像。</p>
-<h3 id="🙌-代码实现"><a href="#🙌-代码实现" class="headerlink" title="🙌 代码实现"></a>🙌 代码实现</h3><p>实现16位灰度图像写入。</p>
-<h5 id="🤹‍-参考Steve-on-Image-Processing-and-MATLAB构造ImageAdapter类"><a href="#🤹‍-参考Steve-on-Image-Processing-and-MATLAB构造ImageAdapter类" class="headerlink" title="🤹‍ 参考Steve on Image Processing and MATLAB构造ImageAdapter类"></a>🤹‍ 参考<a href="https://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/" target="_blank" rel="noopener">Steve on Image Processing and MATLAB</a>构造ImageAdapter类</h5> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-keyword">classdef</span> bigTiffWriter &lt; ImageAdapter</span><br><span class="line">    <span class="hljs-comment">%BIGTIFFWRITER - A basic image adapter to write Big TIFF files.</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% A simple ImageAdapter class implementing a Tiff writer ImageAdapter</span></span><br><span class="line">    <span class="hljs-comment">% object for use with BLOCKPROC. </span></span><br><span class="line">    <span class="hljs-comment">% - Tile dimensions must be multiples of 16.</span></span><br><span class="line">    <span class="hljs-comment">% - Only uint8, RGB input image data is supported.</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% Based on "Working with Data in Unsupported Formats"</span></span><br><span class="line">    <span class="hljs-comment">% http://www.mathworks.com/help/toolbox/images/f7-12726.html#bse_q4y-1</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% Example:</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Set file names and obtain size information from input file.</span></span><br><span class="line">    <span class="hljs-comment">%    inFile        = 'example.tif';</span></span><br><span class="line">    <span class="hljs-comment">%    inFileInfo    = imfinfo(inFile);</span></span><br><span class="line">    <span class="hljs-comment">%    outFile       = 'out.tif';</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Create an output TIFF file with tile size of 128x128 </span></span><br><span class="line">    <span class="hljs-comment">%    tileSize      = [128, 128]; % has to be a multiple of 16.</span></span><br><span class="line">    <span class="hljs-comment">%    outFileWriter = bigTiffWriter(outFile, inFileInfo(1).Height, inFileInfo(1).Width, tileSize(1), tileSize(2));</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Now call blockproc to rearrange the color channels.</span></span><br><span class="line">    <span class="hljs-comment">%    blockproc(inFile, tileSize, @(b) flipdim(b.data,3), 'Destination', outFileWriter);</span></span><br><span class="line">    <span class="hljs-comment">%    outFileWriter.close();</span></span><br><span class="line">    <span class="hljs-comment">%    imshowpair(imread(inFile), imread(outFile),'montage');</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% See also: blockproc, Tiff, Tiff/writeEncodedTile</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">%   Copyright 2013 The MathWorks, Inc.</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">properties</span>(GetAccess = public, SetAccess = private)        </span><br><span class="line">        Filename;        </span><br><span class="line">        TiffObject;</span><br><span class="line">        TileLength;</span><br><span class="line">        TileWidth;        </span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">methods</span></span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">obj</span> = <span class="hljs-title">bigTiffWriter</span><span class="hljs-params">(fname, imageLength, imageWidth, tileLength, tileWidth)</span></span></span><br><span class="line">            <span class="hljs-comment">% Constructor</span></span><br><span class="line">            </span><br><span class="line">            validateattributes(fname,       &#123;<span class="hljs-string">'char'</span>&#125;,   &#123;<span class="hljs-string">'row'</span>&#125;);</span><br><span class="line">            validateattributes(imageLength, &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(imageWidth,  &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(tileLength,  &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(tileWidth,   &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">mod</span>(tileLength,<span class="hljs-number">16</span>)~=<span class="hljs-number">0</span> || <span class="hljs-built_in">mod</span>(tileWidth,<span class="hljs-number">16</span>)~=<span class="hljs-number">0</span>)</span><br><span class="line">                error(<span class="hljs-string">'bigTiffWriter:invalidTileSize'</span>,...</span><br><span class="line">                    <span class="hljs-string">'Tile size must be a multiple of 16'</span>);</span><br><span class="line">            <span class="hljs-keyword">end</span></span><br><span class="line">            </span><br><span class="line">            obj.Filename   = fname;</span><br><span class="line">            obj.ImageSize  = [imageLength, imageWidth];</span><br><span class="line">            obj.TileLength = tileLength;</span><br><span class="line">            obj.TileWidth  = tileWidth;</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Create the Tiff object.</span></span><br><span class="line">            obj.TiffObject = Tiff(obj.Filename, <span class="hljs-string">'w8'</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Setup the tiff file properties</span></span><br><span class="line">            <span class="hljs-comment">% See "Exporting Image Data and Metadata to TIFF files</span></span><br><span class="line">            <span class="hljs-comment">% http://www.mathworks.com/help/techdoc/import_export/f5-123068.html#br_c_iz-1</span></span><br><span class="line">            <span class="hljs-comment">%</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'ImageLength'</span>,   obj.ImageSize(<span class="hljs-number">1</span>));</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'ImageWidth'</span>,    obj.ImageSize(<span class="hljs-number">2</span>));</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'TileLength'</span>,    obj.TileLength);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'TileWidth'</span>,     obj.TileWidth);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'Photometric'</span>,   Tiff.Photometric.MinIsBlack);<span class="hljs-comment">%图像数据的颜色空间</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'BitsPerSample'</span>, <span class="hljs-number">16</span>);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'SampleFormat'</span>,  Tiff.SampleFormat.UInt);<span class="hljs-comment">%像素样本格式</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'SamplesPerPixel'</span>, <span class="hljs-number">1</span>);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'PlanarConfiguration'</span>, Tiff.PlanarConfiguration.Chunky);  <span class="hljs-comment">%存储配置 </span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'Compression'</span>, Tiff.Compression.LZW);  <span class="hljs-comment">%压缩方式</span></span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[]</span> = <span class="hljs-title">writeRegion</span><span class="hljs-params">(obj, region_start, region_data)</span></span></span><br><span class="line">            <span class="hljs-comment">% Write a block of data to the tiff file.</span></span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Map region_start to a tile number.</span></span><br><span class="line">            tile_number = obj.TiffObject.computeTile(region_start);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% If region_data is greater than tile size, this function</span></span><br><span class="line">            <span class="hljs-comment">% warns, else it will silently pads with 0s.</span></span><br><span class="line">            obj.TiffObject.writeEncodedTile(tile_number, region_data);</span><br><span class="line">            </span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">data</span> = <span class="hljs-title">readRegion</span><span class="hljs-params">(~,~,~)</span> %#<span class="hljs-title">ok</span>&lt;<span class="hljs-title">STOUT</span>&gt;</span></span><br><span class="line">            <span class="hljs-comment">% Not .</span></span><br><span class="line">            error(<span class="hljs-string">'bigTiffWriter:noReadSupport'</span>,...</span><br><span class="line">                <span class="hljs-string">'Read support is not implemented.'</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">close</span><span class="hljs-params">(obj)</span></span></span><br><span class="line">            <span class="hljs-comment">% Close the tiff file</span></span><br><span class="line">            obj.TiffObject.close();</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">    <span class="hljs-keyword">end</span>    </span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="👩‍👩‍👧‍👧-Demo实现"><a href="#👩‍👩‍👧‍👧-Demo实现" class="headerlink" title="👩‍👩‍👧‍👧  Demo实现"></a>👩‍👩‍👧‍👧  Demo实现</h5> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inFileInfo    = <span class="hljs-built_in">size</span>(img);</span><br><span class="line">outFile       = img_name;</span><br><span class="line">tileSize      = [<span class="hljs-number">512</span>, <span class="hljs-number">512</span>]; <span class="hljs-comment">% has to be a multiple of 16.</span></span><br><span class="line">outFileWriter = bigTiffWriter(outFile, inFileInfo(<span class="hljs-number">1</span>), inFileInfo(<span class="hljs-number">2</span>), tileSize(<span class="hljs-number">1</span>), tileSize(<span class="hljs-number">2</span>));</span><br><span class="line">blockproc(img, tileSize, @(c) c.data, <span class="hljs-string">'Destination'</span>, outFileWriter);</span><br><span class="line">outFileWriter.close();</span><br></pre></td></tr></table></figure>
-
-<h3 id="🙆-参考链接"><a href="#🙆-参考链接" class="headerlink" title="🙆 参考链接"></a>🙆 参考链接</h3><p><a href="http://www.libtiff.org" target="_blank" rel="noopener">LibTIFF</a><br><a href="https://ww2.mathworks.cn/matlabcentral/fileexchange/42086-bigtiffwriter" target="_blank" rel="noopener">bigTiffWriter</a><br><a href="https://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/" target="_blank" rel="noopener">Steve on Image Processing and MATLAB</a></p>
+<h5>🚵 实现思路</h5>
+<p>Matlab中以 obj.TiffObject = Tiff(obj.Filename, 'w8')方式开始写入Bigtiff；
+然后结合blockproc函数分块写入图像。</p>
+<h3>🙌 代码实现</h3>
+<p>实现16位灰度图像写入。</p>
+<h5>🤹‍ 参考<a href="https://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/" target="_blank" rel="noopener">Steve on Image Processing and MATLAB</a>构造ImageAdapter类</h5>
+<p><figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-keyword">classdef</span> bigTiffWriter &lt; ImageAdapter</span><br><span class="line">    <span class="hljs-comment">%BIGTIFFWRITER - A basic image adapter to write Big TIFF files.</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% A simple ImageAdapter class implementing a Tiff writer ImageAdapter</span></span><br><span class="line">    <span class="hljs-comment">% object for use with BLOCKPROC. </span></span><br><span class="line">    <span class="hljs-comment">% - Tile dimensions must be multiples of 16.</span></span><br><span class="line">    <span class="hljs-comment">% - Only uint8, RGB input image data is supported.</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% Based on "Working with Data in Unsupported Formats"</span></span><br><span class="line">    <span class="hljs-comment">% http://www.mathworks.com/help/toolbox/images/f7-12726.html#bse_q4y-1</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% Example:</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Set file names and obtain size information from input file.</span></span><br><span class="line">    <span class="hljs-comment">%    inFile        = 'example.tif';</span></span><br><span class="line">    <span class="hljs-comment">%    inFileInfo    = imfinfo(inFile);</span></span><br><span class="line">    <span class="hljs-comment">%    outFile       = 'out.tif';</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Create an output TIFF file with tile size of 128x128 </span></span><br><span class="line">    <span class="hljs-comment">%    tileSize      = [128, 128]; % has to be a multiple of 16.</span></span><br><span class="line">    <span class="hljs-comment">%    outFileWriter = bigTiffWriter(outFile, inFileInfo(1).Height, inFileInfo(1).Width, tileSize(1), tileSize(2));</span></span><br><span class="line">    <span class="hljs-comment">%    %%</span></span><br><span class="line">    <span class="hljs-comment">%    % Now call blockproc to rearrange the color channels.</span></span><br><span class="line">    <span class="hljs-comment">%    blockproc(inFile, tileSize, @(b) flipdim(b.data,3), 'Destination', outFileWriter);</span></span><br><span class="line">    <span class="hljs-comment">%    outFileWriter.close();</span></span><br><span class="line">    <span class="hljs-comment">%    imshowpair(imread(inFile), imread(outFile),'montage');</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    <span class="hljs-comment">% See also: blockproc, Tiff, Tiff/writeEncodedTile</span></span><br><span class="line">    <span class="hljs-comment">%</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">%   Copyright 2013 The MathWorks, Inc.</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">properties</span>(GetAccess = public, SetAccess = private)        </span><br><span class="line">        Filename;        </span><br><span class="line">        TiffObject;</span><br><span class="line">        TileLength;</span><br><span class="line">        TileWidth;        </span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">methods</span></span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">obj</span> = <span class="hljs-title">bigTiffWriter</span><span class="hljs-params">(fname, imageLength, imageWidth, tileLength, tileWidth)</span></span></span><br><span class="line">            <span class="hljs-comment">% Constructor</span></span><br><span class="line">            </span><br><span class="line">            validateattributes(fname,       &#123;<span class="hljs-string">'char'</span>&#125;,   &#123;<span class="hljs-string">'row'</span>&#125;);</span><br><span class="line">            validateattributes(imageLength, &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(imageWidth,  &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(tileLength,  &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            validateattributes(tileWidth,   &#123;<span class="hljs-string">'numeric'</span>&#125;,&#123;<span class="hljs-string">'scalar'</span>&#125;);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">mod</span>(tileLength,<span class="hljs-number">16</span>)~=<span class="hljs-number">0</span> || <span class="hljs-built_in">mod</span>(tileWidth,<span class="hljs-number">16</span>)~=<span class="hljs-number">0</span>)</span><br><span class="line">                error(<span class="hljs-string">'bigTiffWriter:invalidTileSize'</span>,...</span><br><span class="line">                    <span class="hljs-string">'Tile size must be a multiple of 16'</span>);</span><br><span class="line">            <span class="hljs-keyword">end</span></span><br><span class="line">            </span><br><span class="line">            obj.Filename   = fname;</span><br><span class="line">            obj.ImageSize  = [imageLength, imageWidth];</span><br><span class="line">            obj.TileLength = tileLength;</span><br><span class="line">            obj.TileWidth  = tileWidth;</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Create the Tiff object.</span></span><br><span class="line">            obj.TiffObject = Tiff(obj.Filename, <span class="hljs-string">'w8'</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Setup the tiff file properties</span></span><br><span class="line">            <span class="hljs-comment">% See "Exporting Image Data and Metadata to TIFF files</span></span><br><span class="line">            <span class="hljs-comment">% http://www.mathworks.com/help/techdoc/import_export/f5-123068.html#br_c_iz-1</span></span><br><span class="line">            <span class="hljs-comment">%</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'ImageLength'</span>,   obj.ImageSize(<span class="hljs-number">1</span>));</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'ImageWidth'</span>,    obj.ImageSize(<span class="hljs-number">2</span>));</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'TileLength'</span>,    obj.TileLength);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'TileWidth'</span>,     obj.TileWidth);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'Photometric'</span>,   Tiff.Photometric.MinIsBlack);<span class="hljs-comment">%图像数据的颜色空间</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'BitsPerSample'</span>, <span class="hljs-number">16</span>);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'SampleFormat'</span>,  Tiff.SampleFormat.UInt);<span class="hljs-comment">%像素样本格式</span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'SamplesPerPixel'</span>, <span class="hljs-number">1</span>);</span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'PlanarConfiguration'</span>, Tiff.PlanarConfiguration.Chunky);  <span class="hljs-comment">%存储配置 </span></span><br><span class="line">            obj.TiffObject.setTag(<span class="hljs-string">'Compression'</span>, Tiff.Compression.LZW);  <span class="hljs-comment">%压缩方式</span></span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[]</span> = <span class="hljs-title">writeRegion</span><span class="hljs-params">(obj, region_start, region_data)</span></span></span><br><span class="line">            <span class="hljs-comment">% Write a block of data to the tiff file.</span></span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% Map region_start to a tile number.</span></span><br><span class="line">            tile_number = obj.TiffObject.computeTile(region_start);</span><br><span class="line">            </span><br><span class="line">            <span class="hljs-comment">% If region_data is greater than tile size, this function</span></span><br><span class="line">            <span class="hljs-comment">% warns, else it will silently pads with 0s.</span></span><br><span class="line">            obj.TiffObject.writeEncodedTile(tile_number, region_data);</span><br><span class="line">            </span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">data</span> = <span class="hljs-title">readRegion</span><span class="hljs-params">(~,~,~)</span> %#<span class="hljs-title">ok</span>&lt;<span class="hljs-title">STOUT</span>&gt;</span></span><br><span class="line">            <span class="hljs-comment">% Not .</span></span><br><span class="line">            error(<span class="hljs-string">'bigTiffWriter:noReadSupport'</span>,...</span><br><span class="line">                <span class="hljs-string">'Read support is not implemented.'</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">close</span><span class="hljs-params">(obj)</span></span></span><br><span class="line">            <span class="hljs-comment">% Close the tiff file</span></span><br><span class="line">            obj.TiffObject.close();</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">        </span><br><span class="line">    <span class="hljs-keyword">end</span>    </span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h5>👩‍👩‍👧‍👧  Demo实现</h5>
+<p><figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inFileInfo    = <span class="hljs-built_in">size</span>(img);</span><br><span class="line">outFile       = img_name;</span><br><span class="line">tileSize      = [<span class="hljs-number">512</span>, <span class="hljs-number">512</span>]; <span class="hljs-comment">% has to be a multiple of 16.</span></span><br><span class="line">outFileWriter = bigTiffWriter(outFile, inFileInfo(<span class="hljs-number">1</span>), inFileInfo(<span class="hljs-number">2</span>), tileSize(<span class="hljs-number">1</span>), tileSize(<span class="hljs-number">2</span>));</span><br><span class="line">blockproc(img, tileSize, @(c) c.data, <span class="hljs-string">'Destination'</span>, outFileWriter);</span><br><span class="line">outFileWriter.close();</span><br></pre></td></tr></table></figure></p>
+<h3>🙆 参考链接</h3>
+<p><a href="http://www.libtiff.org" target="_blank" rel="noopener">LibTIFF</a>
+<a href="https://ww2.mathworks.cn/matlabcentral/fileexchange/42086-bigtiffwriter" target="_blank" rel="noopener">bigTiffWriter</a>
+<a href="https://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/" target="_blank" rel="noopener">Steve on Image Processing and MATLAB</a></p>
 <hr>
 <p>🤽‍  以上。(づ●─●)づ</p>
 <p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="https://notouch.top/2019/10/15/Matlab%E8%AF%BB%E5%86%99%E8%B6%85%E8%BF%874GB%E7%9A%84%E5%9B%BE%E5%83%8F/#more">点击阅读原文</a></p>
@@ -321,8 +331,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/30/Learning-notes-2018-11/">
-                <span class="level-item">Learning notes_2018_11</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/30/Learning-notes-2018-12/">
+                <span class="level-item">Learning notes_2018_12</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -399,7 +409,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -419,7 +429,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        26
                     </p>
                 </div>
             </div>
@@ -475,35 +485,35 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><ul class="menu-list"><li>
-        <a class="is-flex" href="#💬-Brief-introduction-to-the-TIFF-format">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">1.1</span>
         <span>💬 Brief introduction to the TIFF format</span>
         </a></li></ul><li>
-        <a class="is-flex" href="#💦-读取图片">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">2</span>
         <span>💦 读取图片</span>
         </a></li><li>
-        <a class="is-flex" href="#💨-写入图片">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">3</span>
         <span>💨 写入图片</span>
         </a><ul class="menu-list"><ul class="menu-list"><li>
-        <a class="is-flex" href="#🚵-实现思路">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">3.1.1</span>
         <span>🚵 实现思路</span>
         </a></li></ul></ul></li><li>
-        <a class="is-flex" href="#🙌-代码实现">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">4</span>
         <span>🙌 代码实现</span>
         </a><ul class="menu-list"><ul class="menu-list"><li>
-        <a class="is-flex" href="#🤹‍-参考Steve-on-Image-Processing-and-MATLAB构造ImageAdapter类">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">4.1.1</span>
         <span>🤹‍ 参考Steve on Image Processing and MATLAB构造ImageAdapter类</span>
         </a></li><li>
-        <a class="is-flex" href="#👩‍👩‍👧‍👧-Demo实现">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">4.1.2</span>
         <span>👩‍👩‍👧‍👧  Demo实现</span>
         </a></li></ul></ul></li><li>
-        <a class="is-flex" href="#🙆-参考链接">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">5</span>
         <span>🙆 参考链接</span>
         </a></li></ul>
@@ -526,7 +536,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
@@ -534,7 +544,7 @@
                 <span class="level-item">Basic knowledge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
@@ -638,7 +648,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -652,6 +662,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -693,25 +741,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
@@ -724,25 +753,6 @@
                     <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
                 </div>
             </div>
@@ -766,7 +776,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -842,8 +852,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/中序遍历/">
+                        <span class="tag">中序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/二阶偏导数/">
                         <span class="tag">二阶偏导数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/先序遍历/">
+                        <span class="tag">先序遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -863,6 +887,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/后序遍历/">
+                        <span class="tag">后序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/字符串/">
                         <span class="tag">字符串</span>
                         <span class="tag is-grey">1</span>
@@ -870,8 +901,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/容器/">
+                        <span class="tag">容器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/常量/">
                         <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
+                        <span class="tag">广度(层次)遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -891,6 +936,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/文件读写/">
+                        <span class="tag">文件读写</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -905,6 +957,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/梯度散度和旋度/">
                         <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
@@ -914,6 +973,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/海森矩阵/">
                         <span class="tag">海森矩阵</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度遍历/">
+                        <span class="tag">深度遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

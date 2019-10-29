@@ -2,23 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019 - Notouch</title>
+<title>C++树的遍历和树状数组 - Notouch</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="总之岁月漫长，然而值得等待！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Notouch">
-<meta property="og:url" content="http://notouch.top/archives/2019/index.html">
+    <meta name="description" content="🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878">
+<meta name="keywords" content="先序遍历,中序遍历,后序遍历,深度遍历,广度(层次)遍历,树状数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++树的遍历和树状数组">
+<meta property="og:url" content="http://notouch.top/2019/10/30/C-树的遍历和树状数组/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="总之岁月漫长，然而值得等待！">
+<meta property="og:description" content="🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://notouch.top/images/og_image.png">
+<meta property="og:image" content="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&dl=-3110281.jpg&fm=jpg">
+<meta property="og:updated_time" content="2019-10-29T16:25:03.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Notouch">
-<meta name="twitter:description" content="总之岁月漫长，然而值得等待！">
-<meta name="twitter:image" content="http://notouch.top/images/og_image.png">
+<meta name="twitter:title" content="C++树的遍历和树状数组">
+<meta name="twitter:description" content="🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878">
+<meta name="twitter:image" content="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&dl=-3110281.jpg&fm=jpg">
 
 
 
@@ -96,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/dk_logo.svg" alt="Notouch" height="28">
+                <img src="/images/dk_logo.svg" alt="C++树的遍历和树状数组" height="28">
             
             </a>
         </div>
@@ -128,6 +130,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -142,127 +148,174 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-6-tablet is-6-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+	
 
-<div class="card widget">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+        </span>
+    </div>
+    
+    
+    <div class="card-content article ">
+		
+        
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+            
+			
+                <time class="level-item has-text-grey" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time>
+                
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 438 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        
+		
+		
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
+            
+                C++树的遍历和树状数组
+            
+
+        </h1>
+        
+        <div class="content">
+            <h2 id="🤷‍-先序遍历，中序遍历，后序遍历-深度遍历-广度-层次-遍历"><a href="#🤷‍-先序遍历，中序遍历，后序遍历-深度遍历-广度-层次-遍历" class="headerlink" title="🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历"></a>🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历</h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> inf = <span class="hljs-number">0x7fffffff</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n;</span><br><span class="line"><span class="hljs-keyword">int</span> post[<span class="hljs-number">35</span>], pre[<span class="hljs-number">35</span>], inor[<span class="hljs-number">35</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">	<span class="hljs-keyword">int</span> data;</span><br><span class="line">	node *left_child;</span><br><span class="line">	node *right_child;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PreOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PreOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PreOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PostOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(node* root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">		dfs(root-&gt;left_child);</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">		dfs(root-&gt;right_child);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">(node* root)</span> </span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line">	q.push(root);</span><br><span class="line">	node *mynode;</span><br><span class="line">	<span class="hljs-keyword">while</span> (!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		mynode = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; mynode-&gt;data;</span><br><span class="line">		num++;</span><br><span class="line">		<span class="hljs-keyword">if</span> (num &lt; n)</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span> (mynode-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">			q.push(mynode-&gt;left_child);</span><br><span class="line">		<span class="hljs-keyword">if</span> (mynode-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">			q.push(mynode-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">node *<span class="hljs-title">Creat_node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> postL, <span class="hljs-keyword">int</span> postR, <span class="hljs-keyword">int</span> inL, <span class="hljs-keyword">int</span> inR)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span> (postL&gt;postR)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	node *root = <span class="hljs-keyword">new</span> node;</span><br><span class="line">	root-&gt;data = post[postR];</span><br><span class="line">	<span class="hljs-keyword">int</span> i;</span><br><span class="line">	<span class="hljs-keyword">for</span> ( i = inL; i &lt; inR; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span> (inor[i] == post[postR])</span><br><span class="line">			<span class="hljs-keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">int</span> num_left = i - inL;<span class="hljs-comment">//左子树</span></span><br><span class="line">	root-&gt;left_child = Creat_node(postL, postL + num_left<span class="hljs-number">-1</span>, inL, i<span class="hljs-number">-1</span>);</span><br><span class="line">	root-&gt;right_child = Creat_node(postL + num_left, postR - <span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>, inR);</span><br><span class="line">	<span class="hljs-keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="hljs-built_in">cin</span> &gt;&gt; post[i];</span><br><span class="line">	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="hljs-built_in">cin</span> &gt;&gt; inor[i];</span><br><span class="line">	node* my_node = Creat_node(<span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"DFS: "</span>;</span><br><span class="line">	dfs(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"BFS: "</span>;</span><br><span class="line">	bfs(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"PreOrder: "</span>;</span><br><span class="line">	PreOrder(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"InOrder: "</span>;</span><br><span class="line">	InOrder(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"PostOrder: "</span>;</span><br><span class="line">	PostOrder(my_node);</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="👨‍💻-树状数组"><a href="#👨‍💻-树状数组" class="headerlink" title="👨‍💻 树状数组"></a>👨‍💻 树状数组</h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> n&amp;(-n);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> num)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(n&lt;=MAX)</span><br><span class="line">    &#123;</span><br><span class="line">        TreeArray[n]+=num;</span><br><span class="line">        n+=lowbit(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">GetSum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span><span class="hljs-comment">//前n个元素的和</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(n&gt;<span class="hljs-number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=TreeArray[n];</span><br><span class="line">        n-=lowbit(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BinarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target)</span>  <span class="hljs-comment">//二分查找</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;                             </span><br><span class="line">                              </span><br><span class="line">    <span class="hljs-keyword">int</span> mid;</span><br><span class="line">	<span class="hljs-keyword">int</span> left = <span class="hljs-number">1</span>, right = MAX_NUM;</span><br><span class="line">	<span class="hljs-keyword">while</span> (left&lt;=right)</span><br><span class="line">	&#123;</span><br><span class="line">		mid = left + (right - left) / <span class="hljs-number">2</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span> (getsum(mid)&lt;target)</span><br><span class="line">			left = mid + <span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">else</span></span><br><span class="line">			right = mid - <span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; left &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/中序遍历/">中序遍历</a>, <a class="has-link-grey -link" href="/tags/先序遍历/">先序遍历</a>, <a class="has-link-grey -link" href="/tags/后序遍历/">后序遍历</a>, <a class="has-link-grey -link" href="/tags/广度-层次-遍历/">广度(层次)遍历</a>, <a class="has-link-grey -link" href="/tags/树状数组/">树状数组</a>, <a class="has-link-grey -link" href="/tags/深度遍历/">深度遍历</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
                 
-                <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
-                    </p>
-                </a>
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/o_timg.gif" alt="Alipay"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time>
-                        <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
-                    </p>
-                </a>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/xiaomai.gif" alt="Wechat"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time>
-                        <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <a href="/2019/10/17/C-基础知识/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
-                    </p>
-                </a>
+<a class="button is-danger donate" href="https://github.com/duankong" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time>
-                        <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time>
-                        <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
 
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/30/C-容器和文件读写/">
+                <span class="level-item">C++容器和文件读写</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
 </div>
-                        <!-- 修改 -->
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '6cd559678e1f221043a2',
+        clientSecret: '80e2f67e1a4202407fa9624190ed476d7cb3a86d',
+        id: '9d61ca9ed66eab3b104c80ca321e9bf9',
+        repo: 'duankong.github.io',
+        owner: 'duankong',
+        admin: "duankong"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+<!-- 粘贴的部分 -->
+                          <!-- 修改，可选保留的栏 -->
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-left is-sticky">
     
         
 <div class="card widget">
@@ -368,6 +421,25 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#🤷‍-先序遍历，中序遍历，后序遍历-深度遍历-广度-层次-遍历">
+        <span class="has-mr-6">1</span>
+        <span>🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历</span>
+        </a></li><li>
+        <a class="is-flex" href="#👨‍💻-树状数组">
+        <span class="has-mr-6">2</span>
+        <span>👨‍💻 树状数组</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 <div class="card widget">
@@ -854,366 +926,7 @@
     
 </div>
 
-
-<!-- 粘贴的部分 -->
-
-                        <!-- 修改 -->
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/17/C-基础知识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
-                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time></div>
-                    <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Bigtiff/">
-                        <span class="tag">Bigtiff</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/KKT/">
-                        <span class="tag">KKT</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Matlab/">
-                        <span class="tag">Matlab</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/PCA降维/">
-                        <span class="tag">PCA降维</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/三维图像/">
-                        <span class="tag">三维图像</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/中序遍历/">
-                        <span class="tag">中序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/二阶偏导数/">
-                        <span class="tag">二阶偏导数</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/先序遍历/">
-                        <span class="tag">先序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
-                        <span class="tag">凸函数，正交和投影</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/变量类型/">
-                        <span class="tag">变量类型</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/后序遍历/">
-                        <span class="tag">后序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/字符串/">
-                        <span class="tag">字符串</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/容器/">
-                        <span class="tag">容器</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/常量/">
-                        <span class="tag">常量</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
-                        <span class="tag">广度(层次)遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/拉格朗日乘子/">
-                        <span class="tag">拉格朗日乘子</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/文件读写/">
-                        <span class="tag">文件读写</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/无偏估计/">
-                        <span class="tag">无偏估计</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/朴素贝叶斯算法/">
-                        <span class="tag">朴素贝叶斯算法</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/树状数组/">
-                        <span class="tag">树状数组</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/梯度散度和旋度/">
-                        <span class="tag">梯度散度和旋度</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/海森矩阵/">
-                        <span class="tag">海森矩阵</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/深度遍历/">
-                        <span class="tag">深度遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/病毒标记/">
-                        <span class="tag">病毒标记</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/高斯函数/">
-                        <span class="tag">高斯函数</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
 
 <!-- 粘贴的部分 -->
 
@@ -1227,7 +940,7 @@
 				<script src="//code.tidio.co/3tnny2tdx9oh0xzuitaxzhuakj60ydfy.js"></script>
                 <a class="footer-logo is-block has-mb-12" href="/">
                 
-                    <img src="/images/dk_logo.svg" alt="Notouch" width="304" height="50">
+                    <img src="/images/dk_logo.svg" alt="C++树的遍历和树状数组" width="304" height="50">
                 
                 </a>
                 <p class="is-size-10">

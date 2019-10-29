@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="标签 :  PCA      降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析—PCA">
+    <meta name="description" content="标签 :  PCA  	降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值 🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析---PCA">
 <meta name="keywords" content="PCA降维">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA(Principal Component Analysis) 主成分分析">
 <meta property="og:url" content="http://notouch.top/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="标签 :  PCA      降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析—PCA">
+<meta property="og:description" content="标签 :  PCA  	降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值 🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析---PCA">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
 <meta property="og:updated_time" content="2019-10-16T16:55:17.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA(Principal Component Analysis) 主成分分析">
-<meta name="twitter:description" content="标签 :  PCA      降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析—PCA">
+<meta name="twitter:description" content="标签 :  PCA  	降维  🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。  🎯  特征值和奇异值 🌌 如何理解矩阵特征值？ 🌅 奇异值分解（SVD） 🎨  主成分分析---PCA">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558897181790&di=5c06a81f1762cd0b1452f8bde9c1e0ed&imgtype=0&src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg">
 
 
@@ -202,26 +202,36 @@
         </h1>
         
         <div class="content">
-            <p>标签 :  PCA      降维</p>
+            <p>标签 :  PCA  	降维</p>
 <blockquote>
 <p>🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
 </blockquote>
-<h2 id="🎯-特征值和奇异值"><a href="#🎯-特征值和奇异值" class="headerlink" title="🎯  特征值和奇异值"></a>🎯  特征值和奇异值</h2><p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
+<h2>🎯  特征值和奇异值</h2>
+<p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
 <p>🌅 <a href="https://zhuanlan.zhihu.com/p/29846048" target="_blank" rel="noopener">奇异值分解（SVD）</a></p>
-<h2 id="🎨-主成分分析—PCA"><a href="#🎨-主成分分析—PCA" class="headerlink" title="🎨  主成分分析—PCA"></a>🎨  主成分分析—PCA</h2><a id="more"></a>
-
-
-<p>正如字面上的意思，主成分分析，首先得找出所谓的”主成分”，并且表示它，然后才能分析。</p>
-<p>一个<code>n</code>维数据集，要找所谓的”主成分”，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。</p>
+<h2>🎨  主成分分析---PCA</h2>
+<p><a id="more"></a></p>
+<p>正如字面上的意思，主成分分析，首先得找出所谓的&quot;主成分&quot;，并且表示它，然后才能分析。</p>
+<p>一个<code>n</code>维数据集，要找所谓的&quot;主成分&quot;，不如说是找主成分所在的方向，也就是说找一个新的坐标系，然后把数据投影过去。</p>
 <blockquote>
 <p>🍑 那么新的坐标系怎么找？</p>
 </blockquote>
-<p>对于PCA来说，认为一个随机信号最有用的信息体包含在方差里。自然而然，我们希望信号在方差最大的维度作为我们的”主成分”，方差小的维度的信号就可以看做是信息量小的或者不重要的数据，那么就可以丢弃。</p>
-<p>假设<code>m</code>个<code>n</code>维随机信号$X=(x_1,x_2,…,x_m)$,存在一个坐标系$w^T$。(信号<code>x</code>各维度都减去了其均值)</p>
-<p>对于一个一维向量来说，<strong>方差</strong>可以度量其包含的信息。对于一个矩阵，可以用<strong>协方差</strong>来表示： </p>
-<p>那么容易得到信号$X$的协方差:<br>$$ S=\frac{1}{n}XX^T $$<br>投影后方差:<br>$$ S’=\frac{1}{n} (w^TX)^2=\frac{1}{n}w^TXX^Tw=w^T(\frac{1}{n}XX^T)w=w^TSw $$</p>
-<p>要求方差<code>S&#39;</code>最大，那么可以得到<strong>优化问题</strong>： 
-$$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$L=w^TSw+\lambda(1-w^Tw)$$<br> $$\frac{\partial L}{\partial w}=2Sw-2\lambda w$$<br>易得:<br>$$Sw=\lambda w$$<br>如果还没忘记什么叫做特征值的话，那么这个式子就可以告诉我们：<strong>求的坐标系$w$其实就是方差$S$的特征向量</strong>。</p>
+<p>对于PCA来说，认为一个随机信号最有用的信息体包含在方差里。自然而然，我们希望信号在方差最大的维度作为我们的&quot;主成分&quot;，方差小的维度的信号就可以看做是信息量小的或者不重要的数据，那么就可以丢弃。</p>
+<p>假设<code>m</code>个<code>n</code>维随机信号$X=(x_1,x_2,...,x_m)$,存在一个坐标系$w^T$。(信号<code>x</code>各维度都减去了其均值)</p>
+<p>对于一个一维向量来说，<strong>方差</strong>可以度量其包含的信息。对于一个矩阵，可以用<strong>协方差</strong>来表示：</p>
+<p>那么容易得到信号$X$的协方差:
+$$ S=\frac{1}{n}XX^T $$
+投影后方差:
+$$ S'=\frac{1}{n} (w^TX)^2=\frac{1}{n}w^TXX^Tw=w^T(\frac{1}{n}XX^T)w=w^TSw $$</p>
+<p>要求方差<code>S'</code>最大，那么可以得到<strong>优化问题</strong>：
+$$ \max_{w}w^TSw $$
+$$ s.t.||w||=1$$
+使用拉格朗日乘数法：
+$$L=w^TSw+\lambda(1-w^Tw)$$
+$$\frac{\partial L}{\partial w}=2Sw-2\lambda w$$
+易得:
+$$Sw=\lambda w$$
+如果还没忘记什么叫做特征值的话，那么这个式子就可以告诉我们：<strong>求的坐标系$w$其实就是方差$S$的特征向量</strong>。</p>
 <p>到这里，我们已经找到了新的坐标系$w$。</p>
 <blockquote>
 <p>🍻 那么开始分析</p>
@@ -236,7 +246,9 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
 <p><img src="https://lh3.googleusercontent.com/-u6IIoqwxUMM/W_9YoY6kXsI/AAAAAAAAAmk/3b1si1dokLc2xfIzVZ8KXI-YVkbF3nDdgCHMYCw/s0/MATLAB_2018-11-29_11-10-00.png" alt></p>
 <hr>
 <p><img src="https://lh3.googleusercontent.com/-A47uBUHW_-M/W_9YbxkgiXI/AAAAAAAAAmc/g4e9bZQOYqkOfUUniiOLomdo6kSzmgs6QCHMYCw/s0/MATLAB_2018-11-29_11-09-10.png" alt></p>
-<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。<br>此时，SVD就派上用场了：<br>$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{* } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{** }$$</p>
+<p>可见协方差以及以及特征值分解时计算时间随着维度增加呈类似指数型的增长。
+此时，SVD就派上用场了：
+$$A_{m\times n}=U_{m\times m}\Sigma_{m\times n} V_{n\times n}^{* } \approx U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{** }$$</p>
 <blockquote>
 <p>🍕 Disp:</p>
 </blockquote>
@@ -244,18 +256,22 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
 <p>上式中$V$的一颗<code>*</code>和两颗星<code>**</code>均表示$V$的<strong>共轭转置</strong>，一颗<code>*</code>的$V$表示$n\times n$的<strong>酉矩阵</strong>。上述表示是因为都是一颗<code>*</code>的时候出现<code>BUG</code>，公式显示不了╮(╯▽╰)╭。</p>
 </blockquote>
 <p>其中$U$是$m\times m$的酉矩阵；$\Sigma$是$m\times n$非负实数对角矩阵。当前$k$行的奇异值之和奇异值总体之和的比值接近于<code>1</code>约等号成立。</p>
-<p>和方阵的特征值分解对比：<br>$$A_{n\times n}=P_{n\times n}\land_{n\times n}P_{n\times n}^{-1}$$</p>
+<p>和方阵的特征值分解对比：
+$$A_{n\times n}=P_{n\times n}\land_{n\times n}P_{n\times n}^{-1}$$</p>
 <p>有一些SVD的实现算法可以不求先求出协方差矩阵$ X^{T}X$ ，也能求出我们的右奇异矩阵$V$。那么有：</p>
-<p>$$Y_{m\times k}=U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{* }V_{n\times k}=U_{m\times k}\Sigma_{k\times k}$$<br>这样，我们就通过SVD(SVD对方阵一样适用)避免了暴力特征分解，得到了最终的降维数据$Y_{m\times k}$。</p>
-<p>这里用的是右奇异矩阵$V$，对维度进行了压缩。<br>假设能不先求出协方差也能求出左奇异矩阵$U$，那么我们就可以左乘对样本进行压缩。那么怎么求呢？实际上只要把原始数据$X_{m\times n}$转置一下得到$X’_ {n\times m}$作为输入就好了(0.0)。</p>
-<h2 id="🎭-PCA小结"><a href="#🎭-PCA小结" class="headerlink" title="🎭  PCA小结"></a>🎭  PCA小结</h2><p>1、PCA假设源信号间彼此非相关，认为主元之间彼此正交，样本呈高斯分布。</p>
+<p>$$Y_{m\times k}=U_{m\times k}\Sigma_{k\times k}V_{k\times n}^{* }V_{n\times k}=U_{m\times k}\Sigma_{k\times k}$$
+这样，我们就通过SVD(SVD对方阵一样适用)避免了暴力特征分解，得到了最终的降维数据$Y_{m\times k}$。</p>
+<p>这里用的是右奇异矩阵$V$，对维度进行了压缩。
+假设能不先求出协方差也能求出左奇异矩阵$U$，那么我们就可以左乘对样本进行压缩。那么怎么求呢？实际上只要把原始数据$X_{m\times n}$转置一下得到$X'_ {n\times m}$作为输入就好了(0.0)。</p>
+<h2>🎭  PCA小结</h2>
+<p>1、PCA假设源信号间彼此非相关，认为主元之间彼此正交，样本呈高斯分布。</p>
 <p>2、PCA认为数据内的信息存在方差之中，所以在寻求新的坐标系的时候实际上求的就是方差最大的方向，然后通过拉格朗日乘子法确定实际上新的坐标系其实就是方差(原始数据的方差)的特征向量。</p>
 <p>3、特征值分解只能针对方阵，奇异值分解任意矩阵(包括方阵)都可以。实际上都是求协方差的特征向量作为新的坐标系，一个是$P_{k\times n}$，一个是$V$。只不过奇异值的好处就是可以减少计算量直接求解矩阵$V$。</p>
 <p>4、PCA适用于线性相关的维度，对于非线性的数据来说可以考虑用K-PCA也就是基于核函数的PCA。</p>
 <hr>
 <p>水平有限，如有错误还请批评指正！</p>
 <p>以上。(づ●─●)づ</p>
-<p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="http://notouch.top/2018/11/15/PCA(Principal%20Component%20Analysis)%20主成分分析/">点击阅读原文</a></p>
+<p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="http://notouch.top/2018/11/15/PCA(Principal%20Component%20Analysis)%20%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/">点击阅读原文</a></p>
 
         </div>
         
@@ -325,9 +341,9 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/30/Learning-notes-2018-12/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/30/Learning-notes-2018-11/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Learning notes_2018_12</span>
+                <span class="level-item">Learning notes_2018_11</span>
             </a>
         </div>
         
@@ -411,7 +427,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -431,7 +447,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        26
                     </p>
                 </div>
             </div>
@@ -487,15 +503,15 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#🎯-特征值和奇异值">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">1</span>
         <span>🎯  特征值和奇异值</span>
         </a></li><li>
-        <a class="is-flex" href="#🎨-主成分分析—PCA">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">2</span>
-        <span>🎨  主成分分析—PCA</span>
+        <span>🎨  主成分分析---PCA</span>
         </a></li><li>
-        <a class="is-flex" href="#🎭-PCA小结">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">3</span>
         <span>🎭  PCA小结</span>
         </a></li></ul>
@@ -518,7 +534,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
@@ -526,7 +542,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 <span class="level-item">Basic knowledge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
@@ -630,7 +646,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -644,6 +660,44 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -685,25 +739,6 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
@@ -716,25 +751,6 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                     <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
                 </div>
             </div>
@@ -758,7 +774,7 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -834,8 +850,22 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/中序遍历/">
+                        <span class="tag">中序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/二阶偏导数/">
                         <span class="tag">二阶偏导数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/先序遍历/">
+                        <span class="tag">先序遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -855,6 +885,13 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/后序遍历/">
+                        <span class="tag">后序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/字符串/">
                         <span class="tag">字符串</span>
                         <span class="tag is-grey">1</span>
@@ -862,8 +899,22 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/容器/">
+                        <span class="tag">容器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/常量/">
                         <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
+                        <span class="tag">广度(层次)遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -883,6 +934,13 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/文件读写/">
+                        <span class="tag">文件读写</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -897,6 +955,13 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/梯度散度和旋度/">
                         <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
@@ -906,6 +971,13 @@ $$ \max_{w}w^TSw $$<br>$$ s.t.||w||=1$$<br>使用拉格朗日乘数法：<br> $$
                 <div class="control">
                     <a class="tags has-addons" href="/tags/海森矩阵/">
                         <span class="tag">海森矩阵</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度遍历/">
+                        <span class="tag">深度遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

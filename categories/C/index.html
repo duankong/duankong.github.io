@@ -159,6 +159,172 @@
 
     
     <div class="card-image">
+        <a href="/2019/10/30/C-树的遍历和树状数组/" class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+        </a>
+    </div>
+    
+    
+    <div class="card-content article ">
+		
+        
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+            
+			
+                <time class="level-item has-text-grey" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time>
+                
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 438 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        
+		
+		
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
+            
+                <a class="has-link-black-ter" href="/2019/10/30/C-树的遍历和树状数组/">C++树的遍历和树状数组</a>
+            
+
+        </h1>
+        
+        <div class="content">
+            <h2 id="🤷‍-先序遍历，中序遍历，后序遍历-深度遍历-广度-层次-遍历"><a href="#🤷‍-先序遍历，中序遍历，后序遍历-深度遍历-广度-层次-遍历" class="headerlink" title="🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历"></a>🤷‍ 先序遍历，中序遍历，后序遍历  深度遍历  广度(层次)遍历</h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">int</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> inf = <span class="hljs-number">0x7fffffff</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n;</span><br><span class="line"><span class="hljs-keyword">int</span> post[<span class="hljs-number">35</span>], pre[<span class="hljs-number">35</span>], inor[<span class="hljs-number">35</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">	<span class="hljs-keyword">int</span> data;</span><br><span class="line">	node *left_child;</span><br><span class="line">	node *right_child;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PreOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PreOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PreOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PostOrder</span><span class="hljs-params">(node *root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrder(root-&gt;left_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrder(root-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(node* root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">		dfs(root-&gt;left_child);</span><br><span class="line">	<span class="hljs-keyword">if</span> (root-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">		dfs(root-&gt;right_child);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">(node* root)</span> </span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line">	q.push(root);</span><br><span class="line">	node *mynode;</span><br><span class="line">	<span class="hljs-keyword">while</span> (!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		mynode = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="hljs-built_in">cout</span> &lt;&lt; mynode-&gt;data;</span><br><span class="line">		num++;</span><br><span class="line">		<span class="hljs-keyword">if</span> (num &lt; n)</span><br><span class="line">			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">' '</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span> (mynode-&gt;left_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">			q.push(mynode-&gt;left_child);</span><br><span class="line">		<span class="hljs-keyword">if</span> (mynode-&gt;right_child != <span class="hljs-literal">NULL</span>)</span><br><span class="line">			q.push(mynode-&gt;right_child);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">node *<span class="hljs-title">Creat_node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> postL, <span class="hljs-keyword">int</span> postR, <span class="hljs-keyword">int</span> inL, <span class="hljs-keyword">int</span> inR)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span> (postL&gt;postR)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	node *root = <span class="hljs-keyword">new</span> node;</span><br><span class="line">	root-&gt;data = post[postR];</span><br><span class="line">	<span class="hljs-keyword">int</span> i;</span><br><span class="line">	<span class="hljs-keyword">for</span> ( i = inL; i &lt; inR; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span> (inor[i] == post[postR])</span><br><span class="line">			<span class="hljs-keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">int</span> num_left = i - inL;<span class="hljs-comment">//左子树</span></span><br><span class="line">	root-&gt;left_child = Creat_node(postL, postL + num_left<span class="hljs-number">-1</span>, inL, i<span class="hljs-number">-1</span>);</span><br><span class="line">	root-&gt;right_child = Creat_node(postL + num_left, postR - <span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>, inR);</span><br><span class="line">	<span class="hljs-keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">	<span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="hljs-built_in">cin</span> &gt;&gt; post[i];</span><br><span class="line">	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="hljs-built_in">cin</span> &gt;&gt; inor[i];</span><br><span class="line">	node* my_node = Creat_node(<span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"DFS: "</span>;</span><br><span class="line">	dfs(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"BFS: "</span>;</span><br><span class="line">	bfs(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"PreOrder: "</span>;</span><br><span class="line">	PreOrder(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"InOrder: "</span>;</span><br><span class="line">	InOrder(my_node);</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"PostOrder: "</span>;</span><br><span class="line">	PostOrder(my_node);</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="👨‍💻-树状数组"><a href="#👨‍💻-树状数组" class="headerlink" title="👨‍💻 树状数组"></a>👨‍💻 树状数组</h2><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> n&amp;(-n);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> num)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(n&lt;=MAX)</span><br><span class="line">    &#123;</span><br><span class="line">        TreeArray[n]+=num;</span><br><span class="line">        n+=lowbit(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">GetSum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span><span class="hljs-comment">//前n个元素的和</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(n&gt;<span class="hljs-number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=TreeArray[n];</span><br><span class="line">        n-=lowbit(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BinarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target)</span>  <span class="hljs-comment">//二分查找</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;                             </span><br><span class="line">                              </span><br><span class="line">    <span class="hljs-keyword">int</span> mid;</span><br><span class="line">	<span class="hljs-keyword">int</span> left = <span class="hljs-number">1</span>, right = MAX_NUM;</span><br><span class="line">	<span class="hljs-keyword">while</span> (left&lt;=right)</span><br><span class="line">	&#123;</span><br><span class="line">		mid = left + (right - left) / <span class="hljs-number">2</span>;</span><br><span class="line">		<span class="hljs-keyword">if</span> (getsum(mid)&lt;target)</span><br><span class="line">			left = mid + <span class="hljs-number">1</span>;</span><br><span class="line">		<span class="hljs-keyword">else</span></span><br><span class="line">			right = mid - <span class="hljs-number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-built_in">cout</span> &lt;&lt; left &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+	
+
+    
+    <div class="card-image">
+        <a href="/2019/10/30/C-容器和文件读写/" class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+        </a>
+    </div>
+    
+    
+    <div class="card-content article ">
+		
+        
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+            
+			
+                <time class="level-item has-text-grey" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time>
+                
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1008 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        
+		
+		
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
+            
+                <a class="has-link-black-ter" href="/2019/10/30/C-容器和文件读写/">C++容器和文件读写</a>
+            
+
+        </h1>
+        
+        <div class="content">
+            <h2 id="😋-C-容器（STL容器）"><a href="#😋-C-容器（STL容器）" class="headerlink" title="😋 C++容器（STL容器）"></a>😋 C++容器（STL容器）</h2><h4 id="👹-顺序容器"><a href="#👹-顺序容器" class="headerlink" title="👹 顺序容器"></a>👹 顺序容器</h4><blockquote>
+<p>元素在容器中的位置同元素的值无关，即容器不是排序的。将元素插入容器时，指定在什么位置（尾部、头部或中间某处）插入，元素就会位于什么位置。 </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/vector/vector/" target="_blank" rel="noopener">vector</a></td>
+<td align="center">可变长动态数组 vector 支持快速随机访问</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/deque/deque/" target="_blank" rel="noopener">deque</a></td>
+<td align="center">双端队列deque 支持push_front、pop_front、push_back、pop_back</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/list/list/" target="_blank" rel="noopener">list</a></td>
+<td align="center">双端链表 只支持双向顺序访问。在list中任何位置进行插入/删除操作速度都很快。</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/forward_list/forward_list/" target="_blank" rel="noopener">forward_list</a></td>
+<td align="center">单向链表 只支持单向顺序访问。在链表任何位置进行插入/删除操作速度都很快。</td>
+</tr>
+</tbody></table>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/30/C-容器和文件读写/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+	
+
+    
+    <div class="card-image">
         <a href="/2019/10/17/C-基础知识/" class="image is-7by1">
             <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
         </a>
@@ -184,7 +350,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 927 words)
+                    8 minutes read (About 1252 words)
                 </span>
                 
                 
@@ -312,7 +478,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -332,7 +498,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        26
                     </p>
                 </div>
             </div>
@@ -396,7 +562,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
@@ -404,7 +570,7 @@
                 <span class="level-item">Basic knowledge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
@@ -508,7 +674,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -522,6 +688,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -563,25 +767,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
@@ -594,25 +779,6 @@
                     <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
                 </div>
             </div>
@@ -636,7 +802,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -712,8 +878,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/中序遍历/">
+                        <span class="tag">中序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/二阶偏导数/">
                         <span class="tag">二阶偏导数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/先序遍历/">
+                        <span class="tag">先序遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -733,6 +913,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/后序遍历/">
+                        <span class="tag">后序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/字符串/">
                         <span class="tag">字符串</span>
                         <span class="tag is-grey">1</span>
@@ -740,8 +927,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/容器/">
+                        <span class="tag">容器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/常量/">
                         <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
+                        <span class="tag">广度(层次)遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -761,6 +962,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/文件读写/">
+                        <span class="tag">文件读写</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -775,6 +983,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/梯度散度和旋度/">
                         <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
@@ -784,6 +999,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/海森矩阵/">
                         <span class="tag">海森矩阵</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度遍历/">
+                        <span class="tag">深度遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -830,6 +1052,44 @@
         
         <article class="media">
             
+            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/17/C-基础知识/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
@@ -868,25 +1128,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
@@ -899,25 +1140,6 @@
                     <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
                 </div>
             </div>
@@ -941,7 +1163,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1017,8 +1239,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/中序遍历/">
+                        <span class="tag">中序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/二阶偏导数/">
                         <span class="tag">二阶偏导数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/先序遍历/">
+                        <span class="tag">先序遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1038,6 +1274,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/后序遍历/">
+                        <span class="tag">后序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/字符串/">
                         <span class="tag">字符串</span>
                         <span class="tag is-grey">1</span>
@@ -1045,8 +1288,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/容器/">
+                        <span class="tag">容器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/常量/">
                         <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
+                        <span class="tag">广度(层次)遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1066,6 +1323,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/文件读写/">
+                        <span class="tag">文件读写</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -1080,6 +1344,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/梯度散度和旋度/">
                         <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
@@ -1089,6 +1360,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/海森矩阵/">
                         <span class="tag">海森矩阵</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度遍历/">
+                        <span class="tag">深度遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

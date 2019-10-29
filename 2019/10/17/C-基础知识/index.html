@@ -16,7 +16,7 @@
 <meta property="og:description" content="👺 变量类型 C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。 变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。 以下几种基本的变量类型:    类型 描述     bool 存储值 true 或 false   char 通常是一个字符（八位）">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-<meta property="og:updated_time" content="2019-10-16T17:09:01.116Z">
+<meta property="og:updated_time" content="2019-10-29T16:20:59.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++基础知识">
 <meta name="twitter:description" content="👺 变量类型 C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。 变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。 以下几种基本的变量类型:    类型 描述     bool 存储值 true 或 false   char 通常是一个字符（八位）">
@@ -178,7 +178,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 927 words)
+                    8 minutes read (About 1252 words)
                 </span>
                 
                 
@@ -309,6 +309,75 @@
 </ul>
 <p>这些是通过使用一元运算符 * 来返回位于操作数所指定地址的变量的值。
 <figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">   <span class="hljs-keyword">int</span>  var = <span class="hljs-number">20</span>;   <span class="hljs-comment">// 实际变量的声明</span></span><br><span class="line">   <span class="hljs-keyword">int</span>  *ip;        <span class="hljs-comment">// 指针变量的声明</span></span><br><span class="line"> </span><br><span class="line">   ip = &amp;var;       <span class="hljs-comment">// 在指针变量中存储 var 的地址</span></span><br><span class="line"> </span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Value of var variable: "</span>;</span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; var &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="hljs-comment">// 输出在指针变量中存储的地址</span></span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Address stored in ip variable: "</span>;</span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; ip &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="hljs-comment">// 访问指针中地址的值</span></span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Value of *ip variable: "</span>;</span><br><span class="line">   <span class="hljs-built_in">cout</span> &lt;&lt; *ip &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2>🚵 仿函数</h2>
+<p>**仿函数（functors）**在C++标准中采用的名称是函数对象（function objects）。仿函数主要用于STL中的算法中，虽然函数指针虽然也可以作为算法的参数，但是函数指针不能满足STL对抽象性的要求，也不能满足软件积木的要求–函数指针无法和STL其他组件搭配，产生更灵活变化。</p>
+<p><strong>仿函数本质就是类重载了一个operator()，创建一个行为类似函数的对象</strong>。</p>
+<p><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Func</span></span></span><br><span class="line"><span class="hljs-class">&#123;</span></span><br><span class="line">     <span class="hljs-keyword">public</span>:</span><br><span class="line">         <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span> <span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span>&amp; str)</span> <span class="hljs-keyword">const</span> </span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">             <span class="hljs-built_in">cout</span>&lt;&lt;str&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line">         &#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>为什么要使用仿函数呢 ？</p>
+<blockquote>
+<p>1）仿函数比一般的函数灵活。</p>
+</blockquote>
+<blockquote>
+<p>2）仿函数有类型识别，可以作为模板参数。</p>
+</blockquote>
+<blockquote>
+<p>3）执行速度上仿函数比函数和指针要更快的。</p>
+</blockquote>
+<h2>🐐 输入输出函数cin、cin.get()、cin.getline()、getline()、gets()</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">头文件</th>
+<th style="text-align:center">[空格]</th>
+<th style="text-align:center">[TAB]</th>
+<th style="text-align:center">[回车]</th>
+<th style="text-align:center">读取内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cin</td>
+<td style="text-align:center">iostream</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">any 字符串数字，且对于结束符，并不保存到变量中</td>
+</tr>
+<tr>
+<td style="text-align:center">cin.get()</td>
+<td style="text-align:center">iostream</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">char   字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">cin.getline()</td>
+<td style="text-align:center">iostream</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">char   字符串cin.getline(m,5,'a')'a'为结束符，一般为'\0'</td>
+</tr>
+<tr>
+<td style="text-align:center">getline()</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">string   getline(cin,s);</td>
+</tr>
+<tr>
+<td style="text-align:center">getchar()</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">char 单个字符   ch=getchar();</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <p>🍹 以上。(づ●─●)づ</p>
 <p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="https://notouch.top/2019/10/17/C-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#more">点击阅读原文</a></p>
@@ -379,6 +448,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/30/C-容器和文件读写/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">C++容器和文件读写</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -460,7 +536,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -480,7 +556,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        26
                     </p>
                 </div>
             </div>
@@ -535,30 +611,38 @@
             <h3 class="menu-label">
                 Catalogue
             </h3>
-            <ul class="menu-list"><li>
+            <ul class="menu-list"><ul class="menu-list"><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">1</span>
+        <span class="has-mr-6">1.1</span>
         <span>👺 变量类型</span>
         </a></li><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">1.2</span>
         <span>😿 常量</span>
         </a></li><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">1.3</span>
         <span>💖 字符串</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">3.1</span>
+        <span class="has-mr-6">1.3.1</span>
         <span>✊ C 风格字符串</span>
         </a></li><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">3.2</span>
+        <span class="has-mr-6">1.3.2</span>
         <span>👨‍🎨 C++ 中的 String 类</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#undefined">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">1.4</span>
         <span>🌳 指针</span>
+        </a></li></ul><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">2</span>
+        <span>🚵 仿函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">3</span>
+        <span>🐐 输入输出函数cin、cin.get()、cin.getline()、getline()、gets()</span>
         </a></li></ul>
         </div>
     </div>
@@ -579,7 +663,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
@@ -587,7 +671,7 @@
                 <span class="level-item">Basic knowledge</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
@@ -691,7 +775,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -705,6 +789,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
+                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -746,25 +868,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/30/Learning-notes-2018-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1974856/pexels-photo-1974856.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-30T15:54:06.000Z">2018-11-30</time></div>
-                    <a href="/2018/11/30/Learning-notes-2018-11/" class="has-link-black-ter is-size-6">Learning notes_2018_11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/30/Learning-notes-2018-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Learning notes_2018_12">
@@ -777,25 +880,6 @@
                     <a href="/2018/11/30/Learning-notes-2018-12/" class="has-link-black-ter is-size-6">Learning notes_2018_12</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note/">Learning Note</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time></div>
-                    <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="has-link-black-ter is-size-6">PCA(Principal Component Analysis) 主成分分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
                     </p>
                 </div>
             </div>
@@ -819,7 +903,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -895,8 +979,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/中序遍历/">
+                        <span class="tag">中序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/二阶偏导数/">
                         <span class="tag">二阶偏导数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/先序遍历/">
+                        <span class="tag">先序遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -916,6 +1014,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/后序遍历/">
+                        <span class="tag">后序遍历</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/字符串/">
                         <span class="tag">字符串</span>
                         <span class="tag is-grey">1</span>
@@ -923,8 +1028,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/容器/">
+                        <span class="tag">容器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/常量/">
                         <span class="tag">常量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
+                        <span class="tag">广度(层次)遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -944,6 +1063,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/文件读写/">
+                        <span class="tag">文件读写</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/无偏估计/">
                         <span class="tag">无偏估计</span>
                         <span class="tag is-grey">1</span>
@@ -958,6 +1084,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/梯度散度和旋度/">
                         <span class="tag">梯度散度和旋度</span>
                         <span class="tag is-grey">1</span>
@@ -967,6 +1100,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/海森矩阵/">
                         <span class="tag">海森矩阵</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度遍历/">
+                        <span class="tag">深度遍历</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
