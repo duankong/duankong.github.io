@@ -6,25 +6,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>求三维图像的海森矩阵 - Notouch</title>
+<title>二叉搜索树Binary Search Tree (BST) - Notouch</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数    👌 雅可比矩阵  在向量分析中，雅可比矩阵是一阶偏导数以一定方式排列成的矩阵, 其行列式称为雅可比行列式。  👀 海森矩阵  数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的二阶偏导数组成的方块矩阵（假设其二阶偏导都存在）。">
-<meta name="keywords" content="海森矩阵,三维图像,二阶偏导数,高斯函数">
+    <meta name="description" content="🈚️ 二叉搜索树的定义  二叉搜索树是一种节点值之间具有一定数量级次序的二叉树，对于树中每个节点：  若其左子树存在，则其左子树中每个节点的值都不大于该节点值(左节点&amp;lt;父节点)； 若其右子树存在，则其右子树中每个节点的值都不小于该节点值(右节点&amp;gt;=父节点)。 左、右子树也分别为二叉搜索树。">
+<meta name="keywords" content="二叉搜索树,BST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="求三维图像的海森矩阵">
-<meta property="og:url" content="http://notouch.top/2018/10/22/求三维图像的海森矩阵/index.html">
+<meta property="og:title" content="二叉搜索树Binary Search Tree (BST)">
+<meta property="og:url" content="http://notouch.top/2019/11/25/二叉搜索树Binary-Search-Tree-BST/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数    👌 雅可比矩阵  在向量分析中，雅可比矩阵是一阶偏导数以一定方式排列成的矩阵, 其行列式称为雅可比行列式。  👀 海森矩阵  数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的二阶偏导数组成的方块矩阵（假设其二阶偏导都存在）。">
+<meta property="og:description" content="🈚️ 二叉搜索树的定义  二叉搜索树是一种节点值之间具有一定数量级次序的二叉树，对于树中每个节点：  若其左子树存在，则其左子树中每个节点的值都不大于该节点值(左节点&amp;lt;父节点)； 若其右子树存在，则其右子树中每个节点的值都不小于该节点值(右节点&amp;gt;=父节点)。 左、右子树也分别为二叉搜索树。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg">
-<meta property="og:updated_time" content="2019-10-15T04:20:54.484Z">
+<meta property="og:image" content="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<meta property="og:updated_time" content="2019-11-25T15:00:18.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="求三维图像的海森矩阵">
-<meta name="twitter:description" content="标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数    👌 雅可比矩阵  在向量分析中，雅可比矩阵是一阶偏导数以一定方式排列成的矩阵, 其行列式称为雅可比行列式。  👀 海森矩阵  数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的二阶偏导数组成的方块矩阵（假设其二阶偏导都存在）。">
-<meta name="twitter:image" content="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg">
+<meta name="twitter:title" content="二叉搜索树Binary Search Tree (BST)">
+<meta name="twitter:description" content="🈚️ 二叉搜索树的定义  二叉搜索树是一种节点值之间具有一定数量级次序的二叉树，对于树中每个节点：  若其左子树存在，则其左子树中每个节点的值都不大于该节点值(左节点&amp;lt;父节点)； 若其右子树存在，则其右子树中每个节点的值都不小于该节点值(右节点&amp;gt;=父节点)。 左、右子树也分别为二叉搜索树。">
+<meta name="twitter:image" content="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 
 
 
@@ -107,7 +107,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/dk_logo.svg" alt="求三维图像的海森矩阵" height="28">
+                <img src="/images/dk_logo.svg" alt="二叉搜索树Binary Search Tree (BST)" height="28">
             
             </a>
         </div>
@@ -163,7 +163,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
+            <img class="thumbnail" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="二叉搜索树Binary Search Tree (BST)">
         </span>
     </div>
     
@@ -176,18 +176,18 @@
             <div class="level-left">
             
 			
-                <time class="level-item has-text-grey" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time>
+                <time class="level-item has-text-grey" datetime="2019-11-25T14:51:58.000Z">2019-11-25</time>
                 
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1398 words)
+                    5 minutes read (About 774 words)
                 </span>
                 
                 
@@ -205,45 +205,33 @@
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
 			
             
-                求三维图像的海森矩阵
+                二叉搜索树Binary Search Tree (BST)
             
 
         </h1>
         
         <div class="content">
-            <p>标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数</p>
-<hr>
-<hr>
+            <h2 id="🈚️-二叉搜索树的定义"><a href="#🈚️-二叉搜索树的定义" class="headerlink" title="🈚️ 二叉搜索树的定义"></a>🈚️ 二叉搜索树的定义</h2><p>  二叉搜索树是一种节点值之间具有一定数量级次序的二叉树，对于树中每个节点：</p>
 <ul>
-<li>👌 雅可比矩阵</li>
+<li>若其左子树存在，则其左子树中每个节点的值都不大于该节点值(左节点&lt;父节点)；</li>
+<li>若其右子树存在，则其右子树中每个节点的值都不小于该节点值(右节点&gt;=父节点)。</li>
+<li>左、右子树也分别为二叉搜索树。</li>
 </ul>
-<p>在向量分析中，雅可比矩阵是<strong>一阶偏导数</strong>以一定方式排列成的矩阵, 其行列式称为雅可比行列式。</p>
-<ul>
-<li>👀 海森矩阵</li>
-</ul>
-<p>数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的<strong>二阶偏导数</strong>组成的方块矩阵（假设其二阶偏导都存在）。</p>
 <a id="more"></a> 
 
 
-<p>$$ H(f)=\left[<br>\begin{matrix}<br> \frac{\partial^2 f}{\partial x^2_1} &amp; \frac{\partial^2 f}{\partial x_1x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1x_n}      \<br>  \frac{\partial^2 f}{\partial x_2x_1} &amp; \frac{\partial^2 f}{\partial x^2_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2x_n}      \<br> \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br> \frac{\partial^2 f}{\partial x_nx_1} &amp; \frac{\partial^2 f}{\partial x_n x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x^2_n}      \<br>\end{matrix}<br>\right] $$</p>
-<hr>
-<h3 id="🙅-高斯求导"><a href="#🙅-高斯求导" class="headerlink" title="🙅 高斯求导"></a>🙅 高斯求导</h3><hr>
-<h4 id="👚-前言"><a href="#👚-前言" class="headerlink" title="👚 前言"></a>👚 前言</h4><p>通过上述公式可知，求海森矩阵的过程实际上就是求<strong>二阶偏导</strong>的过程。<strong>卷积</strong>中有一个重要的性质：<strong>卷积的微分特性</strong>—两个函数相卷积后的导数等于其中一个函数的导数与另一个函数的卷积 </p>
-<p>$$  \frac{d}{dt}[f_{1}(t)\ * f_{2}(t)]=\frac{df_{1}(t)} {dt}\ * f_2(t)= f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
-<p>证明如下：</p>
-<p>$$\frac{d}{dt}[f_1(t)\ * f_2(t)]=\frac{d}{dt}\int ^{\infty} _ {-\infty} f_1(\tau)\ * f_2(t-\tau)d\tau<br>= \int ^{\infty} _ {-\infty} f_1(\tau)\ * \frac{d}{dt}f_2(t-\tau)d\tau=f_1(t)\ * \frac{df_2(t)}{dt} $$ </p>
-<p>同理可证：<br>$$\frac{d}{dt}[f_1(t)\ *  f_2(t)]=\frac{d}{dt}\int ^{\infty}_ {-\infty} f_1(\tau)\ *  f_2(t-\tau)d\tau<br>= \int ^{\infty}_ {-\infty} \frac{d}{dt}f_1(\tau)\ *  f_2(t-\tau)d\tau<br>=\frac{df_1(t)}{dt}\ * f_2(t) $$</p>
-<p> 故上述微分特性得证。<br>推广易得：<br>$$\frac{\partial^2}{\partial t^2}[f_1(t)\ *  f_2(t)]=\frac{\partial^2f_1(t)}{\partial t^2}\ *  f_2(t)<br>= f_1(t)\ * \frac{\partial^2f_2(t)}{\partial t^2}$$</p>
-<h4 id="⛑-推导"><a href="#⛑-推导" class="headerlink" title="⛑ 推导"></a>⛑ 推导</h4><p> 根据上式，令$f_1(t)$为高斯函数$G(x,y,z)=(\frac{1}{\sqrt{2\pi}\sigma})^3e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$，$f_2(t)$为三维图片$I(x,y,z)$，则有:<br>$$\frac{\partial^2}{\partial x^2}[G(x,y,z)\ *   I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2}\ *   I(x,y,z)<br>= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$$<br>可知，只要求得了$\frac{\partial^2G(x,y,z)}{\partial x^2}$,那么通过上式就可以得到$\frac{\partial^2I(x,y,z)}{\partial x^2}$为图像$I$在$(x,y,z)$点的对$x$的二阶偏导。其他方向的二阶偏导同理可求。<br>到这里，求图像的二阶偏导转换成了求高斯函数的二阶偏导。</p>
-<hr>
-<p>跳过。。跳过。。一系列的求导过程((٩(//̀Д/́/)۶))</p>
-<hr>
-<p>得到以下高斯函数的二阶偏导：<br>$$\frac{\partial^2G(x,y,z)}{\partial x^2}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{x^2-\sigma^2}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{x^2-\sigma^2}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{1}{(\sqrt{2\pi}\sigma)^3}\frac{xy}{\sigma^4}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}=\frac{xy}{(\sqrt{2\pi})^3\sigma^7}e^{-\frac{x^2+y^2+z^2}{2\sigma^2}}$$<br>同理易得高斯函数$G(x,y,z)$对$y^2,z^2,yx,xz,zx,yz,zy$等方向的偏导。<br>可以发现：<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial y}=\frac{\partial^2G(x,y,z)}{\partial y\partial x}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial x\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial x}$$<br>$$\frac{\partial^2G(x,y,z)}{\partial y\partial z}=\frac{\partial^2G(x,y,z)}{\partial z\partial y}$$<br>至此，高斯函数所有的二阶偏导已经求得，然后利用matlab中的convn函数进行三维空间内的卷积(参数选择same保证结果和图像一致)，这也意味着黑森矩阵已经可以通过上述过程得到。</p>
-<h3 id="🐼-代码实现"><a href="#🐼-代码实现" class="headerlink" title="🐼 代码实现"></a>🐼 代码实现</h3> <figure class="highlight matlab hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">%%  求高斯函数的二阶偏导数</span></span><br><span class="line"><span class="hljs-comment">%%  num为高斯核的大小</span></span><br><span class="line"><span class="hljs-comment">%%  sigma为高斯函数的方差</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[gau_xx,gau_yy,gau_zz,gau_xy,gau_xz,gau_yz]</span>=<span class="hljs-title">gaus_creation_3D</span><span class="hljs-params">(num,sigma)</span></span></span><br><span class="line"></span><br><span class="line">gau_xx=[];gau_yy=[];gau_zz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line">gau_xy=[];gau_xz=[];gau_yz=[];<span class="hljs-comment">%初始化矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> k=<span class="hljs-number">1</span>:<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*num+<span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line">            x=<span class="hljs-built_in">i</span>-num<span class="hljs-number">-1</span>;y=<span class="hljs-built_in">j</span>-num<span class="hljs-number">-1</span>;z=k-num<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">            gau_xx(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-x^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-y^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_zz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(-(sigma^<span class="hljs-number">2</span>-z^<span class="hljs-number">2</span>)/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">            gau_xy(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_xz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(x*z/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">            gau_yz(<span class="hljs-built_in">i</span>,<span class="hljs-built_in">j</span>,k)=<span class="hljs-number">1</span>/power(<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>),<span class="hljs-number">3</span>)*(z*y/sigma^<span class="hljs-number">7</span>)*<span class="hljs-built_in">exp</span>(-(x^<span class="hljs-number">2</span>+y^<span class="hljs-number">2</span>+z^<span class="hljs-number">2</span>)/<span class="hljs-number">2</span>/sigma^<span class="hljs-number">2</span>);</span><br><span class="line">        <span class="hljs-keyword">end</span></span><br><span class="line">    <span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="🔠-二叉搜索树的特点"><a href="#🔠-二叉搜索树的特点" class="headerlink" title="🔠 二叉搜索树的特点"></a>🔠 二叉搜索树的特点</h2><p>  如果二叉排序树是平衡的，则n个节点的二叉排序树的高度为Log2n+1,其查找效率为O(Log2n)，近似于折半查找。如果二叉排序树完全不平衡，则其深度可达到n，查找效率为O(n)，退化为顺序查找。一般的，二叉排序树的查找性能在O(Log2n)到O(n)之间。因此，为了获得较好的查找性能，就要构造一棵平衡的二叉排序树。</p>
+<h2 id="➰-二叉搜索树的建立"><a href="#➰-二叉搜索树的建立" class="headerlink" title="➰ 二叉搜索树的建立"></a>➰ 二叉搜索树的建立</h2><h4 id="♻️-C-代码"><a href="#♻️-C-代码" class="headerlink" title="♻️ C++代码"></a>♻️ C++代码</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">node *<span class="hljs-title">build_bst</span><span class="hljs-params">(node * root, <span class="hljs-keyword">int</span> num)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		root = <span class="hljs-keyword">new</span> node;</span><br><span class="line">		root-&gt;data = num;</span><br><span class="line">		root-&gt;left = <span class="hljs-literal">NULL</span>;</span><br><span class="line">		root-&gt;right = <span class="hljs-literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (num &lt;= root-&gt;data)</span><br><span class="line">	&#123;</span><br><span class="line">		root-&gt;left = build_bst(root-&gt;left, num);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		root-&gt;right = build_bst(root-&gt;right, num);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">int</span> n;</span><br><span class="line">	<span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	node *root = <span class="hljs-literal">NULL</span>;</span><br><span class="line">	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="hljs-built_in">cin</span> &gt;&gt; kk;</span><br><span class="line">		root = build_bst(root, kk);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="🐕-思考"><a href="#🐕-思考" class="headerlink" title="🐕 思考"></a>🐕 思考</h3><blockquote>
-<p>关于最终的结果<br>从$\frac{\partial^2}{\partial x^2}[G(x,y,z) \ *  I(x,y,z)]=\frac{\partial^2G(x,y,z)}{\partial x^2} \ *  I(x,y,z)= G(x,y,z)\ *  \frac{\partial^2I(x,y,z)}{\partial x^2}$式中可知最后的结果其实是图像的二阶偏导和高斯函数的卷积，并不只是单纯的图像二阶偏导。高斯函数在图像处理中常用于去除高斯噪声，它具有良好的低通滤波效果，一般在检测边缘之前常用高斯卷积来移除图像一些细节以及噪声。所以事实上，这里的卷积不会影响图像整体的结构，而且一定程度上对图像进行了去噪使图像质量更好(当然不可否认的是损失了一些图像细节)，如果是利用海森矩阵进行三维图像的线性结构或是面结构的检测，那么一定程度的去噪以及平滑处理将可能得到更好的结果。</p>
-</blockquote>
+<h2 id="🛐-查询操作"><a href="#🛐-查询操作" class="headerlink" title="🛐 查询操作"></a>🛐 查询操作</h2><p>  从根节点开始查找，待查找的值是否与根节点的值相同，若相同则返回True；否则，判断待寻找的值是否比根节点的值小，若是则进入根节点左子树进行查找，否则进入右子树进行查找。该操作使用递归实现。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">query</span><span class="hljs-params">(root, val)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-string">'''</span>二叉搜索树查询操作<span class="hljs-string">'''</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (root == None)</span><br><span class="line">        <span class="hljs-keyword">return</span> False;</span><br><span class="line">    <span class="hljs-keyword">if</span> (root.val == val)</span><br><span class="line">        <span class="hljs-keyword">return</span> True;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (val &lt; root.val)</span><br><span class="line">        query(root.left, val);</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (val &gt; root.val)</span><br><span class="line">        query(root.right, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="🚿-查找二叉搜索树中的最大（小值）"><a href="#🚿-查找二叉搜索树中的最大（小值）" class="headerlink" title="🚿 查找二叉搜索树中的最大（小值）"></a>🚿 查找二叉搜索树中的最大（小值）</h2><p>  （1）查找最小值：从根节点开始，沿着左子树一直往下，直到找到最后一个左子树节点，按照定义可知，该节点一定是该二叉搜索树中的最小值节点。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-string">'''</span>查找二叉搜索树中最小值点<span class="hljs-string">'''</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (root.left!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">        findMin(root.left)</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-keyword">return</span> root.data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  （2）查找最大值：从根节点开始，沿着右子树一直往下，直到找到最后一个右子树节点，按照定义可知，该节点一定是该二叉搜索树中的最大值节点。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMax</span><span class="hljs-params">(root)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-string">'''</span>查找二叉搜索树中最大值点<span class="hljs-string">'''</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (root.right!=<span class="hljs-literal">NULL</span>)</span><br><span class="line">        findMin(root.right)</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-keyword">return</span> root.data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>🐑 以上。(づ●─●)づ</p>
 <p>转载请注明：<a href="http://notouch.top">Duankong的博客</a> » <a href="https://notouch.top/2018/10/22/%E6%B1%82%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%83%8F%E7%9A%84%E6%B5%B7%E6%A3%AE%E7%9F%A9%E9%98%B5/">点击阅读原文</a></p>
@@ -254,7 +242,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/三维图像/">三维图像</a>, <a class="has-link-grey -link" href="/tags/二阶偏导数/">二阶偏导数</a>, <a class="has-link-grey -link" href="/tags/海森矩阵/">海森矩阵</a>, <a class="has-link-grey -link" href="/tags/高斯函数/">高斯函数</a>
+                    <a class="has-link-grey -link" href="/tags/BST/">BST</a>, <a class="has-link-grey -link" href="/tags/二叉搜索树/">二叉搜索树</a>
                 </div>
             </div>
         </div>
@@ -315,13 +303,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">PCA(Principal Component Analysis) 主成分分析</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/30/C-树的遍历和树状数组/">
+                <span class="level-item">C++树的遍历和树状数组</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -339,7 +327,7 @@
     var gitalk = new Gitalk({
         clientID: '6cd559678e1f221043a2',
         clientSecret: '80e2f67e1a4202407fa9624190ed476d7cb3a86d',
-        id: '81e26a736ca774c2a848e75fc6b7c83e',
+        id: '33cac18d9f608c9c346f087fd5b869e6',
         repo: 'duankong.github.io',
         owner: 'duankong',
         admin: "duankong"
@@ -471,25 +459,29 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#🙅-高斯求导">
+        <a class="is-flex" href="#🈚️-二叉搜索树的定义">
         <span class="has-mr-6">1</span>
-        <span>🙅 高斯求导</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#👚-前言">
-        <span class="has-mr-6">1.1</span>
-        <span>👚 前言</span>
+        <span>🈚️ 二叉搜索树的定义</span>
         </a></li><li>
-        <a class="is-flex" href="#⛑-推导">
-        <span class="has-mr-6">1.2</span>
-        <span>⛑ 推导</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#🐼-代码实现">
+        <a class="is-flex" href="#🔠-二叉搜索树的特点">
         <span class="has-mr-6">2</span>
-        <span>🐼 代码实现</span>
+        <span>🔠 二叉搜索树的特点</span>
         </a></li><li>
-        <a class="is-flex" href="#🐕-思考">
+        <a class="is-flex" href="#➰-二叉搜索树的建立">
         <span class="has-mr-6">3</span>
-        <span>🐕 思考</span>
+        <span>➰ 二叉搜索树的建立</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#♻️-C-代码">
+        <span class="has-mr-6">3.1</span>
+        <span>♻️ C++代码</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#🛐-查询操作">
+        <span class="has-mr-6">4</span>
+        <span>🛐 查询操作</span>
+        </a></li><li>
+        <a class="is-flex" href="#🚿-查找二叉搜索树中的最大（小值）">
+        <span class="has-mr-6">5</span>
+        <span>🚿 查找二叉搜索树中的最大（小值）</span>
         </a></li></ul>
         </div>
     </div>
@@ -1028,7 +1020,7 @@
 				<script src="//code.tidio.co/3tnny2tdx9oh0xzuitaxzhuakj60ydfy.js"></script>
                 <a class="footer-logo is-block has-mb-12" href="/">
                 
-                    <img src="/images/dk_logo.svg" alt="求三维图像的海森矩阵" width="304" height="50">
+                    <img src="/images/dk_logo.svg" alt="二叉搜索树Binary Search Tree (BST)" width="304" height="50">
                 
                 </a>
                 <p class="is-size-10">
