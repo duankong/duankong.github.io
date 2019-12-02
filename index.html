@@ -157,6 +157,86 @@
 
     
     <div class="card-image">
+        <a href="/2019/12/02/背包问题/" class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+        </a>
+    </div>
+    
+    
+    <div class="card-content article ">
+		
+        
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+            
+			
+                <time class="level-item has-text-grey" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time>
+                
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 744 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        
+		
+		
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
+            
+                <a class="has-link-black-ter" href="/2019/12/02/背包问题/">背包问题</a>
+            
+
+        </h1>
+        
+        <div class="content">
+            <h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><pre><code>有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件
+
+dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值
+1、不放第i件物品，则 dp[i][j] = dp[i-1][j]
+2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得的最大价值 dp[i-1][j-w[i]] + c[i]
+3、递推方程dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]]+c[i]);</code></pre><h4 id="通用解法"><a href="#通用解法" class="headerlink" title="通用解法"></a>通用解法</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>, j &lt;= v; j++)</span><br><span class="line">    <span class="hljs-keyword">if</span>(j - w[i] &gt;= <span class="hljs-number">0</span>) </span><br><span class="line">      dp[i][j] = max(dp[i<span class="hljs-number">-1</span>][j], dp[i<span class="hljs-number">-1</span>][j-w[i]] + c[i]);</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      dp[i][j] = dp[i<span class="hljs-number">-1</span>][j];    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一维</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = v; j &gt;= w[i]; j--)</span><br><span class="line">    dp[v] = max(dp[v], dp[v-w[i]] + c[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="实例-1068-Find-More-Coins-30-分"><a href="#实例-1068-Find-More-Coins-30-分" class="headerlink" title="实例 1068 Find More Coins (30 分)"></a>实例 1068 Find More Coins (30 分)</h4><blockquote>
+<p>题目大意：用n个硬币买价值为m的东西，输出使用方案，使得正好几个硬币加起来价值为m。从小到大排列，输出最小的那个排列方案</p>
+</blockquote>
+<h6 id="背包问题求解"><a href="#背包问题求解" class="headerlink" title="背包问题求解"></a>背包问题求解</h6><pre><code>01背包问题，因为要输出从小到大的排列，可以先把硬币面额从大到小排列，然后用bool类型的choice[i][j]数组dp[i][j]是否选取，如果选取了就令choice为true；然后进行01背包问题求解，如果最后求解的结果不是恰好等于所需要的价值的，就输出No Soultion，否则从choice[i][j]判断选取的情况，i从n到1表示从后往前看第i个物品的选取情况，j从m到0表示从容量m到0是否选取(j = j – w[i])，把选取情况压入arr数组中，最后输出arr数组</code></pre><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> dp[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> w[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">bool</span> choice[<span class="hljs-number">10010</span>][<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>&#123;<span class="hljs-keyword">return</span> a &gt; b;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n, m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    sort(w + <span class="hljs-number">1</span>, w + n + <span class="hljs-number">1</span>, cmp1);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = m; j &gt;= w[i]; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(dp[j] &lt;= dp[j-w[i]] + w[i]) &#123;<span class="hljs-comment">//当容量为j时，放进去可以得到更高价值</span></span><br><span class="line">                choice[i][j] = <span class="hljs-literal">true</span>;<span class="hljs-comment">//flag</span></span><br><span class="line">                dp[j] = dp[j-w[i]] + w[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dp[m] != m) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Solution"</span>);</span><br><span class="line">    <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; arr;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = m, index = n;</span><br><span class="line">        <span class="hljs-keyword">while</span>(v &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(choice[index][v] == <span class="hljs-literal">true</span>) &#123;</span><br><span class="line">                arr.push_back(w[index]);</span><br><span class="line">                v -= w[index];<span class="hljs-comment">//减去找到的硬币</span></span><br><span class="line">            &#125;</span><br><span class="line">            index--;<span class="hljs-comment">//找下一个indx</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.size(); i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(i != <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>);</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="直接求最小的数列，通过ok判断是否找到最小。"><a href="#直接求最小的数列，通过ok判断是否找到最小。" class="headerlink" title="直接求最小的数列，通过ok判断是否找到最小。"></a>直接求最小的数列，通过ok判断是否找到最小。</h6><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; coin;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; temp, res;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> ok = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nowk, <span class="hljs-keyword">int</span> nowsum)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//show_res(temp);</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (nowk &gt; n || nowsum &gt; m || ok == <span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nowsum == m) &#123;</span><br><span class="line">        ok = <span class="hljs-number">1</span>;</span><br><span class="line">        res = temp;</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nowk; i &lt; n; i++) &#123;</span><br><span class="line">        temp.push_back(coin[i]);</span><br><span class="line">        dfs(i + <span class="hljs-number">1</span>, nowsum + coin[i]);</span><br><span class="line">        temp.erase(temp.end() - <span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+	
+
+    
+    <div class="card-image">
         <a href="/2019/11/25/二叉搜索树Binary-Search-Tree-BST/" class="image is-7by1">
             <img class="thumbnail" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="二叉搜索树Binary Search Tree (BST)">
         </a>
@@ -355,34 +435,30 @@
             <h2 id="😋-C-容器（STL容器）"><a href="#😋-C-容器（STL容器）" class="headerlink" title="😋 C++容器（STL容器）"></a>😋 C++容器（STL容器）</h2><h4 id="👹-顺序容器"><a href="#👹-顺序容器" class="headerlink" title="👹 顺序容器"></a>👹 顺序容器</h4><blockquote>
 <p>元素在容器中的位置同元素的值无关，即容器不是排序的。将元素插入容器时，指定在什么位置（尾部、头部或中间某处）插入，元素就会位于什么位置。 </p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">name</th>
-<th style="text-align:center">特点</th>
+<th align="center">name</th>
+<th align="center">特点</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"> <a href="http://www.cplusplus.com/reference/vector/vector/" target="_blank" rel="noopener">vector</a></td>
-<td style="text-align:center">可变长动态数组 vector 支持快速随机访问</td>
+<tbody><tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/vector/vector/" target="_blank" rel="noopener">vector</a></td>
+<td align="center">可变长动态数组 vector 支持快速随机访问</td>
 </tr>
 <tr>
-<td style="text-align:center">  <a href="http://www.cplusplus.com/reference/deque/deque/" target="_blank" rel="noopener">deque</a></td>
-<td style="text-align:center">双端队列deque 支持push_front、pop_front、push_back、pop_back</td>
+<td align="center"><a href="http://www.cplusplus.com/reference/deque/deque/" target="_blank" rel="noopener">deque</a></td>
+<td align="center">双端队列deque 支持push_front、pop_front、push_back、pop_back</td>
 </tr>
 <tr>
-<td style="text-align:center">  <a href="http://www.cplusplus.com/reference/list/list/" target="_blank" rel="noopener">list</a></td>
-<td style="text-align:center">双端链表 只支持双向顺序访问。在list中任何位置进行插入/删除操作速度都很快。 </td>
+<td align="center"><a href="http://www.cplusplus.com/reference/list/list/" target="_blank" rel="noopener">list</a></td>
+<td align="center">双端链表 只支持双向顺序访问。在list中任何位置进行插入/删除操作速度都很快。</td>
 </tr>
 <tr>
-<td style="text-align:center">  <a href="http://www.cplusplus.com/reference/forward_list/forward_list/" target="_blank" rel="noopener">forward_list</a></td>
-<td style="text-align:center">单向链表 只支持单向顺序访问。在链表任何位置进行插入/删除操作速度都很快。</td>
+<td align="center"><a href="http://www.cplusplus.com/reference/forward_list/forward_list/" target="_blank" rel="noopener">forward_list</a></td>
+<td align="center">单向链表 只支持单向顺序访问。在链表任何位置进行插入/删除操作速度都很快。</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
         </div>
         
         
@@ -458,46 +534,42 @@
             <h3 id="👺-变量类型"><a href="#👺-变量类型" class="headerlink" title="👺 变量类型"></a>👺 变量类型</h3><p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
 <p>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。</p>
 <p>以下几种基本的变量类型:</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">描述</th>
+<th align="center">类型</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">bool</td>
-<td style="text-align:center">存储值 true 或 false</td>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">存储值 true 或 false</td>
 </tr>
 <tr>
-<td style="text-align:center">char</td>
-<td style="text-align:center">通常是一个字符（八位），是一个整数类型</td>
+<td align="center">char</td>
+<td align="center">通常是一个字符（八位），是一个整数类型</td>
 </tr>
 <tr>
-<td style="text-align:center">int</td>
-<td style="text-align:center">整数类型</td>
+<td align="center">int</td>
+<td align="center">整数类型</td>
 </tr>
 <tr>
-<td style="text-align:center">float</td>
-<td style="text-align:center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
+<td align="center">float</td>
+<td align="center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
 </tr>
 <tr>
-<td style="text-align:center">double</td>
-<td style="text-align:center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
+<td align="center">double</td>
+<td align="center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
 </tr>
 <tr>
-<td style="text-align:center">void</td>
-<td style="text-align:center">表示类型的缺失</td>
+<td align="center">void</td>
+<td align="center">表示类型的缺失</td>
 </tr>
 <tr>
-<td style="text-align:center">wchar_t</td>
-<td style="text-align:center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
+<td align="center">wchar_t</td>
+<td align="center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
         </div>
         
         
@@ -505,80 +577,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2019/10/17/C-基础知识/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    <div class="card">
-	
-
-    
-    <div class="card-image">
-        <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
-        </a>
-    </div>
-    
-    
-    <div class="card-content article ">
-		
-        
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-            
-			
-                <time class="level-item has-text-grey" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time>
-                
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1008 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        
-		
-		
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-			
-            
-                <a class="has-link-black-ter" href="/2019/10/15/Matlab读写超过4GB的图像/">Matlab读写超过4GB的图像</a>
-            
-
-        </h1>
-        
-        <div class="content">
-            <h4 id="💬-Brief-introduction-to-the-TIFF-format"><a href="#💬-Brief-introduction-to-the-TIFF-format" class="headerlink" title="💬 Brief introduction to the TIFF format"></a>💬 Brief introduction to the TIFF format</h4><p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
-<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either ‘Tiles’ or ‘Strips’. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/15/Matlab读写超过4GB的图像/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -657,7 +655,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -677,7 +675,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        30
                     </p>
                 </div>
             </div>
@@ -741,7 +739,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Algorithm/">
@@ -749,7 +747,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/C/Basic-knowledge/">
@@ -861,7 +859,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/BST/" style="font-size: 10px;">BST</a> <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/01背包问题/" style="font-size: 10px;">01背包问题</a> <a href="/tags/BST/" style="font-size: 10px;">BST</a> <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -875,6 +873,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/02/背包问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -952,25 +969,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time></div>
-                    <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -982,6 +980,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/11/">
@@ -1039,6 +1048,13 @@
                 Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/01背包问题/">
+                        <span class="tag">01背包问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BST/">
@@ -1113,6 +1129,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
                         <span class="tag">凸函数，正交和投影</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1264,6 +1287,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/02/背包问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/11/25/二叉搜索树Binary-Search-Tree-BST/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="二叉搜索树Binary Search Tree (BST)">
@@ -1338,25 +1380,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="Matlab读写超过4GB的图像">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-15T04:10:09.000Z">2019-10-15</time></div>
-                    <a href="/2019/10/15/Matlab读写超过4GB的图像/" class="has-link-black-ter is-size-6">Matlab读写超过4GB的图像</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning/">Learning</a> / <a class="has-link-grey -link" href="/categories/Learning/Matlab/">Matlab</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1368,6 +1391,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/11/">
@@ -1425,6 +1459,13 @@
                 Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/01背包问题/">
+                        <span class="tag">01背包问题</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/BST/">
@@ -1499,6 +1540,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
                         <span class="tag">凸函数，正交和投影</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

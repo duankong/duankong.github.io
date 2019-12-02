@@ -6,23 +6,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: Dimensionality-Reduction - Notouch</title>
+<title>背包问题 - Notouch</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="总之岁月漫长，然而值得等待！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Notouch">
-<meta property="og:url" content="http://notouch.top/categories/Learning/Dimensionality-Reduction/index.html">
+    <meta name="description" content="01背包问题有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件  dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值 1、不放第i件物品，则 dp[i][j] = dp[i-1][j] 2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得">
+<meta name="keywords" content="01背包问题,动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背包问题">
+<meta property="og:url" content="http://notouch.top/2019/12/02/背包问题/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="总之岁月漫长，然而值得等待！">
+<meta property="og:description" content="01背包问题有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件  dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值 1、不放第i件物品，则 dp[i][j] = dp[i-1][j] 2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://notouch.top/images/og_image.png">
+<meta property="og:image" content="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+<meta property="og:updated_time" content="2019-12-02T15:45:39.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Notouch">
-<meta name="twitter:description" content="总之岁月漫长，然而值得等待！">
-<meta name="twitter:image" content="http://notouch.top/images/og_image.png">
+<meta name="twitter:title" content="背包问题">
+<meta name="twitter:description" content="01背包问题有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件  dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值 1、不放第i件物品，则 dp[i][j] = dp[i-1][j] 2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得">
+<meta name="twitter:image" content="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 
 
 
@@ -105,7 +107,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/dk_logo.svg" alt="Notouch" height="28">
+                <img src="/images/dk_logo.svg" alt="背包问题" height="28">
             
             </a>
         </div>
@@ -137,6 +139,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -151,28 +157,14 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li><a href="/categories/Learning/">Learning</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">Dimensionality-Reduction</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
+                <div class="column is-6-tablet is-6-desktop is-9-widescreen has-order-2 column-main"><div class="card">
 	
 
     
     <div class="card-image">
-        <a href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/" class="image is-7by1">
-            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1558897181790&amp;di=5c06a81f1762cd0b1452f8bde9c1e0ed&amp;imgtype=0&amp;src=http%3A%2F%2Fimg3.orsoon.com%2Fpic%2F201710%2F13215942_08fcd65aec.jpg" alt="PCA(Principal Component Analysis) 主成分分析">
-        </a>
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+        </span>
     </div>
     
     
@@ -184,20 +176,25 @@
             <div class="level-left">
             
 			
-                <time class="level-item has-text-grey" datetime="2018-11-15T14:44:09.000Z">2018-11-15</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time>
                 
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Dimensionality-Reduction/">Dimensionality-Reduction</a>
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1561 words)
+                    5 minutes read (About 744 words)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
                 
             </div>
         </div>
@@ -208,49 +205,139 @@
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
 			
             
-                <a class="has-link-black-ter" href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/">PCA(Principal Component Analysis) 主成分分析</a>
+                背包问题
             
 
         </h1>
         
         <div class="content">
-            <p>标签 :  PCA      降维</p>
-<blockquote>
-<p>🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
+            <h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><pre><code>有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件
+
+dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值
+1、不放第i件物品，则 dp[i][j] = dp[i-1][j]
+2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得的最大价值 dp[i-1][j-w[i]] + c[i]
+3、递推方程dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]]+c[i]);</code></pre><h4 id="通用解法"><a href="#通用解法" class="headerlink" title="通用解法"></a>通用解法</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>, j &lt;= v; j++)</span><br><span class="line">    <span class="hljs-keyword">if</span>(j - w[i] &gt;= <span class="hljs-number">0</span>) </span><br><span class="line">      dp[i][j] = max(dp[i<span class="hljs-number">-1</span>][j], dp[i<span class="hljs-number">-1</span>][j-w[i]] + c[i]);</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      dp[i][j] = dp[i<span class="hljs-number">-1</span>][j];    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一维</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = v; j &gt;= w[i]; j--)</span><br><span class="line">    dp[v] = max(dp[v], dp[v-w[i]] + c[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="实例-1068-Find-More-Coins-30-分"><a href="#实例-1068-Find-More-Coins-30-分" class="headerlink" title="实例 1068 Find More Coins (30 分)"></a>实例 1068 Find More Coins (30 分)</h4><blockquote>
+<p>题目大意：用n个硬币买价值为m的东西，输出使用方案，使得正好几个硬币加起来价值为m。从小到大排列，输出最小的那个排列方案</p>
 </blockquote>
-<h2 id="🎯-特征值和奇异值"><a href="#🎯-特征值和奇异值" class="headerlink" title="🎯  特征值和奇异值"></a>🎯  特征值和奇异值</h2><p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
-<p>🌅 <a href="https://zhuanlan.zhihu.com/p/29846048" target="_blank" rel="noopener">奇异值分解（SVD）</a></p>
-<h2 id="🎨-主成分分析—PCA"><a href="#🎨-主成分分析—PCA" class="headerlink" title="🎨  主成分分析—PCA"></a>🎨  主成分分析—PCA</h2>
+<h6 id="背包问题求解"><a href="#背包问题求解" class="headerlink" title="背包问题求解"></a>背包问题求解</h6><pre><code>01背包问题，因为要输出从小到大的排列，可以先把硬币面额从大到小排列，然后用bool类型的choice[i][j]数组dp[i][j]是否选取，如果选取了就令choice为true；然后进行01背包问题求解，如果最后求解的结果不是恰好等于所需要的价值的，就输出No Soultion，否则从choice[i][j]判断选取的情况，i从n到1表示从后往前看第i个物品的选取情况，j从m到0表示从容量m到0是否选取(j = j – w[i])，把选取情况压入arr数组中，最后输出arr数组</code></pre><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> dp[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> w[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">bool</span> choice[<span class="hljs-number">10010</span>][<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>&#123;<span class="hljs-keyword">return</span> a &gt; b;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n, m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    sort(w + <span class="hljs-number">1</span>, w + n + <span class="hljs-number">1</span>, cmp1);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = m; j &gt;= w[i]; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(dp[j] &lt;= dp[j-w[i]] + w[i]) &#123;<span class="hljs-comment">//当容量为j时，放进去可以得到更高价值</span></span><br><span class="line">                choice[i][j] = <span class="hljs-literal">true</span>;<span class="hljs-comment">//flag</span></span><br><span class="line">                dp[j] = dp[j-w[i]] + w[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dp[m] != m) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Solution"</span>);</span><br><span class="line">    <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; arr;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = m, index = n;</span><br><span class="line">        <span class="hljs-keyword">while</span>(v &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(choice[index][v] == <span class="hljs-literal">true</span>) &#123;</span><br><span class="line">                arr.push_back(w[index]);</span><br><span class="line">                v -= w[index];<span class="hljs-comment">//减去找到的硬币</span></span><br><span class="line">            &#125;</span><br><span class="line">            index--;<span class="hljs-comment">//找下一个indx</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.size(); i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(i != <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>);</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="直接求最小的数列，通过ok判断是否找到最小。"><a href="#直接求最小的数列，通过ok判断是否找到最小。" class="headerlink" title="直接求最小的数列，通过ok判断是否找到最小。"></a>直接求最小的数列，通过ok判断是否找到最小。</h6><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; coin;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; temp, res;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> ok = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nowk, <span class="hljs-keyword">int</span> nowsum)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//show_res(temp);</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (nowk &gt; n || nowsum &gt; m || ok == <span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nowsum == m) &#123;</span><br><span class="line">        ok = <span class="hljs-number">1</span>;</span><br><span class="line">        res = temp;</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nowk; i &lt; n; i++) &#123;</span><br><span class="line">        temp.push_back(coin[i]);</span><br><span class="line">        dfs(i + <span class="hljs-number">1</span>, nowsum + coin[i]);</span><br><span class="line">        temp.erase(temp.end() - <span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/01背包问题/">01背包问题</a>, <a class="has-link-grey -link" href="/tags/动态规划/">动态规划</a>
                 </div>
             </div>
         </div>
         
+        
+        
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+
         
     </div>
 </div>
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/o_timg.gif" alt="Alipay"></div>
+</a>
 
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/xiaomai.gif" alt="Wechat"></div>
+</a>
 
+                
+                
+<a class="button is-danger donate" href="https://github.com/duankong" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
 
-
-
-
+                
+        </div>
+    </div>
 </div>
-                        <!-- 修改 -->
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/25/二叉搜索树Binary-Search-Tree-BST/">
+                <span class="level-item">二叉搜索树Binary Search Tree (BST)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '6cd559678e1f221043a2',
+        clientSecret: '80e2f67e1a4202407fa9624190ed476d7cb3a86d',
+        id: 'f9e5502f5268f1f7a869681b913b968f',
+        repo: 'duankong.github.io',
+        owner: 'duankong',
+        admin: "duankong"
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+<!-- 粘贴的部分 -->
+                          <!-- 修改，可选保留的栏 -->
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-3 column-left is-sticky">
     
         
 <div class="card widget">
@@ -356,6 +443,37 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#01背包问题">
+        <span class="has-mr-6">1</span>
+        <span>01背包问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#通用解法">
+        <span class="has-mr-6">1.1</span>
+        <span>通用解法</span>
+        </a></li><li>
+        <a class="is-flex" href="#实例-1068-Find-More-Coins-30-分">
+        <span class="has-mr-6">1.2</span>
+        <span>实例 1068 Find More Coins (30 分)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#背包问题求解">
+        <span class="has-mr-6">1.2.1</span>
+        <span>背包问题求解</span>
+        </a></li><li>
+        <a class="is-flex" href="#直接求最小的数列，通过ok判断是否找到最小。">
+        <span class="has-mr-6">1.2.2</span>
+        <span>直接求最小的数列，通过ok判断是否找到最小。</span>
+        </a></li></ul></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 <div class="card widget">
@@ -900,416 +1018,7 @@
     
 </div>
 
-
-<!-- 粘贴的部分 -->
-
-                        <!-- 修改 -->
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/12/02/背包问题/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/11/25/二叉搜索树Binary-Search-Tree-BST/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="二叉搜索树Binary Search Tree (BST)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T14:51:58.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/25/二叉搜索树Binary-Search-Tree-BST/" class="has-link-black-ter is-size-6">二叉搜索树Binary Search Tree (BST)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/30/C-树的遍历和树状数组/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3110281/pexels-photo-3110281.jpeg?cs=srgb&amp;dl=-3110281.jpg&amp;fm=jpg" alt="C++树的遍历和树状数组">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:19:36.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/C-树的遍历和树状数组/" class="has-link-black-ter is-size-6">C++树的遍历和树状数组</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/10/17/C-基础知识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
-                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/12/">
-                <span class="level-start">
-                    <span class="level-item">December 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/01背包问题/">
-                        <span class="tag">01背包问题</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/BST/">
-                        <span class="tag">BST</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Bigtiff/">
-                        <span class="tag">Bigtiff</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/KKT/">
-                        <span class="tag">KKT</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Matlab/">
-                        <span class="tag">Matlab</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/PCA降维/">
-                        <span class="tag">PCA降维</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/三维图像/">
-                        <span class="tag">三维图像</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/中序遍历/">
-                        <span class="tag">中序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/二叉搜索树/">
-                        <span class="tag">二叉搜索树</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/二阶偏导数/">
-                        <span class="tag">二阶偏导数</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/先序遍历/">
-                        <span class="tag">先序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/凸函数，正交和投影/">
-                        <span class="tag">凸函数，正交和投影</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/动态规划/">
-                        <span class="tag">动态规划</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/变量类型/">
-                        <span class="tag">变量类型</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/后序遍历/">
-                        <span class="tag">后序遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/字符串/">
-                        <span class="tag">字符串</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/容器/">
-                        <span class="tag">容器</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/常量/">
-                        <span class="tag">常量</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/广度-层次-遍历/">
-                        <span class="tag">广度(层次)遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/拉格朗日乘子/">
-                        <span class="tag">拉格朗日乘子</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/指针/">
-                        <span class="tag">指针</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/文件读写/">
-                        <span class="tag">文件读写</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/无偏估计/">
-                        <span class="tag">无偏估计</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/朴素贝叶斯算法/">
-                        <span class="tag">朴素贝叶斯算法</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/树状数组/">
-                        <span class="tag">树状数组</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/梯度散度和旋度/">
-                        <span class="tag">梯度散度和旋度</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/海森矩阵/">
-                        <span class="tag">海森矩阵</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/深度遍历/">
-                        <span class="tag">深度遍历</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/病毒标记/">
-                        <span class="tag">病毒标记</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/高斯函数/">
-                        <span class="tag">高斯函数</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
 
 <!-- 粘贴的部分 -->
 
@@ -1323,7 +1032,7 @@
 				<script src="//code.tidio.co/3tnny2tdx9oh0xzuitaxzhuakj60ydfy.js"></script>
                 <a class="footer-logo is-block has-mb-12" href="/">
                 
-                    <img src="/images/dk_logo.svg" alt="Notouch" width="304" height="50">
+                    <img src="/images/dk_logo.svg" alt="背包问题" width="304" height="50">
                 
                 </a>
                 <p class="is-size-10">
