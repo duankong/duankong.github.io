@@ -168,7 +168,7 @@
     
     <div class="card-image">
         <a href="/2019/12/02/背包问题/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+            <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
         </a>
     </div>
     
@@ -192,7 +192,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 744 words)
+                    5 minutes read (About 804 words)
                 </span>
                 
                 
@@ -205,30 +205,29 @@
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
 			
             
-                <a class="has-link-black-ter" href="/2019/12/02/背包问题/">背包问题</a>
+                <a class="has-link-black-ter" href="/2019/12/02/背包问题/">🏃 背包问题</a>
             
 
         </h1>
         
         <div class="content">
-            <h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><pre><code>有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件
-
-dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值
-1、不放第i件物品，则 dp[i][j] = dp[i-1][j]
-2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得的最大价值 dp[i-1][j-w[i]] + c[i]
-3、递推方程dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]]+c[i]);</code></pre><h4 id="通用解法"><a href="#通用解法" class="headerlink" title="通用解法"></a>通用解法</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>, j &lt;= v; j++)</span><br><span class="line">    <span class="hljs-keyword">if</span>(j - w[i] &gt;= <span class="hljs-number">0</span>) </span><br><span class="line">      dp[i][j] = max(dp[i<span class="hljs-number">-1</span>][j], dp[i<span class="hljs-number">-1</span>][j-w[i]] + c[i]);</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      dp[i][j] = dp[i<span class="hljs-number">-1</span>][j];    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一维</p>
-<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = v; j &gt;= w[i]; j--)</span><br><span class="line">    dp[v] = max(dp[v], dp[v-w[i]] + c[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="实例-1068-Find-More-Coins-30-分"><a href="#实例-1068-Find-More-Coins-30-分" class="headerlink" title="实例 1068 Find More Coins (30 分)"></a>实例 1068 Find More Coins (30 分)</h4><blockquote>
-<p>题目大意：用n个硬币买价值为m的东西，输出使用方案，使得正好几个硬币加起来价值为m。从小到大排列，输出最小的那个排列方案</p>
-</blockquote>
-<h6 id="背包问题求解"><a href="#背包问题求解" class="headerlink" title="背包问题求解"></a>背包问题求解</h6><pre><code>01背包问题，因为要输出从小到大的排列，可以先把硬币面额从大到小排列，然后用bool类型的choice[i][j]数组dp[i][j]是否选取，如果选取了就令choice为true；然后进行01背包问题求解，如果最后求解的结果不是恰好等于所需要的价值的，就输出No Soultion，否则从choice[i][j]判断选取的情况，i从n到1表示从后往前看第i个物品的选取情况，j从m到0表示从容量m到0是否选取(j = j – w[i])，把选取情况压入arr数组中，最后输出arr数组</code></pre><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> dp[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> w[<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-keyword">bool</span> choice[<span class="hljs-number">10010</span>][<span class="hljs-number">10010</span>];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>&#123;<span class="hljs-keyword">return</span> a &gt; b;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n, m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;w[i]);</span><br><span class="line">    sort(w + <span class="hljs-number">1</span>, w + n + <span class="hljs-number">1</span>, cmp1);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = m; j &gt;= w[i]; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(dp[j] &lt;= dp[j-w[i]] + w[i]) &#123;<span class="hljs-comment">//当容量为j时，放进去可以得到更高价值</span></span><br><span class="line">                choice[i][j] = <span class="hljs-literal">true</span>;<span class="hljs-comment">//flag</span></span><br><span class="line">                dp[j] = dp[j-w[i]] + w[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dp[m] != m) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Solution"</span>);</span><br><span class="line">    <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; arr;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = m, index = n;</span><br><span class="line">        <span class="hljs-keyword">while</span>(v &gt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(choice[index][v] == <span class="hljs-literal">true</span>) &#123;</span><br><span class="line">                arr.push_back(w[index]);</span><br><span class="line">                v -= w[index];<span class="hljs-comment">//减去找到的硬币</span></span><br><span class="line">            &#125;</span><br><span class="line">            index--;<span class="hljs-comment">//找下一个indx</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.size(); i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(i != <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>);</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="直接求最小的数列，通过ok判断是否找到最小。"><a href="#直接求最小的数列，通过ok判断是否找到最小。" class="headerlink" title="直接求最小的数列，通过ok判断是否找到最小。"></a>直接求最小的数列，通过ok判断是否找到最小。</h6><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; coin;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; temp, res;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> ok = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nowk, <span class="hljs-keyword">int</span> nowsum)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//show_res(temp);</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (nowk &gt; n || nowsum &gt; m || ok == <span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nowsum == m) &#123;</span><br><span class="line">        ok = <span class="hljs-number">1</span>;</span><br><span class="line">        res = temp;</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nowk; i &lt; n; i++) &#123;</span><br><span class="line">        temp.push_back(coin[i]);</span><br><span class="line">        dfs(i + <span class="hljs-number">1</span>, nowsum + coin[i]);</span><br><span class="line">        temp.erase(temp.end() - <span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>有n件物品，每件物品的重量为w[i]，价值为c[i]。现有一个重量为V的背包，问如何选取物品放入背包，使得背包内物品的总价值最大。其中每种物品只有1件</p>
+<p>dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大价值</p>
+<ul>
+<li>1、不放第i件物品，则 dp[i][j] = dp[i-1][j]</li>
+<li>2、放第i件物品，那么问题转化为前i – 1件物品恰好装入容量j – w[i]的背包中所能获得的最大价值 dp[i-1][j-w[i]] + c[i]</li>
+<li>3、递推方程dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]]+c[i]);</li>
+</ul>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/12/02/背包问题/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -508,14 +507,14 @@ dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大�
             
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">🏃 背包问题</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                     </p>
@@ -919,14 +918,14 @@ dp[i][j]表示前i件物品恰好装入容量为j的背包所能获得的最大�
             
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">🏃 背包问题</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                     </p>
