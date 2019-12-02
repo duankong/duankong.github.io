@@ -201,45 +201,49 @@
         </h1>
         
         <div class="content">
-            <h3 id="👺-变量类型"><a href="#👺-变量类型" class="headerlink" title="👺 变量类型"></a>👺 变量类型</h3><p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
+            <h3>👺 变量类型</h3>
+<p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
 <p>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。</p>
 <p>以下几种基本的变量类型:</p>
 <table>
 <thead>
 <tr>
-<th align="center">类型</th>
-<th align="center">描述</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">bool</td>
-<td align="center">存储值 true 或 false</td>
+<tbody>
+<tr>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">存储值 true 或 false</td>
 </tr>
 <tr>
-<td align="center">char</td>
-<td align="center">通常是一个字符（八位），是一个整数类型</td>
+<td style="text-align:center">char</td>
+<td style="text-align:center">通常是一个字符（八位），是一个整数类型</td>
 </tr>
 <tr>
-<td align="center">int</td>
-<td align="center">整数类型</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">整数类型</td>
 </tr>
 <tr>
-<td align="center">float</td>
-<td align="center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
 </tr>
 <tr>
-<td align="center">double</td>
-<td align="center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
 </tr>
 <tr>
-<td align="center">void</td>
-<td align="center">表示类型的缺失</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">表示类型的缺失</td>
 </tr>
 <tr>
-<td align="center">wchar_t</td>
-<td align="center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
+<td style="text-align:center">wchar_t</td>
+<td style="text-align:center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+<p></p>
         </div>
         
         
@@ -312,8 +316,10 @@
         </h1>
         
         <div class="content">
-            <h4 id="💬-Brief-introduction-to-the-TIFF-format"><a href="#💬-Brief-introduction-to-the-TIFF-format" class="headerlink" title="💬 Brief introduction to the TIFF format"></a>💬 Brief introduction to the TIFF format</h4><p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
-<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either ‘Tiles’ or ‘Strips’. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
+            <h4>💬 Brief introduction to the TIFF format</h4>
+<p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of 'tags' and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
+<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either 'Tiles' or 'Strips'. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
+<p></p>
         </div>
         
         
@@ -386,13 +392,15 @@
         </h1>
         
         <div class="content">
-            <p>标签 :  PCA      降维</p>
+            <p>标签 :  PCA  	降维</p>
 <blockquote>
 <p>🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
 </blockquote>
-<h2 id="🎯-特征值和奇异值"><a href="#🎯-特征值和奇异值" class="headerlink" title="🎯  特征值和奇异值"></a>🎯  特征值和奇异值</h2><p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
+<h2>🎯  特征值和奇异值</h2>
+<p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
 <p>🌅 <a href="https://zhuanlan.zhihu.com/p/29846048" target="_blank" rel="noopener">奇异值分解（SVD）</a></p>
-<h2 id="🎨-主成分分析—PCA"><a href="#🎨-主成分分析—PCA" class="headerlink" title="🎨  主成分分析—PCA"></a>🎨  主成分分析—PCA</h2>
+<h2>🎨  主成分分析---PCA</h2>
+<p></p>
         </div>
         
         
@@ -476,6 +484,7 @@
 <li>👀 海森矩阵</li>
 </ul>
 <p>数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的<strong>二阶偏导数</strong>组成的方块矩阵（假设其二阶偏导都存在）。</p>
+<p></p>
         </div>
         
         
@@ -786,14 +795,14 @@
             
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">🏃 背包问题</a>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                     </p>
@@ -1197,14 +1206,14 @@
             
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">🏃 背包问题</a>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                     </p>

@@ -11,19 +11,19 @@
 
 
 
-    <meta name="description" content="😀 一、梯度、散度、旋度轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
+    <meta name="description" content="😀 一、梯度、散度、旋度 轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件 汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
 <meta name="keywords" content="梯度散度和旋度,拉格朗日乘子,KKT,凸函数，正交和投影">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning notes_2018_12">
 <meta property="og:url" content="http://notouch.top/2018/11/30/Learning-notes-2018-12/index.html">
 <meta property="og:site_name" content="Notouch">
-<meta property="og:description" content="😀 一、梯度、散度、旋度轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
+<meta property="og:description" content="😀 一、梯度、散度、旋度 轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件 汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 <meta property="og:updated_time" content="2019-06-02T04:05:50.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning notes_2018_12">
-<meta name="twitter:description" content="😀 一、梯度、散度、旋度轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
+<meta name="twitter:description" content="😀 一、梯度、散度、旋度 轻松理解散度和旋度 - 数学知识的动画解析 🖐 二、拉格朗日乘子法和KKT条件 汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院">
 <meta name="twitter:image" content="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 
 
@@ -211,44 +211,65 @@
         </h1>
         
         <div class="content">
-            <h2 id="😀-一、梯度、散度、旋度"><a href="#😀-一、梯度、散度、旋度" class="headerlink" title="😀 一、梯度、散度、旋度"></a>😀 一、梯度、散度、旋度</h2><p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
-<h2 id="🖐-二、拉格朗日乘子法和KKT条件"><a href="#🖐-二、拉格朗日乘子法和KKT条件" class="headerlink" title="🖐 二、拉格朗日乘子法和KKT条件"></a>🖐 二、拉格朗日乘子法和KKT条件</h2><p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
-<a id="more"></a> 
-
-
+            <h2>😀 一、梯度、散度、旋度</h2>
+<p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
+<h2>🖐 二、拉格朗日乘子法和KKT条件</h2>
+<p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
+<p><a id="more"></a></p>
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-22-17.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/26514613" target="_blank" rel="noopener">浅谈最优化问题的KKT条件</a></p>
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-20-46.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28804123" target="_blank" rel="noopener">【分类战车SVM】第四话：拉格朗日对偶问题（原来这么简单，你也可以轻松学会）</a></p>
-<h2 id="🙎-三、点乘和叉乘"><a href="#🙎-三、点乘和叉乘" class="headerlink" title="🙎 三、点乘和叉乘"></a>🙎 三、点乘和叉乘</h2><p>$$ a\cdot b =|a||b|\cos \theta$$<br>$$ a\cdot b =a_1b_1+a_2b_2+ … +a_nb_n  $$<br>$$  a \times b=<br>\left|<br> \begin{matrix}<br>   i &amp; j &amp; k \<br>   x_1 &amp; y_1 &amp; z_1  \<br>   x_2 &amp; y_2 &amp; z_2<br>  \end{matrix}<br>\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k<br>$$<br><img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
-<h2 id="🧚‍-四、凸集、凸函数"><a href="#🧚‍-四、凸集、凸函数" class="headerlink" title="🧚‍ 四、凸集、凸函数"></a>🧚‍ 四、凸集、凸函数</h2><ol>
+<h2>🙎 三、点乘和叉乘</h2>
+<p>$$ a\cdot b =|a||b|\cos \theta$$
+$$ a\cdot b =a_1b_1+a_2b_2+ ... +a_nb_n  $$
+$$  a \times b=
+\left|
+\begin{matrix}
+i &amp; j &amp; k \
+x_1 &amp; y_1 &amp; z_1  \
+x_2 &amp; y_2 &amp; z_2<br>
+\end{matrix}
+\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k
+$$
+<img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
+<h2>🧚‍ 四、凸集、凸函数</h2>
+<ol>
 <li>凸集</li>
 </ol>
 <p>若某集合中的x和y两个点，若x和y连线之间的所有点（即0&lt;=μ&lt;=1，μx+(1-μ)y）仍属于这个集合，则称此集合为凸集。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
+<p>直观几何表示：
+<img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
 <ol start="2">
 <li>凸函数</li>
 </ol>
 <p>对于$x$是定义在某凸集（非空的，空集也被规定为凸集）上的函数，对于凸集中的任意两点$x_1$和$x_2$，若</p>
-<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$ </p>
+<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$</p>
 <p>则称函数$f(x)$为<code>凸函数</code>。</p>
-<p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
+<p>直观几何表示：
+<img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
 <p>也就是说两点对应的函数值$f(x_1)$和$f(x_2)$的之间的连线$(\mu f(x_1)+(1-\mu)f(x_2))$大于等于相应的（即同一个$\mu$值）两点之间连线$(\mu f(x_1)+(1-\mu)f(x_2))$对应的函数值$f[\mu x_1+(1-\mu)x_2]$</p>
 <p>这其实应叫 下凸。</p>
 <p>判定方法可利用<strong>定义法、已知结论法以及函数的二阶导数</strong></p>
 <p>对于实数集上的凸函数，一般的判别方法是求它的二阶导数，如果其二阶导数在区间上非负，就称为凸函数。(向下凸)</p>
 <p>如果其二阶导数在区间上恒大于0，就称为严格凸函数。</p>
-<h2 id="👨‍-五、方程的解"><a href="#👨‍-五、方程的解" class="headerlink" title="👨‍ 五、方程的解"></a>👨‍ 五、方程的解</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141128173356875.jpg" alt="方程的解"><br>若矩阵A的秩为r，即r=R(A) ：</p>
+<h2>👨‍ 五、方程的解</h2>
+<p><img src="/2018/11/30/Learning-notes-2018-12/20141128173356875.jpg" alt="方程的解">
+若矩阵A的秩为r，即r=R(A) ：</p>
 <p>1）若$r=M=N$，则线性方程组$Ax=b$有唯一解；</p>
 <p>2）若$r=N&lt; M$,则线性方程组$Ax=b$有唯一解或无解；</p>
 <p>3）若$r=M&lt; N$，则线性方程组$Ax=b$有无穷解；</p>
 <p>4）若$r&lt; M$,$r&lt; N$，则线性方程组$Ax =b$有无穷解或无解；</p>
-<h2 id="🍳-六、正交投影和投影矩阵"><a href="#🍳-六、正交投影和投影矩阵" class="headerlink" title="🍳 六、正交投影和投影矩阵"></a>🍳 六、正交投影和投影矩阵</h2><p><img src="/2018/11/30/Learning-notes-2018-12/20141125122541339.jpg" alt="正交投影"></p>
+<h2>🍳 六、正交投影和投影矩阵</h2>
+<p><img src="/2018/11/30/Learning-notes-2018-12/20141125122541339.jpg" alt="正交投影"></p>
 <p><strong>正交投影</strong>$p$是向量$b$在平面（由矩阵$A$的列向量$a_1$和$a_2$确定）上正交投影</p>
-<p>投影矩阵是从向量b变换到其正交投影p过程中的变换矩阵P：<br><img src="/2018/11/30/Learning-notes-2018-12/20141125123056796.jpg" alt="正交投影和投影矩阵"></p>
-<h2 id="🍻-七、MP和OMP"><a href="#🍻-七、MP和OMP" class="headerlink" title="🍻 七、MP和OMP"></a>🍻 七、MP和OMP</h2><p><a href="https://korediantousman.staff.telkomuniversity.ac.id/files/2017/08/main.pdf" target="_blank" rel="noopener">MP</a><br>OMP</p>
+<p>投影矩阵是从向量b变换到其正交投影p过程中的变换矩阵P：
+<img src="/2018/11/30/Learning-notes-2018-12/20141125123056796.jpg" alt="正交投影和投影矩阵"></p>
+<h2>🍻 七、MP和OMP</h2>
+<p><a href="https://korediantousman.staff.telkomuniversity.ac.id/files/2017/08/main.pdf" target="_blank" rel="noopener">MP</a>
+OMP</p>
 <hr>
 <p>以上。(づ●─●)づ</p>
 
@@ -482,31 +503,31 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#😀-一、梯度、散度、旋度">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">1</span>
         <span>😀 一、梯度、散度、旋度</span>
         </a></li><li>
-        <a class="is-flex" href="#🖐-二、拉格朗日乘子法和KKT条件">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">2</span>
         <span>🖐 二、拉格朗日乘子法和KKT条件</span>
         </a></li><li>
-        <a class="is-flex" href="#🙎-三、点乘和叉乘">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">3</span>
         <span>🙎 三、点乘和叉乘</span>
         </a></li><li>
-        <a class="is-flex" href="#🧚‍-四、凸集、凸函数">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">4</span>
         <span>🧚‍ 四、凸集、凸函数</span>
         </a></li><li>
-        <a class="is-flex" href="#👨‍-五、方程的解">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">5</span>
         <span>👨‍ 五、方程的解</span>
         </a></li><li>
-        <a class="is-flex" href="#🍳-六、正交投影和投影矩阵">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">6</span>
         <span>🍳 六、正交投影和投影矩阵</span>
         </a></li><li>
-        <a class="is-flex" href="#🍻-七、MP和OMP">
+        <a class="is-flex" href="#undefined">
         <span class="has-mr-6">7</span>
         <span>🍻 七、MP和OMP</span>
         </a></li></ul>
@@ -668,14 +689,14 @@
             
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="🏃 背包问题">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T15:39:41.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">🏃 背包问题</a>
+                    <a href="/2019/12/02/背包问题/" class="has-link-black-ter is-size-6">背包问题</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Algorithm/">Algorithm</a>
                     </p>
