@@ -157,6 +157,105 @@
 
     
     <div class="card-image">
+        <a href="/2019/10/30/C-容器和文件读写/" class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
+        </a>
+    </div>
+    
+    
+    <div class="card-content article ">
+		
+        
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+            
+			
+                <time class="level-item has-text-grey" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time>
+                
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C/">C++</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1057 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        
+		
+		
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+			
+            
+                <a class="has-link-black-ter" href="/2019/10/30/C-容器和文件读写/">C++容器和文件读写</a>
+            
+
+        </h1>
+        
+        <div class="content">
+            <h2 id="😋-C-容器（STL容器）"><a href="#😋-C-容器（STL容器）" class="headerlink" title="😋 C++容器（STL容器）"></a>😋 C++容器（STL容器）</h2><h4 id="👹-顺序容器"><a href="#👹-顺序容器" class="headerlink" title="👹 顺序容器"></a>👹 顺序容器</h4><blockquote>
+<p>元素在容器中的位置同元素的值无关，即容器不是排序的。将元素插入容器时，指定在什么位置（尾部、头部或中间某处）插入，元素就会位于什么位置。 </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/vector/vector/" target="_blank" rel="noopener">vector</a></td>
+<td align="center">可变长动态数组 vector 支持快速随机访问</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/deque/deque/" target="_blank" rel="noopener">deque</a></td>
+<td align="center">双端队列deque 支持push_front、pop_front、push_back、pop_back</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/list/list/" target="_blank" rel="noopener">list</a></td>
+<td align="center">双端链表 只支持双向顺序访问。在list中任何位置进行插入/删除操作速度都很快。</td>
+</tr>
+<tr>
+<td align="center"><a href="http://www.cplusplus.com/reference/forward_list/forward_list/" target="_blank" rel="noopener">forward_list</a></td>
+<td align="center">单向链表 只支持单向顺序访问。在链表任何位置进行插入/删除操作速度都很快。</td>
+</tr>
+</tbody></table>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/30/C-容器和文件读写/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+	
+
+    
+    <div class="card-image">
         <a href="/2019/10/17/C-基础知识/" class="image is-7by1">
             <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
         </a>
@@ -201,49 +300,45 @@
         </h1>
         
         <div class="content">
-            <h3>👺 变量类型</h3>
-<p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
+            <h3 id="👺-变量类型"><a href="#👺-变量类型" class="headerlink" title="👺 变量类型"></a>👺 变量类型</h3><p>C++ 中每个变量都有指定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
 <p>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C++ 是大小写敏感的。</p>
 <p>以下几种基本的变量类型:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">描述</th>
+<th align="center">类型</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">bool</td>
-<td style="text-align:center">存储值 true 或 false</td>
+<tbody><tr>
+<td align="center">bool</td>
+<td align="center">存储值 true 或 false</td>
 </tr>
 <tr>
-<td style="text-align:center">char</td>
-<td style="text-align:center">通常是一个字符（八位），是一个整数类型</td>
+<td align="center">char</td>
+<td align="center">通常是一个字符（八位），是一个整数类型</td>
 </tr>
 <tr>
-<td style="text-align:center">int</td>
-<td style="text-align:center">整数类型</td>
+<td align="center">int</td>
+<td align="center">整数类型</td>
 </tr>
 <tr>
-<td style="text-align:center">float</td>
-<td style="text-align:center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
+<td align="center">float</td>
+<td align="center">单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数</td>
 </tr>
 <tr>
-<td style="text-align:center">double</td>
-<td style="text-align:center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
+<td align="center">double</td>
+<td align="center">双精度浮点值。双精度是1位符号，11位指数，52位小数</td>
 </tr>
 <tr>
-<td style="text-align:center">void</td>
-<td style="text-align:center">表示类型的缺失</td>
+<td align="center">void</td>
+<td align="center">表示类型的缺失</td>
 </tr>
 <tr>
-<td style="text-align:center">wchar_t</td>
-<td style="text-align:center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
+<td align="center">wchar_t</td>
+<td align="center">宽字符类型，双字节类型，在windows下是Unicode 16编码</td>
 </tr>
-</tbody>
-</table>
-<p></p>
+</tbody></table>
         </div>
         
         
@@ -316,10 +411,8 @@
         </h1>
         
         <div class="content">
-            <h4>💬 Brief introduction to the TIFF format</h4>
-<p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of 'tags' and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
-<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either 'Tiles' or 'Strips'. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
-<p></p>
+            <h4 id="💬-Brief-introduction-to-the-TIFF-format"><a href="#💬-Brief-introduction-to-the-TIFF-format" class="headerlink" title="💬 Brief introduction to the TIFF format"></a>💬 Brief introduction to the TIFF format</h4><p>A TIFF file is, well, a Tagged Image File Format (TIFF). As the name implies, the file itself consists of a whole bunch of ‘tags’ and corresponding values. For example, all TIFF files are expected to have the ImageWidth and ImageLength tags, whose values are the width and length (height) of the image stored within.</p>
+<p>A core feature of this format lies in how image data is organized in a physical file. TIFF allows for the image data to be stored in chunks as either ‘Tiles’ or ‘Strips’. You could think of a strip as a tile whose width is the same as the image. The format stores offsets for each of these strips or tiles in an image header. This allows for efficient random access of any chunk in the image. The original TIFF format specification calls for use of 32 bit file offset values. I guess you can imagine where I am going with that bit of information. 32 bits implies a maximum value of 2^32 for any offset. Note that these are offsets from the very beginning of the file. In effect, the 32 bit requirement limits the size of the largest possible TIFF file to be under 4 gigabytes. This was fine for a long time (The earliest TIFF release was in 1986), but we now have more data producers hitting this limit.</p>
         </div>
         
         
@@ -392,15 +485,13 @@
         </h1>
         
         <div class="content">
-            <p>标签 :  PCA  	降维</p>
+            <p>标签 :  PCA      降维</p>
 <blockquote>
 <p>🥃 PCA的实现一般有两种，一种是用特征值分解去实现的，一种是用奇异值分解去实现的。</p>
 </blockquote>
-<h2>🎯  特征值和奇异值</h2>
-<p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
+<h2 id="🎯-特征值和奇异值"><a href="#🎯-特征值和奇异值" class="headerlink" title="🎯  特征值和奇异值"></a>🎯  特征值和奇异值</h2><p>🌌 <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">如何理解矩阵特征值？</a></p>
 <p>🌅 <a href="https://zhuanlan.zhihu.com/p/29846048" target="_blank" rel="noopener">奇异值分解（SVD）</a></p>
-<h2>🎨  主成分分析---PCA</h2>
-<p></p>
+<h2 id="🎨-主成分分析—PCA"><a href="#🎨-主成分分析—PCA" class="headerlink" title="🎨  主成分分析—PCA"></a>🎨  主成分分析—PCA</h2>
         </div>
         
         
@@ -408,90 +499,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    <div class="card">
-	
-
-    
-    <div class="card-image">
-        <a href="/2018/10/22/求三维图像的海森矩阵/" class="image is-7by1">
-            <img class="thumbnail" src="http://5b0988e595225.cdn.sohucs.com/images/20190519/7c0f354cf3bf496895d5a73a92baa681.jpeg" alt="求三维图像的海森矩阵">
-        </a>
-    </div>
-    
-    
-    <div class="card-content article ">
-		
-        
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-            
-			
-                <time class="level-item has-text-grey" datetime="2018-10-22T15:54:06.000Z">2018-10-22</time>
-                
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning/">Learning</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Learning/Feature-Extraction/">Feature-Extraction</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 minutes read (About 1398 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        
-		
-		
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-			
-            
-                <a class="has-link-black-ter" href="/2018/10/22/求三维图像的海森矩阵/">求三维图像的海森矩阵</a>
-            
-
-        </h1>
-        
-        <div class="content">
-            <p>标签 : 三维图像  海森矩阵 二阶偏导数  高斯函数</p>
-<hr>
-<hr>
-<ul>
-<li>👌 雅可比矩阵</li>
-</ul>
-<p>在向量分析中，雅可比矩阵是<strong>一阶偏导数</strong>以一定方式排列成的矩阵, 其行列式称为雅可比行列式。</p>
-<ul>
-<li>👀 海森矩阵</li>
-</ul>
-<p>数学中，海森矩阵(Hessian matrix)是一个自变量为向量的实值函数的<strong>二阶偏导数</strong>组成的方块矩阵（假设其二阶偏导都存在）。</p>
-<p></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/22/求三维图像的海森矩阵/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -572,7 +579,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -582,7 +589,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        9
                     </p>
                 </div>
             </div>
@@ -592,7 +599,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        34
                     </p>
                 </div>
             </div>
@@ -656,7 +663,7 @@
                 <span class="level-item">C++</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/C/Algorithm/">
@@ -673,6 +680,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/C/PAT-Note/">
+            <span class="level-start">
+                <span class="level-item">PAT Note</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Learning/">
@@ -776,7 +791,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/01背包问题/" style="font-size: 10px;">01背包问题</a> <a href="/tags/BST/" style="font-size: 10px;">BST</a> <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
+        <a href="/tags/01背包问题/" style="font-size: 10px;">01背包问题</a> <a href="/tags/BST/" style="font-size: 10px;">BST</a> <a href="/tags/Bigtiff/" style="font-size: 10px;">Bigtiff</a> <a href="/tags/Dijkstra算法/" style="font-size: 10px;">Dijkstra算法</a> <a href="/tags/KKT/" style="font-size: 10px;">KKT</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/PCA降维/" style="font-size: 10px;">PCA降维</a> <a href="/tags/hashing查找/" style="font-size: 10px;">hashing查找</a> <a href="/tags/三维图像/" style="font-size: 10px;">三维图像</a> <a href="/tags/中序遍历/" style="font-size: 10px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二阶偏导数/" style="font-size: 10px;">二阶偏导数</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/凸函数，正交和投影/" style="font-size: 10px;">凸函数，正交和投影</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/变量类型/" style="font-size: 10px;">变量类型</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/常量/" style="font-size: 10px;">常量</a> <a href="/tags/广度-层次-遍历/" style="font-size: 10px;">广度(层次)遍历</a> <a href="/tags/拉格朗日乘子/" style="font-size: 10px;">拉格朗日乘子</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/文件读写/" style="font-size: 10px;">文件读写</a> <a href="/tags/无偏估计/" style="font-size: 10px;">无偏估计</a> <a href="/tags/朴素贝叶斯算法/" style="font-size: 10px;">朴素贝叶斯算法</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/梯度散度和旋度/" style="font-size: 10px;">梯度散度和旋度</a> <a href="/tags/海森矩阵/" style="font-size: 10px;">海森矩阵</a> <a href="/tags/深度遍历/" style="font-size: 10px;">深度遍历</a> <a href="/tags/病毒标记/" style="font-size: 10px;">病毒标记</a> <a href="/tags/红黑树/" style="font-size: 10px;">红黑树</a> <a href="/tags/高斯函数/" style="font-size: 10px;">高斯函数</a>
     </div>
 </div>
 
@@ -790,6 +805,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/12/03/PAT-note-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="PAT note 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T14:32:21.000Z">2019-12-03</time></div>
+                    <a href="/2019/12/03/PAT-note-1/" class="has-link-black-ter is-size-6">PAT note 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/PAT-Note/">PAT Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -867,25 +901,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/17/C-基础知识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
-                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -904,7 +919,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -988,6 +1003,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Dijkstra算法/">
+                        <span class="tag">Dijkstra算法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/KKT/">
                         <span class="tag">KKT</span>
                         <span class="tag is-grey">1</span>
@@ -1002,8 +1024,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/PAT/">
+                        <span class="tag">PAT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/PCA降维/">
                         <span class="tag">PCA降维</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hashing查找/">
+                        <span class="tag">hashing查找</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1165,6 +1201,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/病毒标记/">
                         <span class="tag">病毒标记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/红黑树/">
+                        <span class="tag">红黑树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1204,6 +1247,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/03/PAT-note-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="PAT note 1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T14:32:21.000Z">2019-12-03</time></div>
+                    <a href="/2019/12/03/PAT-note-1/" class="has-link-black-ter is-size-6">PAT note 1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/PAT-Note/">PAT Note</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/02/背包问题/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/2931242/pexels-photo-2931242.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="背包问题">
@@ -1278,25 +1340,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/17/C-基础知识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/3063362/pexels-photo-3063362.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="C++基础知识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-16T16:40:54.000Z">2019-10-17</time></div>
-                    <a href="/2019/10/17/C-基础知识/" class="has-link-black-ter is-size-6">C++基础知识</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1315,7 +1358,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1399,6 +1442,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Dijkstra算法/">
+                        <span class="tag">Dijkstra算法</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/KKT/">
                         <span class="tag">KKT</span>
                         <span class="tag is-grey">1</span>
@@ -1413,8 +1463,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/PAT/">
+                        <span class="tag">PAT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/PCA降维/">
                         <span class="tag">PCA降维</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hashing查找/">
+                        <span class="tag">hashing查找</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1576,6 +1640,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/病毒标记/">
                         <span class="tag">病毒标记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/红黑树/">
+                        <span class="tag">红黑树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
