@@ -214,25 +214,29 @@
             <h2 id="😀-一、梯度、散度、旋度"><a href="#😀-一、梯度、散度、旋度" class="headerlink" title="😀 一、梯度、散度、旋度"></a>😀 一、梯度、散度、旋度</h2><p><a href="http://www.365yg.com/i6522440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">轻松理解散度和旋度 - 数学知识的动画解析</a></p>
 <h2 id="🖐-二、拉格朗日乘子法和KKT条件"><a href="#🖐-二、拉格朗日乘子法和KKT条件" class="headerlink" title="🖐 二、拉格朗日乘子法和KKT条件"></a>🖐 二、拉格朗日乘子法和KKT条件</h2><p><a href="http://slidesplayer.com/slide/11358544/22440389700354564/#mid=1569021639000065" target="_blank" rel="noopener">汽车优化设计 第二章：优化方法的数学基础 王琥 湖南大学 机械与运载工程学院</a></p>
 <a id="more"></a> 
-
-
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-22-17.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/26514613" target="_blank" rel="noopener">浅谈最优化问题的KKT条件</a></p>
 <p><img src="/2018/11/30/Learning-notes-2018-12/chrome_2018-12-04_20-20-46.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28804123" target="_blank" rel="noopener">【分类战车SVM】第四话：拉格朗日对偶问题（原来这么简单，你也可以轻松学会）</a></p>
-<h2 id="🙎-三、点乘和叉乘"><a href="#🙎-三、点乘和叉乘" class="headerlink" title="🙎 三、点乘和叉乘"></a>🙎 三、点乘和叉乘</h2><p>$$ a\cdot b =|a||b|\cos \theta$$<br>$$ a\cdot b =a_1b_1+a_2b_2+ … +a_nb_n  $$<br>$$  a \times b=<br>\left|<br> \begin{matrix}<br>   i &amp; j &amp; k \<br>   x_1 &amp; y_1 &amp; z_1  \<br>   x_2 &amp; y_2 &amp; z_2<br>  \end{matrix}<br>\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k<br>$$<br><img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
+<h2 id="🙎-三、点乘和叉乘"><a href="#🙎-三、点乘和叉乘" class="headerlink" title="🙎 三、点乘和叉乘"></a>🙎 三、点乘和叉乘</h2><script type="math/tex; mode=display">a\cdot b =|a||b|\cos \theta</script><script type="math/tex; mode=display">a\cdot b =a_1b_1+a_2b_2+ ... +a_nb_n</script><script type="math/tex; mode=display">a \times b= 
+\left|
+ \begin{matrix}
+   i & j & k \\
+   x_1 & y_1 & z_1  \\
+   x_2 & y_2 & z_2  
+  \end{matrix} 
+\right|=(y_1z_2-y_2z_1)i-(x_1z_2-x_2z_1)j+(x_1y_2+x_2y_1)k</script><p><img src="/2018/11/30/Learning-notes-2018-12/timg.jpg" alt="点乘和叉乘"></p>
 <h2 id="🧚‍-四、凸集、凸函数"><a href="#🧚‍-四、凸集、凸函数" class="headerlink" title="🧚‍ 四、凸集、凸函数"></a>🧚‍ 四、凸集、凸函数</h2><ol>
 <li>凸集</li>
 </ol>
 <p>若某集合中的x和y两个点，若x和y连线之间的所有点（即0&lt;=μ&lt;=1，μx+(1-μ)y）仍属于这个集合，则称此集合为凸集。</p>
 <p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103170550131.jpg" alt="凸集和凹集"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
-<ol start="2">
+<ol>
 <li>凸函数</li>
 </ol>
 <p>对于$x$是定义在某凸集（非空的，空集也被规定为凸集）上的函数，对于凸集中的任意两点$x_1$和$x_2$，若</p>
-<p>$$ f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)$$ </p>
-<p>则称函数$f(x)$为<code>凸函数</code>。</p>
+<script type="math/tex; mode=display">f[\mu x_1+(1-\mu)x_2]\leq \mu f(x_1)+(1-\mu)f(x_2)</script><p>则称函数$f(x)$为<code>凸函数</code>。</p>
 <p>直观几何表示：<br><img src="/2018/11/30/Learning-notes-2018-12/20141103171408380.jpg" alt="凸函数"></p>
 <p>左边的是凸集，右边的不是凸集，因为右边的集合中任意两点x和y连线之间的所有点有时不属于这个集合（右图中的连线）。</p>
 <p>也就是说两点对应的函数值$f(x_1)$和$f(x_2)$的之间的连线$(\mu f(x_1)+(1-\mu)f(x_2))$大于等于相应的（即同一个$\mu$值）两点之间连线$(\mu f(x_1)+(1-\mu)f(x_2))$对应的函数值$f[\mu x_1+(1-\mu)x_2]$</p>
