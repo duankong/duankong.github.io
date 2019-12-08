@@ -217,22 +217,24 @@
 <p> 🍻 跨突触标记：多神经元传递</p>
 </blockquote>
 <a id="more"></a> 
+
+
 <h2 id="🍥-条件概率、贝叶斯公式和全概率公式"><a href="#🍥-条件概率、贝叶斯公式和全概率公式" class="headerlink" title="🍥 条件概率、贝叶斯公式和全概率公式"></a>🍥 条件概率、贝叶斯公式和全概率公式</h2><p>🍼 <code>边缘概率</code>(又称先验概率):某个事件发生的概率。</p>
 <p><strong>边缘概率</strong> 是这样得到的：在联合概率中，把最终结果中那些不需要的事件通过合并成它们的全概率，而消去它们(对离散随机变量用求和得全概率，对连续随机变量用积分得全概率)，这称为边缘化（marginalization），比如A的边缘概率表示为P(A)，B的边缘概率表示为P(B)。 </p>
 <p>🥜 <code>联合概率</code>表示两个事件共同发生的概率。A与B的联合概率表示为$P ( A \bigcap B )$或者$P(A,B)$。</p>
 <p>🍣 <code>条件概率</code>(又称后验概率):事件A在另外一个事件B已经发生条件下的发生概率。条件概率表示为P(A|B)，读作“在B条件下A的概率”。</p>
 <ul>
-<li>条件概率<script type="math/tex; mode=display">P(A|B)=\frac{P(A,B)}{P(B)}</script></li>
-<li>贝叶斯公式<script type="math/tex; mode=display">P(A|B)=\frac{P(B|A)P(A)}{P(B)}</script></li>
-<li>全概率公式<script type="math/tex; mode=display">P(A)=\sum_{i=1}^n P(A|B_i)P(B_i)</script></li>
-<li>全概率公式和贝叶斯公式的结合<script type="math/tex; mode=display">P(A|B)=\frac{P(B|A)P(A)}{\sum_{i=1}^n P(B|A_i)P(A_i)}</script></li>
+<li>条件概率<br>$$P(A|B)=\frac{P(A,B)}{P(B)}$$</li>
+<li>贝叶斯公式<br>$$ P(A|B)=\frac{P(B|A)P(A)}{P(B)} $$</li>
+<li>全概率公式<br>$$P(A)=\sum_{i=1}^n P(A|B_i)P(B_i)$$</li>
+<li>全概率公式和贝叶斯公式的结合<br>$$ P(A|B)=\frac{P(B|A)P(A)}{\sum_{i=1}^n P(B|A_i)P(A_i)} $$</li>
 </ul>
 <h2 id="🏋️‍-无偏估计、有效性、一致性"><a href="#🏋️‍-无偏估计、有效性、一致性" class="headerlink" title="🏋️‍ 无偏估计、有效性、一致性"></a>🏋️‍ 无偏估计、有效性、一致性</h2><blockquote>
 <p> 🚵 无偏估计</p>
 </blockquote>
 <p> 估计量的<code>数学期望</code>等于被估计参数的<code>真实值</code>，则称此此估计量为被估计参数的无偏估计，即具有无偏性。</p>
-<p> 无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。</p>
-<script type="math/tex; mode=display">S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2</script><blockquote>
+<p> 无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。<br>$$ S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2 $$</p>
+<blockquote>
 <p> 🚴‍ 有效性</p>
 </blockquote>
 <p>估计量方差越小，则说明这个估计量有效性更高。</p>
@@ -266,34 +268,30 @@
 <li>盲反卷积复原</li>
 </ul>
 <p>图像复原的四种函数</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">函数名</th>
-<th style="text-align:center">滤波器</th>
+<th align="center">函数名</th>
+<th align="center">滤波器</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">deconv</td>
-<td style="text-align:center">用wnrener滤波器实现图像去模糊</td>
+<tbody><tr>
+<td align="center">deconv</td>
+<td align="center">用wnrener滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td style="text-align:center">deconvreg</td>
-<td style="text-align:center">用gularized滤波器实现图像去模糊</td>
+<td align="center">deconvreg</td>
+<td align="center">用gularized滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td style="text-align:center">deconvlucy</td>
-<td style="text-align:center">用ucy-Richardson滤波器实现图像去模糊</td>
+<td align="center">deconvlucy</td>
+<td align="center">用ucy-Richardson滤波器实现图像去模糊</td>
 </tr>
 <tr>
-<td style="text-align:center">deconvbind</td>
-<td style="text-align:center">用反卷积算法实现图像去模糊</td>
+<td align="center">deconvbind</td>
+<td align="center">用反卷积算法实现图像去模糊</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>其中：</p>
 <ol>
 <li><p>deconvwnr函数求得的是最小二乘解</p>
@@ -310,7 +308,7 @@
 <p>朴素贝叶斯法的参数估计：极大似然估计。</p>
 <p>贝叶斯估计：用极大似然估计可能出现要估计的概率值为0的情况，这会影响到后验概率的计算结果，使分类产生偏差，解决这类问题的方法是采用贝叶斯估计。<br><img src="/2018/11/30/Learning-notes-2018-11/ApplicationFrameHost_2018-11-22_14-21-37.png" alt="贝叶斯估计"></p>
 <h2 id="🚩-概念定义"><a href="#🚩-概念定义" class="headerlink" title="🚩 概念定义"></a>🚩 概念定义</h2><p>🏁 <strong>凸集</strong>：欧式空间中，对于集合中的任意两点的连线，连线上任意一点都在集合中，我们就说这个集合是凸集。</p>
-<p>➗ <strong>凸函数</strong>：对于任意属于[0,1]的a和任意属于凸集的两点x, y，有f( ax + (1-a)y ) &lt;= a <em> f(x) + (1-a) </em> f(y)，几何上的直观理解就是两点连线上某点的函数值，大于等于两点之间某点的函数值。凸函数的任一局部极小点也是全局极小点</p>
+<p>➗ <strong>凸函数</strong>：对于任意属于[0,1]的a和任意属于凸集的两点x, y，有f( ax + (1-a)y ) &lt;= a * f(x) + (1-a) * f(y)，几何上的直观理解就是两点连线上某点的函数值，大于等于两点之间某点的函数值。凸函数的任一局部极小点也是全局极小点</p>
 <p>💭 <strong>半正定矩阵</strong>：特征值大于等于0的实对称矩阵。</p>
 <blockquote>
 <p>半正定矩阵的充要条件：行列式（n阶顺序主子式）等于0，行列式的i阶顺序主子式&gt;=0，i从1到n-1</p>
@@ -386,16 +384,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/15/Matlab读写超过4GB的图像/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/30/Learning-notes-2018-12/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Matlab读写超过4GB的图像</span>
+                <span class="level-item">Learning notes_2018_12</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/30/Learning-notes-2018-12/">
-                <span class="level-item">Learning notes_2018_12</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/15/PCA-Principal-Component-Analysis-主成分分析/">
+                <span class="level-item">PCA(Principal Component Analysis) 主成分分析</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -472,7 +470,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        12
                     </p>
                 </div>
             </div>
@@ -740,6 +738,25 @@
         
         <article class="media">
             
+            <a href="/2019/12/08/PAT-Note-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="PAT Note 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-08T09:46:17.000Z">2019-12-08</time></div>
+                    <a href="/2019/12/08/PAT-Note-2/" class="has-link-black-ter is-size-6">PAT Note 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/12/03/PAT-note-1/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" alt="PAT note 1">
@@ -814,25 +831,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/30/C-容器和文件读写/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&amp;dl=-556416.jpg&amp;fm=jpg" alt="C++容器和文件读写">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-29T16:04:05.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/C-容器和文件读写/" class="has-link-black-ter is-size-6">C++容器和文件读写</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/C/">C++</a> / <a class="has-link-grey -link" href="/categories/C/Basic-knowledge/">Basic knowledge</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -851,7 +849,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
